@@ -39,7 +39,7 @@
                       <hr class="mt-3">
                       <div class="col-md-6">
                         <div class="form-check">
-                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="Deluxe_room" value="Deluxe room">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault2" id="Deluxe_room" value="Deluxe room">
                           <label class="form-check-label" for="Deluxe_room">
                             Per coupl 
                           </label>
@@ -48,7 +48,7 @@
 
                      <div class="col-md-6">
                         <div class="form-check">
-                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="Deluxe_room" value="Deluxe room">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault2" id="Deluxe_room" value="Deluxe room">
                           <label class="form-check-label" for="Deluxe_room">
                             Single traveller 
                           </label>
