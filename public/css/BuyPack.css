@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+body{
+    font-family: 'DM Sans', sans-serif;
+}
+.card-shop{
+    width: 50%;
+   
+}
+.choice-pack{
+    width: 50%;
+    height: 120px;
+    margin-bottom: 10px;
+}
+.payment-type{
+    width: 50%;
+    height: 60px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.payment-submit{
+    width: 50%;
+}
+.total{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+}
+.price{
+    text-align: right;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    color: #00b090;
+}
+.button-group{
+    display: flex;
+    justify-content: center;
+}
+.btn-submit{
+    background-color: #673de6;
+    border: 1px solid transparent;
+    height: 50px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 38px;
+}
+.btn-submit:hover{
+    background-color: #676de6;
+    color: #fff;
+}
+.btn-cancel:hover{
+    background-color: #FF5669;
+    color: #fff;
+}
+.btn-cancel{
+    background-color: #EB2143;
+    border: 1px solid transparent;
+    height: 50px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 38px;
+}
+p{
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    color: #727586;
+    margin-bottom: -10px
+}
+.form-check{
+    text-align: center;
+    
+    font-size: 14px;
+}
+@media screen and (max-width:890px)
+{
+    .card-shop{
+        width: 80%;
+    }
+    .choice-pack{
+        width: 80%;
+        
+    }
+    .payment-type{
+        width: 80%;
+    }
+    .payment-submit{
+        width: 80%;
+    }
+
+}
+
+@media screen and (max-width:769px) {
+
+    .choice-pack{
+        margin-bottom: 100px;
+    }
+}
+
+@media screen and (max-width:835px) {
+    .payment-type{
+        margin-bottom: 60px;
+    }
+}
