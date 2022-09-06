@@ -70,37 +70,37 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                <input type="text" class="form-control" id="floatingInput" placeholder=" ">
                                 <label for="floatingInput">Nom</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                <input type="text" class="form-control" id="floatingInput" placeholder=" ">
                                 <label for="floatingInput">Prenom</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                <input type="email" class="form-control" id="floatingInput" placeholder=" ">
                                 <label for="floatingInput">Email Adress</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                <input type="email" class="form-control" id="floatingInput" placeholder=" ">
                                 <label for="floatingInput">Telephone</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                <input type="email" class="form-control" id="floatingInput" placeholder=" ">
                                 <label for="floatingInput">Ville</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                <input type="text" class="form-control" id="floatingInput" placeholder=" ">
                                 <label for="floatingInput">Address</label>
                             </div>
                         </div>                      
