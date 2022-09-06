@@ -1,9 +1,10 @@
 <?php
 
 use App\Http\Controllers\BuyPackController;
-use App\Http\Controllers\BuyPackSaveOnlyController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+USE App\Http\Middleware\VerifyCsrfToken;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,8 +17,16 @@ use Illuminate\Support\Facades\Auth;
 */
 
 
-Route::get('BuyPack',[BuyPackController::class,'index']);
-Route::get('BuyPackSaveOnly',[BuyPackSaveOnlyController::class,'index']);
+Route::get('BuyPack1',[BuyPackController::class,'index1']);
+Route::get('BuyPack2',[BuyPackController::class,'index2']);
+Route::get('BuyPack3',[BuyPackController::class,'index3']);
+Route::post('process',[BuyPackController::class, 'process'])->name('process');
+Route::post('submit',[BuyPackController::class, 'submit'])->name('submit');
+
+Route::get('/okFail', [BuyPackController::class, 'okFail']);
+Route::post('okSuccess',[BuyPackController::class, 'okSuccess'])->withoutMiddleware([VerifyCsrfToken::class]);
+
+
+
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

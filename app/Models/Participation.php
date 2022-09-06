@@ -8,13 +8,23 @@ use Illuminate\Database\Eloquent\Model;
 class Participation extends Model
 {
     use HasFactory;
-    protected $table="participation";
     protected $fillable=[
-        'nom',
-        'prenom',
+        'fullname',
+        'country',
         'email',
-        'prix',
-        'status'
+        'nationality',
+        'tel',
+        'status',
+        'price',
+        'adress',
+        'deluxeroom',
+        'juniorsuite',
+        'prestigesuite',
+        'roh',
+        'superiorriad',
+        'premuimriad',
+        'couple',
+        'single',
     ];
 
 }
