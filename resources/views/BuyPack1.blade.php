@@ -1,12 +1,42 @@
+
 @extends('layouts.app')
+
+<head>
+
+
+    <title>HBS OPM30 Morocco 2023</title>
+
+
+</head>
 
 @section('content')
 
 
-<h2 class="text-center">Booking Form</h2>
+  <h4 class="title">SOFITEL PALAIS IMPERIAL</h4>
 
 <form  id="validate" action="process" method="post">
     @csrf
+
+    <div class="container card-terms">
+        <div class="row">
+            <div class="col-md-12">
+
+                        <div class="row">
+                            <div class="banner-pack1">
+
+                            </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container card-description">
+        <div class="row">
+            <p>Located in the heart of Hivernage district, within walking distance from the Jamaa el Fna square and the city's main attractions. The Sofitel Palais Imperial is a beautiful Moorish property set amongst manicured gardens and fountains, offering comfortable rooms and spacious suites, with beautiful views of either the city, the pool, or the gardens. The interior design has succeeded in combining French elegance with a dash of Moroccan Art de Vivre.
+			</p>
+        </div>
+    </div>
 
     <div class="container choice-pack">
         <div class="row">
@@ -14,39 +44,47 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
-                           <div class="col-md-4">
-                              <div class="form-check">
-                                <input class="form-check-input" type="radio" name="roomtype" id="Deluxe_room" value="Deluxe room">
-                                <label class="form-check-label" for="Deluxe_room">
-                                    Deluxe Room
-                                </label>
-                              </div>
-                           </div>
-
-                           <div class="col-md-4">
-                              <div class="form-check">
-                                <input class="form-check-input" type="radio" name="roomtype" id="Junior_suite" value="Junior suite">
-                                <label class="form-check-label" for="Junior_suite">
-                                    Junior Suite
-                                </label>
-                              </div>
-                           </div>
-
-                          <div class="col-md-4">
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" name="roomtype" id="Prestige_suite" value="Prestige suite">
-                              <label class="form-check-label" for="Prestige_suite">
-                                Prestige Suite
+                            <div class="radio-buttons">
+                                <h4 class="qts-title">Room Type ?</h4>
+                                <label class="custom-radio">
+                                    <input type="radio" name="roomtype" value="Deluxe room" />
+                                    <span class="radio-btn">
+                                        <i class="las la-check"></i>
+                                      <div class="hobbies-icon">
+                                        <img src="{{asset('images/SofitelDeluxeroom.jpg')}}" alt="">
+                                        <h3>Deluxe room</h3>
+                                      </div>
+                                    </span>
+                                  </label>
+                              <label class="custom-radio">
+                                <input type="radio" name="roomtype" value="Junior suite" />
+                                <span class="radio-btn">
+                                    <i class="las la-check"></i>
+                                  <div class="hobbies-icon">
+                                    <img src="{{asset('images/SofitelJuniorsuite.jpg')}}" alt="">
+                                    <h3>Junior suite</h3>
+                                  </div>
+                                </span>
+                              </label>
+                              <label class="custom-radio">
+                                <input type="radio" name="roomtype" value="Prestige suite" />
+                                <span class="radio-btn">
+                                    <i class="las la-check"></i>
+                                  <div class="hobbies-icon">
+                                    <img src="{{asset('images/SofitelPrestigesuite.jpg')}}" alt="">
+                                    <h3>Prestige suite</h3>
+                                  </div>
+                                </span>
                               </label>
                             </div>
-                          </div>
 
                           <hr class="mt-3">
+                          <h4 class="qts-title">Are You ?</h4>
                           <div class="col-md-6">
                             <div class="form-check">
                             <input class="form-check-input" type="radio" name="coupleorsingle" id="Deluxe_room" value="Per Couple">
                             <label class="form-check-label" for="Deluxe_room">
-                                Per Couple
+                                a Couple
                             </label>
                             </div>
                         </div>
@@ -55,7 +93,7 @@
                             <div class="form-check">
                             <input class="form-check-input" type="radio" name="coupleorsingle" id="Deluxe_room" value="Single Traveller" >
                             <label class="form-check-label" for="Deluxe_room">
-                                Single Traveller
+                                a Single
                             </label>
                             </div>
                         </div>
@@ -157,7 +195,7 @@
         </div>
     </div> --}}
 
-    <div class="container card-shop mb-3">
+    <div class="container payment-submit mb-3">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">

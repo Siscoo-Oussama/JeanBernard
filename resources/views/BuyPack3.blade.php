@@ -1,12 +1,39 @@
 @extends('layouts.app')
 
+<head>
+
+
+    <title>HBS OPM30 Morocco 2023</title>
+
+
+</head>
+
 @section('content')
-
-
-<h2 class="text-center">Booking Form</h2>
-
+<h4 class="title">HIVERNAGE HOTEL & SPA</h4>
 <form  id="validate" action="process" method="post">
     @csrf
+
+
+    <div class="container card-terms">
+        <div class="row">
+            <div class="col-md-12">
+
+                        <div class="row">
+                            <div class="banner-pack1">
+
+                            </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container card-description">
+        <div class="row">
+            <p>The Hivernage Hotel & Spa is also located at the heart of the Hivernage district - just across the street from Sofitel Palais Imperial, within a few minutes walk from the Jamâa el Fna square and the souks. The hotel features rooms and suites that combine comfort with the nobility of traditional design with views of the Koutoubia minaret and the city's ramparts. This hotel provides its guests with a great value-for-money.
+			</p>
+        </div>
+    </div>
 
     <div class="container choice-pack">
         <div class="row">
@@ -14,18 +41,25 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
-                           <div class="col-md-12">
-                              <div class="form-check">
-                                <input class="form-check-input" type="radio" name="roomtype" id="roh" value="ROH" checked>
-                                <label class="form-check-label" for="ROH">
-                                    ROH
-                                </label>
-                              </div>
-                           </div>
+
+                           <div class="radio-buttons">
+                            <h4 class="qts-title">Room Type ?</h4>
+                            <label class="custom-radio">
+                                <input type="radio" name="roomtype" value="ROH" checked />
+                                <span class="radio-btn">
+                                    <i class="las la-check"></i>
+                                  <div class="hobbies-icon">
+                                    <img src="{{asset('images/Hivernageroom.jpg')}}" alt="">
+                                    <h3>ROH</h3>
+                                  </div>
+                                </span>
+                              </label>
+                        </div>
 
 
 
                           <hr class="mt-3">
+                          <h4 class="qts-title">Are You ?</h4>
                           <div class="col-md-6">
                             <div class="form-check">
                             <input class="form-check-input" type="radio" name="coupleorsingle" id="Deluxe_room" value="Per Couple">
@@ -51,7 +85,7 @@
         </div>
     </div>
 
-    <div class="container card-shop mb-3">
+    <div class="container card-shop3 mb-3">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -140,7 +174,7 @@
         </div>
     </div> --}}
 
-    <div class="container card-shop mb-3">
+    <div class="container payment-submit mb-3">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">

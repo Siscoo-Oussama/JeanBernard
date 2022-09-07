@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Participation;
 use CMI\CmiClient;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Mail;
+
 
 class BuyPackController extends Controller
 {
@@ -66,8 +68,8 @@ class BuyPackController extends Controller
 
         $base_url= config('app.url');
         $client = new CmiClient([
-            'storekey' => 'Myjood_Incite1.0', // STOREKEY Icecube99??
-            'clientid' => '600001399', // CLIENTID 600001399
+            'storekey' => 'HBSevent23', // STOREKEY Icecube99??
+            'clientid' => '600003367', // CLIENTID 600001399
             'oid' => $request->cmd, // COMMAND ID IT MUST BE UNIQUE
             'shopurl' => $base_url, // SHOP URL FOR REDIRECTION
             'okUrl' => $base_url.'/okSuccess', // REDIRECTION AFTER SUCCEFFUL PAYMENT
@@ -77,7 +79,8 @@ class BuyPackController extends Controller
             'BillToStreet12' => $request->adresse, // YOUR ADDRESS APPEAR IN CMI PLATEFORM NOT REQUIRED
             'BillToCity' => $request->country, // YOUR CITY APPEAR IN CMI PLATEFORM NOT REQUIRED
             'BillToStateProv' => $request->adresse, // YOUR STATE APPEAR IN CMI PLATEFORM NOT REQUIRED
-            'BillToCountry' => '504', // YOUR COUNTRY APPEAR IN CMI PLATEFORM NOT REQUIRED (504=MA)
+            'lang' => 'en',
+            'BillToCountry' => '200', // YOUR COUNTRY APPEAR IN CMI PLATEFORM NOT REQUIRED (504=MA)
             'tel' => $request->tel, // YOUR PHONE APPEAR IN CMI PLATEFORM NOT REQUIRED
             'amount' => $request->price, // RETRIEVE AMOUNT WITH METHOD POST
             'payment_id' => $participation->id,
@@ -95,6 +98,7 @@ class BuyPackController extends Controller
         $participation->price = 0;
         $participation->fullname = $request->fullname;
         $participation->country = $request->country;
+        $participation->status = "paid";
         $participation->email = $request->email;
         $participation->nationality = $request->nationality;
         $participation->tel = $request->tel;
@@ -110,20 +114,31 @@ class BuyPackController extends Controller
             $participation->single = 1;
         }
 
+
+
         $participation->save();
 
-        return back()->with('success', 'Data inserted Successfully');
+        $participated = Participation::find('35');
+
+        //Mail::to('oussama@gmail.com')->send(new \App\Mail\RegisteredUser($participated));
+
+
+
+
+        return back()->with('success', 'Your request has been filed, one of our agents will get in touch with you shortly to carry on the process of registration and to confirm the availability of the chosen package');
 
 
     }
 
     public function okSuccess(Request $request)
     {
-        $participation = new Participation;
         $id = $request->payment_id;
         $participation = Participation::find($id);
         $participation->status = "paid";
+        //Mail::to($participation->email)->send(new \App\Mail\RegisteredUser($participation));
         $participation->update();
+
+
 
         return view('success');
 
