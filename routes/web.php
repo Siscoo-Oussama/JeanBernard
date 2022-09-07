@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BuyPackController;
+use App\Http\Controllers\BuyPackSaveOnlyController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 USE App\Http\Middleware\VerifyCsrfToken;
@@ -16,7 +17,7 @@ USE App\Http\Middleware\VerifyCsrfToken;
 |
 */
 
-
+Route::get('test',[BuyPackSaveOnlyController::class,'index']);
 Route::get('BuyPack1',[BuyPackController::class,'index1']);
 Route::get('BuyPack2',[BuyPackController::class,'index2']);
 Route::get('BuyPack3',[BuyPackController::class,'index3']);

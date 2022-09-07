@@ -5,6 +5,8 @@
 
 <h2 class="text-center">Booking Form</h2>
 
+
+
 <form  id="validate" action="process" method="post">
     @csrf
 
@@ -16,16 +18,17 @@
                         <div class="row">
                            <div class="col-md-4">
                               <div class="form-check">
-                                <input class="form-check-input" type="radio" name="roomtype" id="Deluxe_room" value="Deluxe room">
+                                <input class="form_check_input" type="radio" name="roomtype" id="Deluxe_room" value="Deluxe room" checked>
                                 <label class="form-check-label" for="Deluxe_room">
                                     Deluxe Room
+                                    
                                 </label>
                               </div>
                            </div>
 
                            <div class="col-md-4">
                               <div class="form-check">
-                                <input class="form-check-input" type="radio" name="roomtype" id="Junior_suite" value="Junior suite">
+                                <input class="form_check_input" type="radio" name="roomtype" id="Junior_suite" value="Junior suite">
                                 <label class="form-check-label" for="Junior_suite">
                                     Junior Suite
                                 </label>
@@ -34,7 +37,7 @@
 
                           <div class="col-md-4">
                             <div class="form-check">
-                              <input class="form-check-input" type="radio" name="roomtype" id="Prestige_suite" value="Prestige suite">
+                              <input class="form_check_input" type="radio" name="roomtype" id="Prestige_suite" value="Prestige suite">
                               <label class="form-check-label" for="Prestige_suite">
                                 Prestige Suite
                               </label>
@@ -44,7 +47,7 @@
                           <hr class="mt-3">
                           <div class="col-md-6">
                             <div class="form-check">
-                            <input class="form-check-input" type="radio" name="coupleorsingle" id="Deluxe_room" value="Per Couple">
+                            <input class="form_check_input2" type="radio" name="coupleorsingle" id="Deluxe_room" value="Per Couple" checked>
                             <label class="form-check-label" for="Deluxe_room">
                                 Per Couple
                             </label>
@@ -53,7 +56,7 @@
 
                         <div class="col-md-6">
                             <div class="form-check">
-                            <input class="form-check-input" type="radio" name="coupleorsingle" id="Deluxe_room" value="Single Traveller" >
+                            <input class="form_check_input2" type="radio" name="coupleorsingle" id="Deluxe_room" value="Single Traveller" >
                             <label class="form-check-label" for="Deluxe_room">
                                 Single Traveller
                             </label>
@@ -185,14 +188,14 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-6 total1">
                                 <h1 class="total">Total</h1>
                             </div>
                             <div class="col-md-6">
                                 <input type="hidden" name="price" value="1" >
                                 <input type="hidden" name="cmd" value="<?php echo substr(md5(mt_rand()), 0, 7); ?>">
 
-                                <h1 class="price">$200</h1>
+                                <h1 class="price">${{$data}}</h1>
                             </div>
                         </div>
                         <hr>
