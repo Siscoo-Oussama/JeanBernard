@@ -15,7 +15,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 description-hotel">
-                    <h2 class="" style="color: #f28a21">SOFITEL PALAIS IMPERIAL</h2>
+                    <h2 class="">SOFITEL PALAIS IMPERIAL</h2>
                     <p>Located in the heart of Hivernage district, within walking distance from the Jamaa el Fna square and the city's main attractions. The Sofitel Palais Imperial is a beautiful Moorish property set amongst manicured gardens and fountains, offering comfortable rooms and spacious suites, with beautiful views of either the city, the pool, or the gardens. The interior design has succeeded in combining French elegance with a dash of Moroccan Art de Vivre.  	 						
                     </p>
                 </div>
@@ -70,25 +70,33 @@
                               </label>
                             </div>
 
-                          <hr class="mt-3">
-                          <h4 class="qts-title mb-3">Are You ?</h4>
-                          <div class="col-md-6">
-                            <div class="form-check">
-                            <input class="form-check-input" type="radio" name="coupleorsingle" id="Deluxe_room" value="Per Couple">
-                            <label class="form-check-label" for="Deluxe_room">
-                                Couple
-                            </label>
-                            </div>
-                        </div>
+                            <hr class="mt-5">
+                            
 
-                        <div class="col-md-6">
-                            <div class="form-check">
-                            <input class="form-check-input" type="radio" name="coupleorsingle" id="Deluxe_room" value="Single Traveller" >
-                            <label class="form-check-label" for="Deluxe_room">
-                                Single
-                            </label>
+                            <div class="col-md-4">
+                                <div class="room-title">
+                                    <h5 class="qts-title">Are You ?</h5>
+                                </div>
                             </div>
-                        </div>
+                            
+                            
+                              <div class="col-md-4">
+                                <div class="form-check">
+                                <input class="form-check-input" type="radio" name="coupleorsingle" id="Deluxe_room" value="Per Couple">
+                                <label class="form-check-label" for="Deluxe_room">
+                                    a couple
+                                </label>
+                                </div>
+                            </div>
+    
+                            <div class="col-md-4">
+                                <div class="form-check">
+                                <input class="form-check-input" type="radio" name="coupleorsingle" id="Deluxe_room" value="Single Traveller" >
+                                <label class="form-check-label" for="Deluxe_room">
+                                    a single
+                                </label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -96,7 +104,7 @@
         </div>
     </div>
 
-    <div class="container card-shop ">
+    <div class="container card-shop" style="">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -182,7 +190,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-4">
-                                <h1 class="total">Price: </h1>
+                                <h1 class="total">Total: </h1>
                             </div>
                             <div class="col-md-8">
                                 <input type="hidden" name="price" value="1" >

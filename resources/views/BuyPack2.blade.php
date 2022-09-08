@@ -68,22 +68,30 @@
                             </div>
 
 
-                          <hr class="mt-3">
-                          <h4 class="qts-title">Are You ?</h4>
-                            <div class="col-md-6">
+                            <hr class="mt-5">
+                            
+
+                            <div class="col-md-4">
+                                <div class="room-title">
+                                    <h5 class="qts-title">Are You ?</h5>
+                                </div>
+                            </div>
+                            
+                            
+                              <div class="col-md-4">
                                 <div class="form-check">
                                 <input class="form-check-input" type="radio" name="coupleorsingle" id="Deluxe_room" value="Per Couple">
                                 <label class="form-check-label" for="Deluxe_room">
-                                    Per Couple
+                                    a couple
                                 </label>
                                 </div>
                             </div>
-
-                            <div class="col-md-6">
+    
+                            <div class="col-md-4">
                                 <div class="form-check">
                                 <input class="form-check-input" type="radio" name="coupleorsingle" id="Deluxe_room" value="Single Traveller" >
                                 <label class="form-check-label" for="Deluxe_room">
-                                    Single Traveller
+                                    a single
                                 </label>
                                 </div>
                             </div>

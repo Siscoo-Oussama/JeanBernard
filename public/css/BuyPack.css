@@ -6,7 +6,7 @@ body{
 }
 .card-shop ,.card-shop2,.card-shop3{
     width: 50%;
-    margin-top: 340px;
+    margin-top: 300px;
    
 }
 .qts-title{
@@ -48,9 +48,8 @@ body{
 .price{
     text-align: right;
     font-size: 18px;
-    font-weight: 700;
     line-height: 24px;
-    color: #00b090;
+    color: #f28a21;
 }
 .button-group{
     display: flex;
@@ -100,15 +99,19 @@ p{
 {
     .card-shop{
         width: 90%;
+        margin-top: 350px;
+        padding-top: 20px
     }
     .card-description{
         width: 90%;
     }
     .card-shop2{
         width: 90%;
+        margin-top: 340px;
     }
     .card-shop3{
         width: 90%;
+        margin-top: -150px;
     }
     .choice-pack{
         width: 90%;
@@ -136,7 +139,7 @@ span{
 @media screen and (max-width:769px) {
 
     .choice-pack{
-        margin-bottom: 300px;
+        margin-bottom: 500px;
     }
 }
 
@@ -159,6 +162,13 @@ span{
     .card-shop{
         margin-top: 750px;
        
+    }
+    .card-shop2{
+        margin-top: 570px;
+       
+    }
+    .card-sho3{
+        margin-top: 850px;
     }
 }
 
@@ -185,13 +195,13 @@ span{
     border-radius: 10px;
     position: relative;
     text-align: center;
-    box-shadow: 0 0 20px #c3c3c367;
+
     cursor: pointer;
     margin-top: 50px;
   }
 
   .radio-btn > i {
-    color: #ffffff;
+    color: #fffeee;
     background-color: #f28a21;
     font-size: 20px;
     position: absolute;
@@ -232,15 +242,14 @@ span{
   }
 
   .radio-btn .hobbies-icon h3 {
-    color: #f28a21;
+    color: black;
     font-family: "Raleway", sans-serif;
     font-size: 16px;
     font-weight: 400;
-    text-transform: uppercase;
   }
 
   .custom-radio input:checked + .radio-btn {
-    border: 3px solid #f28a21;
+    border: 3px solid black;
   }
 
   .custom-radio input:checked + .radio-btn > i {
@@ -254,7 +263,6 @@ span{
     height: 65vh;
     background-size: cover;
     color: black;
-    border-radius: 18px;
     box-shadow: 1px 1px 3px black;
   }
   .banner-pack2{
@@ -264,7 +272,6 @@ span{
     height: 65vh;
     background-size: cover;
     color: white;
-    border-radius: 18px;
     box-shadow: 1px 1px 3px black;
   }
 
@@ -275,9 +282,38 @@ span{
     height: 65vh;
     background-size: cover;
     color: white;
-    border-radius: 18px;
     box-shadow: 1px 1px 3px black;
   }
+  @media screen and (max-width:720px) {
+    .banner-pack3{
+        background: linear-gradient(rgba(0, 0, 0, 0.2 ), rgba(0, 0, 0, 0.0)),
+        url(../images/Hivernagehotel.jpg);
+        width: 100%;
+        height: 45vh;
+        background-size: cover;
+        color: white;
+        box-shadow: 1px 1px 3px black;
+      }
+      .banner-pack2{
+        background: linear-gradient(rgba(0, 0, 0, 0.2 ), rgba(0, 0, 0, 0.0)),
+        url(../images/RMMhotelimage.jpg);
+        width: 100%;
+        height: 45vh;
+        background-size: cover;
+        color: white;
+        box-shadow: 1px 1px 3px black;
+      }
+      .banner-pack1{
+        background: linear-gradient(rgba(0, 0, 0, 0.2 ), rgba(0, 0, 0, 0.0)),
+        url(../images/Sofitelhotelimage.jpg);
+        width: 100%;
+        height: 45vh;
+        background-size: cover;
+        color: black;
+        box-shadow: 1px 1px 3px black;
+      }
+  }
+  
   .title{
     text-align: center;
     font-size: 30px;
@@ -373,10 +409,17 @@ header nav h3 {
 	margin: 0;
 	font-size: 4vw;
 	width: 80%;
+    margin-top: 20px;
+}
+.presentation .product-presentation h2{
+    margin-top: 20px;
+    color: #f28a21;
+}
+.presentation .product-presentation .description-hotel{
+    margin-top: 10%;
 }
 .presentation .product-presentation p {
 	font-weight: 300;
-	color:#000;
     text-align: left;
 }
 .presentation .image-presentation img {
