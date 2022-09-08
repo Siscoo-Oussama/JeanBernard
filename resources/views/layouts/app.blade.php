@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>HBS OPM30 Morocco 2023</title>
+    <title>BuyPack</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -19,8 +19,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/BuyPack.css')}}">
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <style>
-        
+
     </style>
 </head>
 <body>
@@ -35,6 +36,86 @@
             @yield('content')
         </main>
     </div>
-    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            var val1="";
+            var val2="";
+
+
+                    $(".form_check_input").change(function() {
+
+                    if(this.checked) {
+                        val1=$(this).val();
+                     console.log(val1);
+                    }
+                        $.ajax({
+                                type:'get',
+                                url:"{!!URL::to('BuyPack')!!}",
+                                data:{'val2':val2 ,'val1':val1},
+                                dataType:'json',
+                                success:function(data){
+                                    //console.log('success');
+
+                                   console.log(data.data.price);
+                                   $('.price').text(data.data.price);
+
+                                },
+                                error:function(){
+
+                                }
+                            });
+
+
+                    });
+
+                    $(".form_check_input2").change(function() {
+                    if(this.checked) {
+
+
+                    val2=$(this).val();
+                    console.log(val2);
+                    }
+
+
+                   $.ajax({
+                                type:'get',
+                                url:"{!!URL::to('BuyPack')!!}",
+                                data:{'val2':val2 ,'val1':val1},
+                                dataType:'json',
+                                success:function(data){
+                                    //console.log('success');
+
+                                   console.log(data.data.price);
+                                   $('.price').text(data.data.price);
+
+                                },
+                                error:function(){
+
+                                }
+                            });
+
+
+                    });
+
+
+
+
+        });
+
+
+
+
+
+
+
+
+    </script>
+
 </body>
+
+
 </html>
