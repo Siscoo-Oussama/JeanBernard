@@ -17,7 +17,9 @@ use Illuminate\Support\Facades\Mail;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get("PaymentRequest",function(){
+    return view("PaymentRequest");
+});
 Route::get('BuyPack',[BuyPackController::class,'index']);
 Route::get('BuyPack1',[BuyPackController::class,'index1']);
 Route::get('BuyPack2',[BuyPackController::class,'index2']);

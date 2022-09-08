@@ -76,7 +76,7 @@
 
                           <div class="col-md-4">
                             <div class="form-check">
-                            <input class="form-check-input" type="radio" name="coupleorsingle" id="Deluxe_room" value="Per Couple">
+                            <input class="form-check-input" type="radio" name="coupleorsingle" id="couple" value="Per Couple">
                             <label class="form-check-label" for="Deluxe_room">
                                 a couple
                             </label>
@@ -85,7 +85,7 @@
 
                         <div class="col-md-4">
                             <div class="form-check">
-                            <input class="form-check-input" type="radio" name="coupleorsingle" id="Deluxe_room" value="Single Traveller" >
+                            <input class="form-check-input" type="radio" name="coupleorsingle" id="single" value="Single Traveller" >
                             <label class="form-check-label" for="Deluxe_room">
                                 a single
                             </label>
@@ -112,9 +112,9 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="partnername" >
-                                    <label for="floatingInput">Partner Name (Only for couple type)</label>
+                                <div class=" mb-3">
+                                    <input type="text" style="height: 55px" class="form-control" id="" name="partnername" placeholder="name@example.com">
+                                    
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -235,7 +235,7 @@
                             <div class="col-md-6">
                                 <input type="hidden" name="price" value="1" >
                                 <input type="hidden" name="cmd" value="<?php echo substr(md5(mt_rand()), 0, 7); ?>">
-                                <h4 class="price">2000 MAD  <span> ~ approximately 200 $</span></h4>
+                                <h4 class="price"> MAD  <p>(~ approx  USD )</p></h4>
                             </div>
                         </div>
                         <hr>
@@ -243,8 +243,17 @@
                         <div class="button-group">
 
 
-                            <button class="col-md-7 btn btn-submit" type="submit" >Book Trip
-                            </button>
+                            <div class="col-md-5">
+                                <img src={{asset('images/visaicon.png')}} alt="" class="image-payment">
+                                <button class="col-md-11 btn btn-submit" type="submit" >Submit Payment Request
+                                </button>
+                                
+                            </div>
+                            <div class="col-md-5">
+                                <img src={{asset('images/visaicon.png')}} alt="" class="image-payment">
+                                <button class="col-md-12 btn btn-submit" type="submit" >Complete Payment Transaction
+                                </button>
+                            </div>
 
 
                         </div>
