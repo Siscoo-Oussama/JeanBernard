@@ -36,64 +36,282 @@ class BuyPackController extends Controller
     public function process(Request $request)
     {
         $participation= new Participation;
-        $participation->price = $request->price;
-        $participation->fullname = $request->fullname;
-        $participation->country = $request->country;
-        $participation->email = $request->email;
-        $participation->nationality = $request->nationality;
-        $participation->tel = $request->tel;
-        $participation->adress = $request->adress;
 
         if($request->roomtype == 'Deluxe room'){
-            $participation->deluxeroom = 1;
-        }if ($request->roomtype == 'Junior suite')   {
-            $participation->juniorsuite = 1;
-        }if ($request->roomtype == 'Prestige suite')  {
-            $participation->prestigesuite = 1;
-        }if ($request->roomtype == 'ROH')  {
-            $participation->roh = 1;
-        }if ($request->roomtype == 'Premuim Riad')  {
-            $participation->premuimriad = 1;
-        }if ($request->roomtype == 'Superior Riad')  {
-            $participation->superiorriad = 1;
-        }if ($request->coupleorsingle == 'Per Couple')  {
-            $participation->couple = 1;
-        }if ($request->coupleorsingle == 'Single Traveller')  {
-            $participation->single = 1;
+
+            if (($request->coupleorsingle == 'Per Couple') || ($request->coupleorsingle == 'Single Traveller'))  {
+
+                $participationsdeluxeroom = Participation::where('status', '=','paid')
+                ->where('deluxeroom', '=','1')
+                ->where('couple', '=','1')
+                ->get();
+
+                $countdeluxeroom = $participationsdeluxeroom->count();
+
+                //dd($countdeluxeroom);
+
+                if($countdeluxeroom >= 5){
+                    return back()->with('success', 'No place available for Deluxe Room');
+                }else{
+
+                    $participation->price = $request->price;
+                    $participation->fullname = $request->fullname;
+                    $participation->country = $request->country;
+                    $participation->email = $request->email;
+                    $participation->nationality = $request->nationality;
+                    $participation->tel = $request->tel;
+                    $participation->adress = $request->adress;
+
+                    $participation->deluxeroom = 1;
+
+                    if ($request->coupleorsingle == 'Per Couple')  {
+                        $participation->couple = 1;
+                    }if ($request->coupleorsingle == 'Single Traveller')  {
+                        $participation->single = 1;
+                    }
+
+                    $participation->save();
+
+                    $base_url= config('app.url');
+                    $client = new CmiClient([
+                        'storekey' => 'HBSevent23', // STOREKEY Icecube99??
+                        'clientid' => '600003367', // CLIENTID 600001399
+                        'oid' => $request->cmd, // COMMAND ID IT MUST BE UNIQUE
+                        'shopurl' => $base_url, // SHOP URL FOR REDIRECTION
+                        'okUrl' => $base_url.'/okSuccess', // REDIRECTION AFTER SUCCEFFUL PAYMENT
+                        'failUrl' => $base_url.'/okFail', // REDIRECTION AFTER FAILED PAYMENT
+                        'email' => $request->email, // YOUR EMAIL APPEAR IN CMI PLATEFORM
+                        'BillToName' => 'Hbsmorocco2023', // YOUR NAME APPEAR IN CMI PLATEFORM
+                        'BillToStreet12' => $request->adresse, // YOUR ADDRESS APPEAR IN CMI PLATEFORM NOT REQUIRED
+                        'BillToCity' => $request->country, // YOUR CITY APPEAR IN CMI PLATEFORM NOT REQUIRED
+                        'BillToStateProv' => $request->adresse, // YOUR STATE APPEAR IN CMI PLATEFORM NOT REQUIRED
+                        'lang' => 'en',
+                        'BillToCountry' => '200', // YOUR COUNTRY APPEAR IN CMI PLATEFORM NOT REQUIRED (504=MA)
+                        'tel' => $request->tel, // YOUR PHONE APPEAR IN CMI PLATEFORM NOT REQUIRED
+                        'amount' => $request->price, // RETRIEVE AMOUNT WITH METHOD POST
+                        'payment_id' => $participation->id,
+                        'CallbackURL' => $base_url.'/callback', // CALLBACK
+                    ]);
+
+                    //dd($payment->id);
+
+                    $client->redirect_post();
+                }
+
+            }else{
+                return back()->with('success', 'Please select a Room Name');
+            }
+
+
+
+
+        }if ($request->roomtype == 'Junior suite'){
+
+            if (($request->coupleorsingle == 'Per Couple') || ($request->coupleorsingle == 'Single Traveller'))  {
+
+                $participationsjuniorsuite = Participation::where('status', '=','paid')
+                ->where('juniorsuite', '=','1')
+                ->where('couple', '=','1')
+                ->get();
+
+                $countjuniorsuite = $participationsjuniorsuite->count();
+
+                //dd($countjuniorsuite);
+
+                if($countjuniorsuite >= 25){
+                    return back()->with('success', 'No place available for Junior suite');
+                }else{
+                    $participation->price = $request->price;
+                    $participation->fullname = $request->fullname;
+                    $participation->country = $request->country;
+                    $participation->email = $request->email;
+                    $participation->nationality = $request->nationality;
+                    $participation->tel = $request->tel;
+                    $participation->adress = $request->adress;
+
+                    $participation->juniorsuite = 1;
+
+                    if ($request->coupleorsingle == 'Per Couple')  {
+                        $participation->couple = 1;
+                    }if ($request->coupleorsingle == 'Single Traveller')  {
+                        $participation->single = 1;
+                    }
+
+                    $participation->save();
+
+                    $base_url= config('app.url');
+                    $client = new CmiClient([
+                        'storekey' => 'HBSevent23', // STOREKEY Icecube99??
+                        'clientid' => '600003367', // CLIENTID 600001399
+                        'oid' => $request->cmd, // COMMAND ID IT MUST BE UNIQUE
+                        'shopurl' => $base_url, // SHOP URL FOR REDIRECTION
+                        'okUrl' => $base_url.'/okSuccess', // REDIRECTION AFTER SUCCEFFUL PAYMENT
+                        'failUrl' => $base_url.'/okFail', // REDIRECTION AFTER FAILED PAYMENT
+                        'email' => $request->email, // YOUR EMAIL APPEAR IN CMI PLATEFORM
+                        'BillToName' => 'Hbsmorocco2023', // YOUR NAME APPEAR IN CMI PLATEFORM
+                        'BillToStreet12' => $request->adresse, // YOUR ADDRESS APPEAR IN CMI PLATEFORM NOT REQUIRED
+                        'BillToCity' => $request->country, // YOUR CITY APPEAR IN CMI PLATEFORM NOT REQUIRED
+                        'BillToStateProv' => $request->adresse, // YOUR STATE APPEAR IN CMI PLATEFORM NOT REQUIRED
+                        'lang' => 'en',
+                        'BillToCountry' => '200', // YOUR COUNTRY APPEAR IN CMI PLATEFORM NOT REQUIRED (504=MA)
+                        'tel' => $request->tel, // YOUR PHONE APPEAR IN CMI PLATEFORM NOT REQUIRED
+                        'amount' => $request->price, // RETRIEVE AMOUNT WITH METHOD POST
+                        'payment_id' => $participation->id,
+                        'CallbackURL' => $base_url.'/callback', // CALLBACK
+                    ]);
+
+                    //dd($payment->id);
+
+                    $client->redirect_post();
+                }
+
+            }else{
+                return back()->with('success', 'Please select a Room Name');
+            }
+
+
+
+        }if ($request->roomtype == 'Prestige suite'){
+
+            if (($request->coupleorsingle == 'Per Couple') || ($request->coupleorsingle == 'Single Traveller'))  {
+
+                $participationsprestigesuite = Participation::where('status', '=','paid')
+                ->where('prestigesuite', '=','1')
+                ->where('couple', '=','1')
+                ->get();
+
+                $countprestigesuite = $participationsprestigesuite->count();
+
+                //dd($countprestigesuite);
+
+                if($countprestigesuite >= 5){
+                    return back()->with('success', 'No place available for Prestige suite');
+                }else{
+
+                    $participation->price = $request->price;
+                    $participation->fullname = $request->fullname;
+                    $participation->country = $request->country;
+                    $participation->email = $request->email;
+                    $participation->nationality = $request->nationality;
+                    $participation->tel = $request->tel;
+                    $participation->adress = $request->adress;
+
+                    $participation->prestigesuite = 1;
+
+                    if ($request->coupleorsingle == 'Per Couple')  {
+                        $participation->couple = 1;
+                    }if ($request->coupleorsingle == 'Single Traveller')  {
+                        $participation->single = 1;
+                    }
+
+                    $participation->save();
+
+                    $base_url= config('app.url');
+                    $client = new CmiClient([
+                        'storekey' => 'HBSevent23', // STOREKEY Icecube99??
+                        'clientid' => '600003367', // CLIENTID 600001399
+                        'oid' => $request->cmd, // COMMAND ID IT MUST BE UNIQUE
+                        'shopurl' => $base_url, // SHOP URL FOR REDIRECTION
+                        'okUrl' => $base_url.'/okSuccess', // REDIRECTION AFTER SUCCEFFUL PAYMENT
+                        'failUrl' => $base_url.'/okFail', // REDIRECTION AFTER FAILED PAYMENT
+                        'email' => $request->email, // YOUR EMAIL APPEAR IN CMI PLATEFORM
+                        'BillToName' => 'Hbsmorocco2023', // YOUR NAME APPEAR IN CMI PLATEFORM
+                        'BillToStreet12' => $request->adresse, // YOUR ADDRESS APPEAR IN CMI PLATEFORM NOT REQUIRED
+                        'BillToCity' => $request->country, // YOUR CITY APPEAR IN CMI PLATEFORM NOT REQUIRED
+                        'BillToStateProv' => $request->adresse, // YOUR STATE APPEAR IN CMI PLATEFORM NOT REQUIRED
+                        'lang' => 'en',
+                        'BillToCountry' => '200', // YOUR COUNTRY APPEAR IN CMI PLATEFORM NOT REQUIRED (504=MA)
+                        'tel' => $request->tel, // YOUR PHONE APPEAR IN CMI PLATEFORM NOT REQUIRED
+                        'amount' => $request->price, // RETRIEVE AMOUNT WITH METHOD POST
+                        'payment_id' => $participation->id,
+                        'CallbackURL' => $base_url.'/callback', // CALLBACK
+                    ]);
+
+                    //dd($payment->id);
+
+                    $client->redirect_post();
+                }
+
+            }else{
+                return back()->with('success', 'Please select a Room Name');
+            }
+
+
+
+        }if ($request->roomtype == 'ROH'){
+
+            if (($request->coupleorsingle == 'Per Couple') || ($request->coupleorsingle == 'Single Traveller'))  {
+                $participationsroh = Participation::where('status', '=','paid')
+                ->where('roh', '=','1')
+                ->where('couple', '=','1')
+                ->get();
+
+                $countroh = $participationsroh->count();
+
+                //dd($countroh);
+
+                if($countroh >= 10){
+                    return back()->with('success', 'No place available for Superior Room');
+                }else{
+
+                    $participation->price = $request->price;
+                    $participation->fullname = $request->fullname;
+                    $participation->country = $request->country;
+                    $participation->email = $request->email;
+                    $participation->nationality = $request->nationality;
+                    $participation->tel = $request->tel;
+                    $participation->adress = $request->adress;
+
+                    $participation->roh = 1;
+
+                    if ($request->coupleorsingle == 'Per Couple')  {
+                        $participation->couple = 1;
+                    }if ($request->coupleorsingle == 'Single Traveller')  {
+                        $participation->single = 1;
+                    }
+
+                    $participation->save();
+
+                    $base_url= config('app.url');
+                    $client = new CmiClient([
+                        'storekey' => 'HBSevent23', // STOREKEY Icecube99??
+                        'clientid' => '600003367', // CLIENTID 600001399
+                        'oid' => $request->cmd, // COMMAND ID IT MUST BE UNIQUE
+                        'shopurl' => $base_url, // SHOP URL FOR REDIRECTION
+                        'okUrl' => $base_url.'/okSuccess', // REDIRECTION AFTER SUCCEFFUL PAYMENT
+                        'failUrl' => $base_url.'/okFail', // REDIRECTION AFTER FAILED PAYMENT
+                        'email' => $request->email, // YOUR EMAIL APPEAR IN CMI PLATEFORM
+                        'BillToName' => 'Hbsmorocco2023', // YOUR NAME APPEAR IN CMI PLATEFORM
+                        'BillToStreet12' => $request->adresse, // YOUR ADDRESS APPEAR IN CMI PLATEFORM NOT REQUIRED
+                        'BillToCity' => $request->country, // YOUR CITY APPEAR IN CMI PLATEFORM NOT REQUIRED
+                        'BillToStateProv' => $request->adresse, // YOUR STATE APPEAR IN CMI PLATEFORM NOT REQUIRED
+                        'lang' => 'en',
+                        'BillToCountry' => '200', // YOUR COUNTRY APPEAR IN CMI PLATEFORM NOT REQUIRED (504=MA)
+                        'tel' => $request->tel, // YOUR PHONE APPEAR IN CMI PLATEFORM NOT REQUIRED
+                        'amount' => $request->price, // RETRIEVE AMOUNT WITH METHOD POST
+                        'payment_id' => $participation->id,
+                        'CallbackURL' => $base_url.'/callback', // CALLBACK
+                    ]);
+
+                    //dd($payment->id);
+
+                    $client->redirect_post();
+                }
+
+            }else{
+                return back()->with('success', 'Please select a Room Name');
+            }
+
+
+        }else{
+            return back()->with('success', 'Please select a Room Type');
         }
 
-
-        $participation->save();
-
-
-        $base_url= config('app.url');
-        $client = new CmiClient([
-            'storekey' => 'HBSevent23', // STOREKEY Icecube99??
-            'clientid' => '600003367', // CLIENTID 600001399
-            'oid' => $request->cmd, // COMMAND ID IT MUST BE UNIQUE
-            'shopurl' => $base_url, // SHOP URL FOR REDIRECTION
-            'okUrl' => $base_url.'/okSuccess', // REDIRECTION AFTER SUCCEFFUL PAYMENT
-            'failUrl' => $base_url.'/okFail', // REDIRECTION AFTER FAILED PAYMENT
-            'email' => $request->email, // YOUR EMAIL APPEAR IN CMI PLATEFORM
-            'BillToName' => 'Hbsmorocco2023', // YOUR NAME APPEAR IN CMI PLATEFORM
-            'BillToStreet12' => $request->adresse, // YOUR ADDRESS APPEAR IN CMI PLATEFORM NOT REQUIRED
-            'BillToCity' => $request->country, // YOUR CITY APPEAR IN CMI PLATEFORM NOT REQUIRED
-            'BillToStateProv' => $request->adresse, // YOUR STATE APPEAR IN CMI PLATEFORM NOT REQUIRED
-            'lang' => 'en',
-            'BillToCountry' => '200', // YOUR COUNTRY APPEAR IN CMI PLATEFORM NOT REQUIRED (504=MA)
-            'tel' => $request->tel, // YOUR PHONE APPEAR IN CMI PLATEFORM NOT REQUIRED
-            'amount' => $request->price, // RETRIEVE AMOUNT WITH METHOD POST
-            'payment_id' => $participation->id,
-            'CallbackURL' => $base_url.'/callback', // CALLBACK
-        ]);
-
-        //dd($payment->id);
-
-        $client->redirect_post();
     }
 
     public function submit(Request $request)
     {
+
         $participation= new Participation;
         $participation->price = 0;
         $participation->fullname = $request->fullname;
@@ -121,7 +339,6 @@ class BuyPackController extends Controller
         $participated = Participation::find('35');
 
         //Mail::to('oussama@gmail.com')->send(new \App\Mail\RegisteredUser($participated));
-
 
 
 
