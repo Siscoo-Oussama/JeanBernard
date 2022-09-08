@@ -1,39 +1,31 @@
 @extends('layouts.app')
 
-<head>
-
-
-    <title>HBS OPM30 Morocco 2023</title>
-
-
-</head>
 
 @section('content')
-<h4 class="title">HIVERNAGE HOTEL & SPA</h4>
+
+
+<header>
+
+
+    <section class="presentation first">
+        <div class="product-presentation">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="banner-pack3">
+                                   
+                    </div>
+                </div>
+                <div class="col-md-6 description-hotel">
+                    <h2 class="" style="color: #f28a21">SOFITEL PALAIS IMPERIAL</h2>
+                    <p>Located in the heart of Hivernage district, within walking distance from the Jamaa el Fna square and the city's main attractions. The Sofitel Palais Imperial is a beautiful Moorish property set amongst manicured gardens and fountains, offering comfortable rooms and spacious suites, with beautiful views of either the city, the pool, or the gardens. The interior design has succeeded in combining French elegance with a dash of Moroccan Art de Vivre.  	 						
+                    </p>
+                </div>
+                
+            </div>
+</header>
+
 <form  id="validate" action="process" method="post">
     @csrf
-
-
-    <div class="container card-terms">
-        <div class="row">
-            <div class="col-md-12">
-
-                        <div class="row">
-                            <div class="banner-pack1">
-
-                            </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container card-description">
-        <div class="row">
-            <p>The Hivernage Hotel & Spa is also located at the heart of the Hivernage district - just across the street from Sofitel Palais Imperial, within a few minutes walk from the Jamâa el Fna square and the souks. The hotel features rooms and suites that combine comfort with the nobility of traditional design with views of the Koutoubia minaret and the city's ramparts. This hotel provides its guests with a great value-for-money.
-			</p>
-        </div>
-    </div>
 
     <div class="container choice-pack">
         <div class="row">

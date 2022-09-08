@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>BuyPack</title>
+    <title>HBS OPM30 Morocco 2023</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -35,5 +35,6 @@
             @yield('content')
         </main>
     </div>
+    
 </body>
 </html>

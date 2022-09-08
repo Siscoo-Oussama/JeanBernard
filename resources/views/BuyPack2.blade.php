@@ -1,13 +1,6 @@
 
 
 @extends('layouts.app')
-<head>
-
-
-    <title>HBS OPM30 Morocco 2023</title>
-
-
-</head>
 
 @section('content')
 
@@ -17,30 +10,32 @@
     </div>
 @endif
 
-<h4 class="title">ROYAL MANSOUR MARRAKECH</h4>
+<div class="content">
+
+<header>
+    <nav>
+
+    </nav>
+
+    <section class="presentation first">
+        <div class="product-presentation">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="banner-pack2">
+                                   
+                    </div>
+                </div>
+                <div class="col-md-6 description-hotel">
+                    <h2 class="" style="color: #f28a21">ROYAL MANSOUR MARRAKECH</h2>
+                    <p>Located in the heart of Hivernage district, within walking distance from the Jamaa el Fna square and the city's main attractions. The Sofitel Palais Imperial is a beautiful Moorish property set amongst manicured gardens and fountains, offering comfortable rooms and spacious suites, with beautiful views of either the city, the pool, or the gardens. The interior design has succeeded in combining French elegance with a dash of Moroccan Art de Vivre.  	 						
+                    </p>
+                </div>
+                
+            </div>
+</header>
+
 <form  id="validate" action="submit" method="post">
     @csrf
-
-    <div class="container card-terms">
-        <div class="row">
-            <div class="col-md-12">
-
-                        <div class="row">
-                            <div class="banner-pack1">
-
-                            </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container card-description">
-        <div class="row">
-            <p>One of the best, if not the best property in Marrakech, considered by some among the top 5 in the world, ideally situated within the walls of the medina and just a short walk from the Jamaa el Fna square. The Royal Mansour Marrakech showcases stunning Moroccan architecture and authentic artcrafts. With its individual riads featuring elengant design and beautifully appointed bedrooms, every riad has its own plunge pool on an exclusive roof terrace with magnificent views of the city or Atlas Mountains, the Royal Mansour Marrakech offers its guests a unique experience of luxury hospitality
-			</p>
-        </div>
-    </div>
-
     <div class="container choice-pack">
         <div class="row">
             <div class="col-md-12">
@@ -79,7 +74,7 @@
                                 <div class="form-check">
                                 <input class="form-check-input" type="radio" name="coupleorsingle" id="Deluxe_room" value="Per Couple">
                                 <label class="form-check-label" for="Deluxe_room">
-                                    a Couple
+                                    Per Couple
                                 </label>
                                 </div>
                             </div>
@@ -88,7 +83,7 @@
                                 <div class="form-check">
                                 <input class="form-check-input" type="radio" name="coupleorsingle" id="Deluxe_room" value="Single Traveller" >
                                 <label class="form-check-label" for="Deluxe_room">
-                                    a Single
+                                    Single Traveller
                                 </label>
                                 </div>
                             </div>
@@ -106,10 +101,16 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="floatingInput" placeholder=" " name="fullname" required>
                                     <label for="floatingInput">Full Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="partnername" required>
+                                    <label for="floatingInput">Partner Name | Only for couple type</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -220,12 +221,17 @@
                         <div class="button-group">
 
 
-                            <button class="col-md-7 btn btn-submit" type="submit" >Submit
+                            <button class="col-md-8 btn btn-submit" type="submit" >Submit
                             </button>
 
 
                         </div>
-
+                        {{-- <div class="col-md-12">
+                            
+                            <h6 class="text-center mt-3">Secure Payment .</h6>
+                            <p style="font-size: 10px;">NB: Please note that your credit card will be debited in MAD and the exchange rate will be the one of your credit card company at the time of the booking</p>
+                        </div> --}}
+                        
                     </div>
                 </div>
             </div>
@@ -235,5 +241,5 @@
 
 </form>
 
-
+</div>
 @endsection
