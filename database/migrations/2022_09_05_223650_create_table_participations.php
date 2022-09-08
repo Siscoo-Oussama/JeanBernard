@@ -31,6 +31,8 @@ class CreateTableParticipations extends Migration
             $table->string('premuimriad')->default('0');
             $table->string('couple')->default('0');
             $table->string('single')->default('0');
+            $table->string('partnername')->nullable();
+
             $table->timestamps();
         });
     }

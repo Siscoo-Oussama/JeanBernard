@@ -3,6 +3,18 @@
 
 @section('content')
 
+@if(session()->has('success'))
+<div class="alert alert-success" class="text-center">
+    {{ session()->get('success') }}
+</div>
+@endif
+
+@if(session()->has('error'))
+<div class="alert alert-danger" class="text-center">
+{{ session()->get('error') }}
+</div>
+@endif
+
 
 <header>
 
@@ -12,17 +24,17 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="banner-pack3">
-                                   
+
                     </div>
                 </div>
                 <div class="col-md-6 description-hotel">
                     <div class="container">
                     <h2 class="">SOFITEL PALAIS IMPERIAL</h2>
-                        <p class="">Located in the heart of Hivernage district, within walking distance from the Jamaa el Fna square and the city's main attractions. The Sofitel Palais Imperial is a beautiful Moorish property set amongst manicured gardens and fountains, offering comfortable rooms and spacious suites, with beautiful views of either the city, the pool, or the gardens. The interior design has succeeded in combining French elegance with a dash of Moroccan Art de Vivre.  	 						
+                        <p class="">Located in the heart of Hivernage district, within walking distance from the Jamaa el Fna square and the city's main attractions. The Sofitel Palais Imperial is a beautiful Moorish property set amongst manicured gardens and fountains, offering comfortable rooms and spacious suites, with beautiful views of either the city, the pool, or the gardens. The interior design has succeeded in combining French elegance with a dash of Moroccan Art de Vivre.
                         </p>
                     </div>
                 </div>
-                
+
             </div>
 </header>
 
@@ -53,15 +65,15 @@
 
 
                           <hr class="mt-5">
-                            
+
 
                         <div class="col-md-4">
                             <div class="room-title">
                                 <h5 class="qts-title">Are You ?</h5>
                             </div>
                         </div>
-                        
-                        
+
+
                           <div class="col-md-4">
                             <div class="form-check">
                             <input class="form-check-input" type="radio" name="coupleorsingle" id="Deluxe_room" value="Per Couple">
@@ -93,10 +105,16 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="floatingInput" placeholder=" " name="fullname" required>
                                     <label for="floatingInput">Full Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="partnername" >
+                                    <label for="floatingInput">Partner Name (Only for couple type)</label>
                                 </div>
                             </div>
                             <div class="col-md-6">

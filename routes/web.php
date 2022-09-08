@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Mail;
 |
 */
 
-
+Route::get('BuyPack',[BuyPackController::class,'index']);
 Route::get('BuyPack1',[BuyPackController::class,'index1']);
 Route::get('BuyPack2',[BuyPackController::class,'index2']);
 Route::get('BuyPack3',[BuyPackController::class,'index3']);
@@ -28,25 +28,7 @@ Route::post('submit',[BuyPackController::class, 'submit'])->name('submit');
 Route::get('/okFail', [BuyPackController::class, 'okFail']);
 Route::post('okSuccess',[BuyPackController::class, 'okSuccess'])->withoutMiddleware([VerifyCsrfToken::class]);
 
-Route::get('send-mail', function () {
 
-
-
-    $participated = [
-
-        'title' => 'Mail Title',
-
-        'body' => 'This is for testing email using smtp'
-
-    ];
-
-    Mail::to('your_receiver_email@gmail.com')->send(new \App\Mail\RegisteredUser($participated));
-    dd('Email is Sent Successfully!!!.');
-
-
-
-
- });
 
 
 

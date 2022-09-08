@@ -2,6 +2,18 @@
 @extends('layouts.app')
 
 @section('content')
+
+@if(session()->has('success'))
+<div class="alert alert-success" class="text-center">
+    {{ session()->get('success') }}
+</div>
+@endif
+
+@if(session()->has('error'))
+<div class="alert alert-danger" class="text-center">
+{{ session()->get('error') }}
+</div>
+@endif
 <div class="content">
 <header>
 
@@ -11,15 +23,15 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="banner-pack1">
-                                   
+
                     </div>
                 </div>
                 <div class="col-md-6 description-hotel">
                     <h2 class="">SOFITEL PALAIS IMPERIAL</h2>
-                    <p>Located in the heart of Hivernage district, within walking distance from the Jamaa el Fna square and the city's main attractions. The Sofitel Palais Imperial is a beautiful Moorish property set amongst manicured gardens and fountains, offering comfortable rooms and spacious suites, with beautiful views of either the city, the pool, or the gardens. The interior design has succeeded in combining French elegance with a dash of Moroccan Art de Vivre.  	 						
+                    <p>Located in the heart of Hivernage district, within walking distance from the Jamaa el Fna square and the city's main attractions. The Sofitel Palais Imperial is a beautiful Moorish property set amongst manicured gardens and fountains, offering comfortable rooms and spacious suites, with beautiful views of either the city, the pool, or the gardens. The interior design has succeeded in combining French elegance with a dash of Moroccan Art de Vivre.
                     </p>
                 </div>
-                
+
             </div>
 </header>
 
@@ -39,7 +51,7 @@
                             <div class="radio-buttons">
                                 <h4 class="qts-title">Room Type ?</h4>
                                 <label class="custom-radio">
-                                    <input type="radio" name="roomtype" value="Deluxe room" />
+                                    <input type="radio" class="form_check_input" name="roomtype" value="Deluxe room" />
                                     <span class="radio-btn">
                                         <i class="las la-check"></i>
                                       <div class="hobbies-icon">
@@ -49,7 +61,7 @@
                                     </span>
                                   </label>
                               <label class="custom-radio">
-                                <input type="radio" name="roomtype" value="Junior suite" />
+                                <input type="radio" class="form_check_input" name="roomtype" value="Junior suite" />
                                 <span class="radio-btn">
                                     <i class="las la-check"></i>
                                   <div class="hobbies-icon">
@@ -59,7 +71,7 @@
                                 </span>
                               </label>
                               <label class="custom-radio">
-                                <input type="radio" name="roomtype" value="Prestige suite" />
+                                <input type="radio" class="form_check_input" name="roomtype" value="Prestige suite" />
                                 <span class="radio-btn">
                                     <i class="las la-check"></i>
                                   <div class="hobbies-icon">
@@ -71,27 +83,27 @@
                             </div>
 
                             <hr class="mt-5">
-                            
+
 
                             <div class="col-md-4">
                                 <div class="room-title">
                                     <h5 class="qts-title">Are You ?</h5>
                                 </div>
                             </div>
-                            
-                            
+
+
                               <div class="col-md-4">
                                 <div class="form-check">
-                                <input class="form-check-input" type="radio" name="coupleorsingle" id="Deluxe_room" value="Per Couple">
+                                <input class="form_check_input2" type="radio" name="coupleorsingle" id="Deluxe_room" value="Per Couple">
                                 <label class="form-check-label" for="Deluxe_room">
                                     a couple
                                 </label>
                                 </div>
                             </div>
-    
+
                             <div class="col-md-4">
                                 <div class="form-check">
-                                <input class="form-check-input" type="radio" name="coupleorsingle" id="Deluxe_room" value="Single Traveller" >
+                                <input class="form_check_input2" type="radio" name="coupleorsingle" id="Deluxe_room" value="Single Traveller" >
                                 <label class="form-check-label" for="Deluxe_room">
                                     a single
                                 </label>
@@ -118,8 +130,8 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="partnername" required>
-                                    <label for="floatingInput">Partner Name | Only for couple type</label>
+                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="partnername" >
+                                    <label for="floatingInput">Partner Name (Only for couple type)</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -196,7 +208,7 @@
                                 <input type="hidden" name="price" value="1" >
                                 <input type="hidden" name="cmd" value="<?php echo substr(md5(mt_rand()), 0, 7); ?>">
 
-                                <h4 class="price">2000 MAD  <span> ~ approximately 200 $</span></h4>
+                                <h4 class="price"> MAD  <span> ~ approximately  USD</span></h4>
                             </div>
                         </div>
                         <hr>

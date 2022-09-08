@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Hotel;
 use Illuminate\Http\Request;
 use App\Models\Participation;
 use CMI\CmiClient;
@@ -25,6 +26,23 @@ class BuyPackController extends Controller
     public function index3()
     {
         return view('BuyPack3');
+    }
+
+    public function index(Request $request)
+    {
+        $value1=$request->val1;
+        $value2=$request->val2;
+        $data=Hotel::select('price')
+        ->join('roomtypes','roomtypes.id','=','hotels.id')
+        ->join('grouptypes','grouptypes.id','=','roomtypes.group_type_id')
+        ->where('roomtypes.name',$value1)
+        ->where('grouptypes.name',$value2)
+        ->first();
+
+        // return response()->json($value1);
+        return response()->json(['data'=>$data]);
+       // return view("BuyPack1",["data"=>$data]);
+        //return view('BuyPack1');
     }
 
     public function okFail(Request $request)
@@ -61,6 +79,7 @@ class BuyPackController extends Controller
                     $participation->nationality = $request->nationality;
                     $participation->tel = $request->tel;
                     $participation->adress = $request->adress;
+                    $participation->partnername = $request->partnername;
 
                     $participation->deluxeroom = 1;
 
@@ -99,7 +118,7 @@ class BuyPackController extends Controller
                 }
 
             }else{
-                return back()->with('success', 'Please select a Room Name');
+                return back()->with('error', 'Please select a Room Name');
             }
 
 
@@ -128,6 +147,8 @@ class BuyPackController extends Controller
                     $participation->nationality = $request->nationality;
                     $participation->tel = $request->tel;
                     $participation->adress = $request->adress;
+                    $participation->partnername = $request->partnername;
+
 
                     $participation->juniorsuite = 1;
 
@@ -166,7 +187,7 @@ class BuyPackController extends Controller
                 }
 
             }else{
-                return back()->with('success', 'Please select a Room Name');
+                return back()->with('error', 'Please select a Room Name');
             }
 
 
@@ -195,6 +216,10 @@ class BuyPackController extends Controller
                     $participation->nationality = $request->nationality;
                     $participation->tel = $request->tel;
                     $participation->adress = $request->adress;
+                    $participation->partnername = $request->partnername;
+                    $participation->partnername = $request->partnername;
+
+
 
                     $participation->prestigesuite = 1;
 
@@ -233,7 +258,7 @@ class BuyPackController extends Controller
                 }
 
             }else{
-                return back()->with('success', 'Please select a Room Name');
+                return back()->with('error', 'Please select a Room Name');
             }
 
 
@@ -261,6 +286,8 @@ class BuyPackController extends Controller
                     $participation->nationality = $request->nationality;
                     $participation->tel = $request->tel;
                     $participation->adress = $request->adress;
+                    $participation->partnername = $request->partnername;
+
 
                     $participation->roh = 1;
 
@@ -299,12 +326,12 @@ class BuyPackController extends Controller
                 }
 
             }else{
-                return back()->with('success', 'Please select a Room Name');
+                return back()->with('error', 'Please select a Room Name');
             }
 
 
         }else{
-            return back()->with('success', 'Please select a Room Type');
+            return back()->with('error', 'Please select a Room Name');
         }
 
     }
@@ -312,37 +339,75 @@ class BuyPackController extends Controller
     public function submit(Request $request)
     {
 
-        $participation= new Participation;
-        $participation->price = 0;
-        $participation->fullname = $request->fullname;
-        $participation->country = $request->country;
-        $participation->status = "paid";
-        $participation->email = $request->email;
-        $participation->nationality = $request->nationality;
-        $participation->tel = $request->tel;
-        $participation->adress = $request->adress;
+        if ($request->roomtype == 'Premuim Riad'){
+            if (($request->coupleorsingle == 'Per Couple') || ($request->coupleorsingle == 'Single Traveller')){
 
-        if ($request->roomtype == 'Premuim Riad')  {
-            $participation->premuimriad = 1;
-        }if ($request->roomtype == 'Superior Riad')  {
-            $participation->superiorriad = 1;
-        }if ($request->coupleorsingle == 'Per Couple')  {
-            $participation->couple = 1;
-        }if ($request->coupleorsingle == 'Single Traveller')  {
-            $participation->single = 1;
+                $participation= new Participation;
+                $participation->price = 0;
+                $participation->fullname = $request->fullname;
+                $participation->country = $request->country;
+                $participation->status = "paid";
+                $participation->email = $request->email;
+                $participation->nationality = $request->nationality;
+                $participation->tel = $request->tel;
+                $participation->adress = $request->adress;
+                $participation->partnername = $request->partnername;
+
+                $participation->premuimriad = 1;
+
+                if ($request->coupleorsingle == 'Per Couple')  {
+                    $participation->couple = 1;
+                }if ($request->coupleorsingle == 'Single Traveller')  {
+                    $participation->single = 1;
+                }
+
+                $participation->save();
+
+                return back()->with('success', 'Your request has been filed, one of our agents will get in touch with you shortly to carry on the process of registration and to confirm the availability of the chosen package');
+
+
+            }else{
+                return back()->with('error', 'Please select a Room Name');
+            }
+
+        }if ($request->roomtype == 'Superior Riad'){
+            if (($request->coupleorsingle == 'Per Couple') || ($request->coupleorsingle == 'Single Traveller')){
+
+                $participation= new Participation;
+                $participation->price = 0;
+                $participation->fullname = $request->fullname;
+                $participation->country = $request->country;
+                $participation->status = "paid";
+                $participation->email = $request->email;
+                $participation->nationality = $request->nationality;
+                $participation->tel = $request->tel;
+                $participation->adress = $request->adress;
+                $participation->partnername = $request->partnername;
+
+                $participation->superiorriad = 1;
+
+                if ($request->coupleorsingle == 'Per Couple')  {
+                    $participation->couple = 1;
+                }if ($request->coupleorsingle == 'Single Traveller')  {
+                    $participation->single = 1;
+                }
+
+                $participation->save();
+
+                return back()->with('success', 'Your request has been filed, one of our agents will get in touch with you shortly to carry on the process of registration and to confirm the availability of the chosen package');
+
+
+            }else{
+                return back()->with('error', 'Please select a Room Name');
+            }
+
+        }else{
+            return back()->with('error', 'Please select a Room Type');
         }
 
-
-
-        $participation->save();
-
-        $participated = Participation::find('35');
-
+        //$participated = Participation::find('35');
         //Mail::to('oussama@gmail.com')->send(new \App\Mail\RegisteredUser($participated));
 
-
-
-        return back()->with('success', 'Your request has been filed, one of our agents will get in touch with you shortly to carry on the process of registration and to confirm the availability of the chosen package');
 
 
     }
