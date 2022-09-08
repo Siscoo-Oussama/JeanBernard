@@ -7,7 +7,7 @@ body{
 .card-shop ,.card-shop2,.card-shop3{
     width: 50%;
     margin-top: 300px;
-   
+
 }
 .qts-title{
     align-items: center;
@@ -49,14 +49,14 @@ body{
     text-align: right;
     font-size: 18px;
     line-height: 24px;
-    color: #f28a21;
+    color: #a41034;
 }
 .button-group{
     display: flex;
     justify-content: center;
 }
 .btn-submit{
-    background-color: #f28a21;
+    background-color: #a41034;
     border: 1px solid transparent;
     height: 50px;
     color: #fff;
@@ -92,7 +92,7 @@ p{
 }
 .form-check{
     text-align: center;
-    
+
     font-size: 14px;
 }
 @media screen and (max-width:890px)
@@ -115,7 +115,7 @@ p{
     }
     .choice-pack{
         width: 90%;
-        
+
     }
     .payment-type{
         width: 90%;
@@ -152,7 +152,7 @@ span{
     .card-shop{
 
         margin-top: 750px;
-       
+
     }
     .card-shop2{
         margin-top: 600px;
@@ -161,11 +161,11 @@ span{
 @media screen and (max-width:924px) {
     .card-shop{
         margin-top: 750px;
-       
+
     }
     .card-shop2{
         margin-top: 570px;
-       
+
     }
     .card-sho3{
         margin-top: 850px;
@@ -202,7 +202,7 @@ span{
 
   .radio-btn > i {
     color: #fffeee;
-    background-color: #f28a21;
+    background-color: #a41034;
     font-size: 20px;
     position: absolute;
     top: -15px;
@@ -236,7 +236,7 @@ span{
   }
 
   .radio-btn .hobbies-icon i {
-    color: #f28a21;
+    color: #a41034;
     line-height: 80px;
     font-size: 60px;
   }
@@ -313,7 +313,7 @@ span{
         box-shadow: 1px 1px 3px black;
       }
   }
-  
+
   .title{
     text-align: center;
     font-size: 30px;
@@ -391,12 +391,12 @@ header nav h3 {
     text-align: center;
     margin-left: 25px;
 	text-transform: uppercase;
-	color: #f28a21;
+	color: #a41034;
 }
 
 .presentation {
 	padding: 30px 5%;
-	
+
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -413,7 +413,7 @@ header nav h3 {
 }
 .presentation .product-presentation h2{
     margin-top: 20px;
-    color: #f28a21;
+    color: #a41034;
 }
 .presentation .product-presentation .description-hotel{
     margin-top: 10%;

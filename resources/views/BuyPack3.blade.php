@@ -147,6 +147,13 @@
                                     <label for="floatingInput">Address</label>
                                 </div>
                             </div>
+
+                            <div class="col-md-12">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="notes" required>
+                                    <label for="floatingInput">Special Note (dietary requirements, allergies, medical condition, bedding preference…)</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -204,7 +211,7 @@
                                 <div class="form-check">
                                   <input class="form-check-input" type="radio" name="terms" id="" value="" required>
                                   <label class="form-check-label" for="">
-                                    I agreed to the <a href="#"> Terms and Conditions</a>
+                                    I agreed to the <a href="http://hbsmorocco2023.com/wp-content/uploads/2022/09/Morocco-Terms-Conditions-HBS-Alumni-trip-April-2023.pdf" target="_black" > Terms and Conditions</a>
                                   </label>
                                 </div>
                              </div>
