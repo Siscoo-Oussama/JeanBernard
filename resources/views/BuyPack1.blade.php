@@ -18,7 +18,7 @@
                         <div class="row">
                            <div class="col-md-4">
                               <div class="form-check">
-                                <input class="form_check_input" type="radio" name="roomtype" id="Deluxe_room" value="Deluxe room" checked>
+                                <input class="form_check_input" type="radio" name="roomtype" id="Deluxe_room" value="Deluxe rooms">
                                 <label class="form-check-label" for="Deluxe_room">
                                     Deluxe Room
                                     
@@ -47,8 +47,8 @@
                           <hr class="mt-3">
                           <div class="col-md-6">
                             <div class="form-check">
-                            <input class="form_check_input2" type="radio" name="coupleorsingle" id="Deluxe_room" value="Per Couple" checked>
-                            <label class="form-check-label" for="Deluxe_room">
+                            <input class="form_check_input2" type="radio" name="coupleorsingle" id="Per_Couple" value="Couple">
+                            <label class="form-check-label" for="Per_Couple">
                                 Per Couple
                             </label>
                             </div>
@@ -56,8 +56,8 @@
 
                         <div class="col-md-6">
                             <div class="form-check">
-                            <input class="form_check_input2" type="radio" name="coupleorsingle" id="Deluxe_room" value="Single Traveller" >
-                            <label class="form-check-label" for="Deluxe_room">
+                            <input class="form_check_input2" type="radio" name="coupleorsingle" id="Single_Traveller" value="Single" >
+                            <label class="form-check-label" for="Single_Traveller">
                                 Single Traveller
                             </label>
                             </div>
@@ -195,7 +195,7 @@
                                 <input type="hidden" name="price" value="1" >
                                 <input type="hidden" name="cmd" value="<?php echo substr(md5(mt_rand()), 0, 7); ?>">
 
-                                <h1 class="price">${{$data}}</h1>
+                                <h1 class="price">$</h1>
                             </div>
                         </div>
                         <hr>

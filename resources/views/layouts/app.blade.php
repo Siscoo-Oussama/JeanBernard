@@ -19,6 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/BuyPack.css')}}">
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <style>
         
     </style>
@@ -37,51 +38,68 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
     <script type="text/javascript">
         $(document).ready(function(){
 
             var val1="";
-                    var val2="";
+            var val2="";
                     
 
                     $(".form_check_input").change(function() {
-                    // if(this.checked) {
-                    
-                    // // console.log(val1)
-                    // }
-                    val1=$(this).val();
-                    });
-
-                    $(".form_check_input2").change(function() {
-                    // if(this.checked) {
-                    
-                    // //console.log(val2)
-                    // }
-                    val2=$(this).val();
-                    
-
-                   //console.log(val1,val2);
-
-                    $.ajax({
+                        
+                    if(this.checked) {
+                        val1=$(this).val();
+                     //console.log(val1)
+                    }
+                        $.ajax({
                                 type:'get',
-                                url:"/BuyPack1",
-                                data:{'val1':val1,'val2':val2},
+                                url:"{!!URL::to('BuyPack')!!}",
+                                data:{'val2':val2 ,'val1':val1},
                                 dataType:'json',
                                 success:function(data){
                                     //console.log('success');
 
-                                    console.log(data);
+                                   console.log(data.data.price);
+                                   $('.price').text(data.data.price);
 
-                                    //console.log(data.length);
-
-                                //    div.find('.total1').html(" ");
-                                //    div.find('.total1').append("daada");
                                 },
                                 error:function(){
 
                                 }
-                                });
+                            });
+                   
+                    
                     });
+
+                    $(".form_check_input2").change(function() {
+                    if(this.checked) {
+                    
+                    //console.log(val2)
+                    val2=$(this).val();
+                    }
+                   
+
+                   $.ajax({
+                                type:'get',
+                                url:"{!!URL::to('BuyPack')!!}",
+                                data:{'val2':val2 ,'val1':val1},
+                                dataType:'json',
+                                success:function(data){
+                                    //console.log('success');
+
+                                   console.log(data.data.price);
+                                   $('.price').text(data.data.price);
+
+                                },
+                                error:function(){
+
+                                }
+                            });
+
+                
+                    });
+                           
 
                 
 

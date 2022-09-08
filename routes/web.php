@@ -17,7 +17,7 @@ USE App\Http\Middleware\VerifyCsrfToken;
 |
 */
 
-Route::get('test',[BuyPackSaveOnlyController::class,'index']);
+Route::get('BuyPack',[BuyPackController::class,'index']);
 Route::get('BuyPack1',[BuyPackController::class,'index1']);
 Route::get('BuyPack2',[BuyPackController::class,'index2']);
 Route::get('BuyPack3',[BuyPackController::class,'index3']);

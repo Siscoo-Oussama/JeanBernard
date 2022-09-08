@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Hotel;
 use Illuminate\Http\Request;
 use App\Models\Participation;
 use CMI\CmiClient;
@@ -9,9 +10,26 @@ use Illuminate\Support\Facades\Redirect;
 
 class BuyPackController extends Controller
 {
+
     public function index1()
     {
         return view('BuyPack1');
+    }
+    public function index(Request $request)
+    {
+        $value1=$request->val1;
+        $value2=$request->val2; 
+        $data=Hotel::select('price')
+        ->join('roomtypes','roomtypes.id','=','hotels.id')
+        ->join('grouptypes','grouptypes.id','=','roomtypes.group_type_id')
+        ->where('roomtypes.name',$value1)
+        ->where('grouptypes.name',$value2)
+        ->first();
+
+        // return response()->json($value1);
+        return response()->json(['data'=>$data]);
+       // return view("BuyPack1",["data"=>$data]);
+        //return view('BuyPack1');
     }
 
 
