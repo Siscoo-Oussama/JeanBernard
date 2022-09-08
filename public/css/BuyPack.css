@@ -51,6 +51,10 @@ body{
     line-height: 24px;
     color: #a41034;
 }
+.price p{
+    text-align: right;
+    color: #000;
+}
 .button-group{
     display: flex;
     justify-content: center;
@@ -58,12 +62,11 @@ body{
 .btn-submit{
     background-color: #a41034;
     border: 1px solid transparent;
-    height: 50px;
     color: #fff;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 700;
     margin-bottom: 10px;
-    line-height: 38px;
+    height: 50px;
 }
 .btn-submit:hover{
     background-color: #EDCC99;
@@ -481,5 +484,23 @@ header nav h3 {
         font-weight: 300;
         color: #000;
         margin-bottom: 50px;
+    }
+}
+
+
+
+
+.image-payment{
+    height: 45px;width:150px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 20%;
+}
+
+@media screen and (max-width:1220px) {
+    .image-payment{
+     margin-left: 0;
+     padding-left: 30px;
+     padding-right: 30px;
     }
 }

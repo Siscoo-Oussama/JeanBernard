@@ -40,6 +40,24 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
     <script type="text/javascript">
+
+       $(document).ready(function(){
+        $("#single").change(function(){
+            if(this.checked)
+            {
+                
+                $("[name='partnername']").attr('type', 'hidden');
+            }
+        })
+        $("#couple").change(function(){
+            if(this.checked)
+            {
+                
+                $("[name='partnername']").attr('type', 'text');
+            }
+        })
+
+       });
         $(document).ready(function(){
 
             var val1="";
