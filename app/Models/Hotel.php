@@ -11,6 +11,6 @@ class Hotel extends Model
     protected $table="hotels";
     protected $fillable=[
         'name',
-        'room_type_id'
+        'roomtype_id'
     ];
 }

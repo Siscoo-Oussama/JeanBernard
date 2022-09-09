@@ -17,6 +17,23 @@ class BuyPackController extends Controller
         return view('BuyPack1');
     }
 
+    public function changeprice(Request $request)
+    {
+        $value1=$request->val1;
+        $value2=$request->val2; 
+        $data=Hotel::select('priceInMad')
+        ->join('roomtypes','roomtypes.id','=','hotels.roomtype_id')
+        ->join('grouptypes','grouptypes.id','=','roomtypes.grouptype_id')
+        ->where('roomtypes.name',$value1)
+        ->where('grouptypes.name',$value2)
+        ->first();
+
+        // return response()->json($value1);
+        return response()->json(['data'=>$data]);
+       // return view("BuyPack1",["data"=>$data]);
+        //return view('BuyPack1');
+    }
+
 
     public function index2()
     {

@@ -18,7 +18,8 @@ class CreateRoomTypesTable extends Migration
             $table->string('name');
             $table->bigInteger("grouptype_id")->unsigned();
             $table->foreign('grouptype_id')->references('id')->on("grouptype");
-            $table->integer('price');
+            $table->integer('priceInMad');
+            $table->integer('priceInUsd');
             $table->timestamps();
         });
     }

@@ -94,7 +94,7 @@
 
                               <div class="col-md-4">
                                 <div class="form-check">
-                                <input class="form_check_input2" type="radio" name="coupleorsingle" id="couple" value="Per Couple">
+                                <input class="form_check_input2" type="radio" name="coupleorsingle" id="couple" value="Per couple">
                                 <label class="form-check-label" for="Deluxe_room">
                                     a couple
                                 </label>
@@ -103,7 +103,7 @@
 
                             <div class="col-md-4">
                                 <div class="form-check">
-                                <input class="form_check_input2" type="radio" name="coupleorsingle" id="single" value="Single Traveller" >
+                                <input class="form_check_input2" type="radio" name="coupleorsingle" id="single" value="Per single" >
                                 <label class="form-check-label" for="Deluxe_room">
                                     a single
                                 </label>
