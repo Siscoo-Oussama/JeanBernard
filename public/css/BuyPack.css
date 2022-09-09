@@ -2,10 +2,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
 body{
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'DM Sans', sans-serif !important;
 }
 .card-shop ,.card-shop2,.card-shop3{
-    width: 50%;
+    width: 70%;
     margin-top: 300px;
 
 }
@@ -14,7 +14,7 @@ body{
     text-align: center;
 }
 .card-description{
-    width: 50%;
+    width: 70%;
 }
 .card-description p{
     margin-top: 50px;
@@ -25,7 +25,7 @@ body{
     margin-bottom: 90px;
 }
 .choice-pack{
-    width: 50%;
+    width: 70%;
     height: 120px;
     margin-bottom: 10px;
     margin-top: 20px;
@@ -35,10 +35,10 @@ body{
     color: #000;
 }
 .information-personel{
-    width: 50%;
+    width: 70%;
 }
 .payment-submit{
-    width: 50%;
+    width: 70%;
 }
 .total{
     font-weight: 700;
@@ -68,10 +68,10 @@ body{
     background-color: #a41034;
     border: 1px solid transparent;
     color: #fff;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 700;
-    margin-bottom: 10px;
-    height: 50px;
+    margin-bottom: 12px;
+    height: 65px;
 }
 .btn-submit:hover{
     background-color: #EDCC99;
@@ -200,7 +200,7 @@ span{
     height: 150px;
     border: 3px solid transparent;
     display: inline-block;
-    border-radius: 10px;
+    border-radius: 2px;
     position: relative;
     text-align: center;
 
@@ -239,7 +239,7 @@ span{
     align-items: center;
     margin-bottom: 10px;
     margin-top: 0px;
-    border-radius: 10px;
+    border-radius: 2px;
     margin-left: -0.5px;
   }
 
@@ -328,40 +328,6 @@ span{
     font-weight: 700;
     margin-bottom: 30px;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -496,16 +462,17 @@ header nav h3 {
 
 
 .image-payment{
-    height: 45px;width:150px;
+    height: 25px;
+    width: 100px;
     padding-left: 15px;
     padding-right: 15px;
-    margin-left: 20%;
+    margin-bottom: 0px;
 }
 
 @media screen and (max-width:1220px) {
     .image-payment{
-     margin-left: 0;
+     /* margin-left: 0;
      padding-left: 30px;
-     padding-right: 30px;
+     padding-right: 30px; */
     }
 }

@@ -20,7 +20,7 @@ class BuyPackController extends Controller
     public function changeprice(Request $request)
     {
         $value1=$request->val1;
-        $value2=$request->val2; 
+        $value2=$request->val2;
         $data=Hotel::select('priceInMad','priceInUsd')
         ->join('roomtypes','roomtypes.id','=','hotels.roomtype_id')
         ->join('grouptypes','grouptypes.id','=','roomtypes.grouptype_id')
@@ -45,22 +45,7 @@ class BuyPackController extends Controller
         return view('BuyPack3');
     }
 
-    public function index(Request $request)
-    {
-        $value1=$request->val1;
-        $value2=$request->val2;
-        $data=Hotel::select('price')
-        ->join('roomtypes','roomtypes.id','=','hotels.id')
-        ->join('grouptypes','grouptypes.id','=','roomtypes.group_type_id')
-        ->where('roomtypes.name',$value1)
-        ->where('grouptypes.name',$value2)
-        ->first();
 
-        // return response()->json($value1);
-        return response()->json(['data'=>$data]);
-       // return view("BuyPack1",["data"=>$data]);
-        //return view('BuyPack1');
-    }
 
     public function okFail(Request $request)
     {
@@ -78,7 +63,6 @@ class BuyPackController extends Controller
 
                 $participationsdeluxeroom = Participation::where('status', '=','paid')
                 ->where('deluxeroom', '=','1')
-                ->where('couple', '=','1')
                 ->get();
 
                 $countdeluxeroom = $participationsdeluxeroom->count();
@@ -97,6 +81,7 @@ class BuyPackController extends Controller
                     $participation->tel = $request->tel;
                     $participation->adress = $request->adress;
                     $participation->partnername = $request->partnername;
+                    $participation->notes = $request->notes;
 
                     $participation->deluxeroom = 1;
 
@@ -147,7 +132,6 @@ class BuyPackController extends Controller
 
                 $participationsjuniorsuite = Participation::where('status', '=','paid')
                 ->where('juniorsuite', '=','1')
-                ->where('couple', '=','1')
                 ->get();
 
                 $countjuniorsuite = $participationsjuniorsuite->count();
@@ -165,6 +149,8 @@ class BuyPackController extends Controller
                     $participation->tel = $request->tel;
                     $participation->adress = $request->adress;
                     $participation->partnername = $request->partnername;
+                    $participation->notes = $request->notes;
+
 
 
                     $participation->juniorsuite = 1;
@@ -215,7 +201,6 @@ class BuyPackController extends Controller
 
                 $participationsprestigesuite = Participation::where('status', '=','paid')
                 ->where('prestigesuite', '=','1')
-                ->where('couple', '=','1')
                 ->get();
 
                 $countprestigesuite = $participationsprestigesuite->count();
@@ -234,7 +219,7 @@ class BuyPackController extends Controller
                     $participation->tel = $request->tel;
                     $participation->adress = $request->adress;
                     $participation->partnername = $request->partnername;
-                    $participation->partnername = $request->partnername;
+                    $participation->notes = $request->notes;
 
 
 
@@ -280,12 +265,11 @@ class BuyPackController extends Controller
 
 
 
-        }if ($request->roomtype == 'ROH'){
+        }if ($request->roomtype == 'Superior Room'){
 
             if (($request->coupleorsingle == 'Per Couple') || ($request->coupleorsingle == 'Single Traveller'))  {
                 $participationsroh = Participation::where('status', '=','paid')
                 ->where('roh', '=','1')
-                ->where('couple', '=','1')
                 ->get();
 
                 $countroh = $participationsroh->count();
@@ -304,6 +288,8 @@ class BuyPackController extends Controller
                     $participation->tel = $request->tel;
                     $participation->adress = $request->adress;
                     $participation->partnername = $request->partnername;
+                    $participation->notes = $request->notes;
+
 
 
                     $participation->roh = 1;
@@ -353,6 +339,204 @@ class BuyPackController extends Controller
 
     }
 
+    public function processwithamex(Request $request)
+    {
+        $participation= new Participation;
+
+        if($request->roomtype == 'Deluxe room'){
+
+            if (($request->coupleorsingle == 'Per Couple') || ($request->coupleorsingle == 'Single Traveller'))  {
+
+                $participationsdeluxeroom = Participation::where('status', '=','paid')
+                ->where('deluxeroom', '=','1')
+                ->get();
+
+                $countdeluxeroom = $participationsdeluxeroom->count();
+
+                //dd($countdeluxeroom);
+
+                if($countdeluxeroom >= 5){
+                    return back()->with('success', 'No place available for Deluxe Room');
+                }else{
+
+                    $participation->price = $request->price;
+                    $participation->fullname = $request->fullname;
+                    $participation->country = $request->country;
+                    $participation->email = $request->email;
+                    $participation->nationality = $request->nationality;
+                    $participation->tel = $request->tel;
+                    $participation->adress = $request->adress;
+                    $participation->partnername = $request->partnername;
+                    $participation->notes = $request->notes;
+
+                    $participation->deluxeroom = 1;
+
+                    if ($request->coupleorsingle == 'Per Couple')  {
+                        $participation->couple = 1;
+                    }if ($request->coupleorsingle == 'Single Traveller')  {
+                        $participation->single = 1;
+                    }
+
+                    $participation->save();
+
+                    //oussama
+
+                    //return view('')->with(compact('id_part',$participation->id));
+                }
+
+            }else{
+                return back()->with('error', 'Please select a Room Name');
+            }
+
+
+
+
+        }if ($request->roomtype == 'Junior suite'){
+
+            if (($request->coupleorsingle == 'Per Couple') || ($request->coupleorsingle == 'Single Traveller'))  {
+
+                $participationsjuniorsuite = Participation::where('status', '=','paid')
+                ->where('juniorsuite', '=','1')
+                ->get();
+
+                $countjuniorsuite = $participationsjuniorsuite->count();
+
+                //dd($countjuniorsuite);
+
+                if($countjuniorsuite >= 25){
+                    return back()->with('success', 'No place available for Junior suite');
+                }else{
+                    $participation->price = $request->price;
+                    $participation->fullname = $request->fullname;
+                    $participation->country = $request->country;
+                    $participation->email = $request->email;
+                    $participation->nationality = $request->nationality;
+                    $participation->tel = $request->tel;
+                    $participation->adress = $request->adress;
+                    $participation->partnername = $request->partnername;
+                    $participation->notes = $request->notes;
+
+
+
+                    $participation->juniorsuite = 1;
+
+                    if ($request->coupleorsingle == 'Per Couple')  {
+                        $participation->couple = 1;
+                    }if ($request->coupleorsingle == 'Single Traveller')  {
+                        $participation->single = 1;
+                    }
+
+                    $participation->save();
+
+                    //dd($payment->id);
+
+                }
+
+            }else{
+                return back()->with('error', 'Please select a Room Name');
+            }
+
+
+
+        }if ($request->roomtype == 'Prestige suite'){
+
+            if (($request->coupleorsingle == 'Per Couple') || ($request->coupleorsingle == 'Single Traveller'))  {
+
+                $participationsprestigesuite = Participation::where('status', '=','paid')
+                ->where('prestigesuite', '=','1')
+                ->get();
+
+                $countprestigesuite = $participationsprestigesuite->count();
+
+                //dd($countprestigesuite);
+
+                if($countprestigesuite >= 5){
+                    return back()->with('success', 'No place available for Prestige suite');
+                }else{
+
+                    $participation->price = $request->price;
+                    $participation->fullname = $request->fullname;
+                    $participation->country = $request->country;
+                    $participation->email = $request->email;
+                    $participation->nationality = $request->nationality;
+                    $participation->tel = $request->tel;
+                    $participation->adress = $request->adress;
+                    $participation->partnername = $request->partnername;
+                    $participation->notes = $request->notes;
+
+
+
+                    $participation->prestigesuite = 1;
+
+                    if ($request->coupleorsingle == 'Per Couple')  {
+                        $participation->couple = 1;
+                    }if ($request->coupleorsingle == 'Single Traveller')  {
+                        $participation->single = 1;
+                    }
+
+                    $participation->save();
+
+
+                }
+
+            }else{
+                return back()->with('error', 'Please select a Room Name');
+            }
+
+
+
+        }if ($request->roomtype == 'Superior Room'){
+
+            if (($request->coupleorsingle == 'Per Couple') || ($request->coupleorsingle == 'Single Traveller'))  {
+                $participationsroh = Participation::where('status', '=','paid')
+                ->where('roh', '=','1')
+                ->get();
+
+                $countroh = $participationsroh->count();
+
+                //dd($countroh);
+
+                if($countroh >= 10){
+                    return back()->with('success', 'No place available for Superior Room');
+                }else{
+
+                    $participation->price = $request->price;
+                    $participation->fullname = $request->fullname;
+                    $participation->country = $request->country;
+                    $participation->email = $request->email;
+                    $participation->nationality = $request->nationality;
+                    $participation->tel = $request->tel;
+                    $participation->adress = $request->adress;
+                    $participation->partnername = $request->partnername;
+                    $participation->notes = $request->notes;
+
+
+
+                    $participation->roh = 1;
+
+                    if ($request->coupleorsingle == 'Per Couple')  {
+                        $participation->couple = 1;
+                    }if ($request->coupleorsingle == 'Single Traveller')  {
+                        $participation->single = 1;
+                    }
+
+                    $participation->save();
+
+
+
+                }
+
+            }else{
+                return back()->with('error', 'Please select a Room Name');
+            }
+
+
+        }else{
+            return back()->with('error', 'Please select a Room Name');
+        }
+
+    }
+
     public function submit(Request $request)
     {
 
@@ -369,6 +553,8 @@ class BuyPackController extends Controller
                 $participation->tel = $request->tel;
                 $participation->adress = $request->adress;
                 $participation->partnername = $request->partnername;
+                $participation->notes = $request->notes;
+
 
                 $participation->premuimriad = 1;
 
@@ -400,6 +586,8 @@ class BuyPackController extends Controller
                 $participation->tel = $request->tel;
                 $participation->adress = $request->adress;
                 $participation->partnername = $request->partnername;
+                $participation->notes = $request->notes;
+
 
                 $participation->superiorriad = 1;
 

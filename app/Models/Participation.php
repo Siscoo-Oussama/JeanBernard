@@ -25,6 +25,8 @@ class Participation extends Model
         'premuimriad',
         'couple',
         'single',
+        'notes',
+        'partnername'
     ];
 
 }

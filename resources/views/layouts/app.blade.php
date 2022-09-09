@@ -45,14 +45,14 @@
         $("#single").change(function(){
             if(this.checked)
             {
-                
+
                 $("[name='partnername']").attr('type', 'hidden');
             }
         })
         $("#couple").change(function(){
             if(this.checked)
             {
-                
+
                 $("[name='partnername']").attr('type', 'text');
             }
         })
@@ -79,10 +79,11 @@
                                     //console.log('success');
 
                                    console.log(data);
-                         
+
                                    $('.price').text(parseFloat(data.data.priceInMad).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " MAD");
+                                   $('.pricerequest').val(data.data.priceInMad);
                                    $('.priceUSD').text((data.data.priceInUsd).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " ( ~ approx  USD )");
-                                   
+
 
                                 },
                                 error:function(){
@@ -107,12 +108,13 @@
                                     //console.log('success');
 
                                    console.log(data);
-                  
-                                   
+
+
                                    $('.price').text((data.data.priceInMad).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " MAD");
+                                   $('.pricerequest').val(data.data.priceInMad);
                                    $('.priceUSD').text((data.data.priceInUsd).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") +" ( ~ approx  USD )");
                                 //    $('.priceUsd').text(data.data.priceInMad );
-                                   
+
 
                                 },
                                 error:function(){

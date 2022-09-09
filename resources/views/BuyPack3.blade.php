@@ -16,10 +16,10 @@
 @endif
 
 
-<header>
+<header class="container">
 
 
-    <section class="presentation first">
+    <section class= presentation first">
         <div class="product-presentation">
             <div class="row">
                 <div class="col-md-6">
@@ -29,8 +29,8 @@
                 </div>
                 <div class="col-md-6 description-hotel">
                     <div class="container">
-                    <h2 class="">SOFITEL PALAIS IMPERIAL</h2>
-                        <p class="">Located in the heart of Hivernage district, within walking distance from the Jamaa el Fna square and the city's main attractions. The Sofitel Palais Imperial is a beautiful Moorish property set amongst manicured gardens and fountains, offering comfortable rooms and spacious suites, with beautiful views of either the city, the pool, or the gardens. The interior design has succeeded in combining French elegance with a dash of Moroccan Art de Vivre.
+                    <h2 class="">Hivernage Hotel & SPA</h2>
+                        <p class="">The Hivernage Hotel & Spa is also located at the heart of the Hivernage district – just across the street from Sofitel Palais Imperial.
                         </p>
                     </div>
                 </div>
@@ -74,10 +74,10 @@
                         </div>
 
 
-                          <div class="col-md-4">
+                        <div class="col-md-4">
                             <div class="form-check">
-                            <input class="form_check_input2" type="radio" name="coupleorsingle" id="couple" value="Per couple">
-                            <label class="form-check-label" for="couple">
+                            <input class="form_check_input2" type="radio" name="coupleorsingle" id="couple" value="Per Couple">
+                            <label class="form-check-label" for="Deluxe_room">
                                 a couple
                             </label>
                             </div>
@@ -85,8 +85,8 @@
 
                         <div class="col-md-4">
                             <div class="form-check">
-                            <input class="form_check_input2" type="radio" name="coupleorsingle" id="single" value="Per single" >
-                            <label class="form-check-label" for="single">
+                            <input class="form_check_input2" type="radio" name="coupleorsingle" id="single" value="Single Traveller" >
+                            <label class="form-check-label" for="Deluxe_room">
                                 a single
                             </label>
                             </div>
@@ -113,8 +113,8 @@
                             </div>
                             <div class="col-md-6">
                                 <div class=" mb-3">
-                                    <input type="text" style="height: 55px" class="form-control" id="" name="partnername" placeholder="name@example.com">
-                                    
+                                    <input type="text" style="height: 55px" class="form-control" id="" name="partnername" placeholder="Partner Full Name">
+
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -150,7 +150,7 @@
 
                             <div class="col-md-12">
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="notes" required>
+                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="notes">
                                     <label for="floatingInput">Special Note (dietary requirements, allergies, medical condition, bedding preference…)</label>
                                 </div>
                             </div>
@@ -233,7 +233,7 @@
                                 <h1 class="total">Total:</h1>
                             </div>
                             <div class="col-md-6">
-                                <input type="hidden" name="price" value="1" >
+                                <input type="hidden" class="pricerequest" name="price">
                                 <input type="hidden" name="cmd" value="<?php echo substr(md5(mt_rand()), 0, 7); ?>">
                                <h4 class="price"> MAD</h4>
                                 <h4 class="priceUSD">(~ approx  USD )</h4>
@@ -243,23 +243,22 @@
 
                         <div class="button-group">
 
-
-                            <div class="col-md-5">
-                                <img src={{asset('images/visaicon.png')}} alt="" class="image-payment">
-                                <button class="col-md-11 btn btn-submit" type="submit" >Submit Payment Request
-                                </button>
-                                
-                            </div>
-                            <div class="col-md-5">
-                                <img src={{asset('images/visaicon.png')}} alt="" class="image-payment">
-                                <button class="col-md-12 btn btn-submit" type="submit" >Complete Payment Transaction
-                                </button>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <button class="form-control btn btn-submit" type="submit" ><img src={{asset('images/visaicon.png')}} alt="" class="image-payment">
+                                        Complete Payment Transaction
+                                    </button>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <button class="form-control btn btn-submit"  formaction="/processwithamex" type="submit" ><img src={{asset('images/amex.png')}} alt="" class="image-payment">
+                                        Submit Payment Request
+                                    </button>
+                                </div>
                             </div>
 
 
                         </div>
                         <div class="col-md-12">
-                            <h6 class="text-center mt-3">Secure Payment .</h6>
                             <p style="font-size: 10px;">NB: Please note that your credit card will be debited in MAD and the exchange rate will be the one of your credit card company at the time of the booking												</p>
                         </div>
                     </div>

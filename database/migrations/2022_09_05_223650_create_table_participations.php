@@ -32,6 +32,7 @@ class CreateTableParticipations extends Migration
             $table->string('couple')->default('0');
             $table->string('single')->default('0');
             $table->string('partnername')->nullable();
+            $table->string('notes')->nullable();
 
             $table->timestamps();
         });

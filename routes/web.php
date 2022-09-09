@@ -25,6 +25,7 @@ Route::get('BuyPack',[BuyPackController::class,'index']);
 Route::get('BuyPack1',[BuyPackController::class,'index1']);
 Route::get('BuyPack2',[BuyPackController::class,'index2']);
 Route::get('BuyPack3',[BuyPackController::class,'index3']);
+Route::post('processwithamex',[BuyPackController::class, 'processwithamex'])->name('processwithamex');
 Route::post('process',[BuyPackController::class, 'process'])->name('process');
 Route::post('submit',[BuyPackController::class, 'submit'])->name('submit');
 
