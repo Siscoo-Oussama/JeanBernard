@@ -52,7 +52,7 @@
                            <div class="radio-buttons">
                               <h4 class="qts-title">Room Type ?</h4>
                              <label class="custom-radio">
-                                <input type="radio" name="roomtype" value="Premuim Riad"/>
+                                <input class="form_check_input" type="radio" name="roomtype" value="Premier riad"/>
                                 <span class="radio-btn">
                                     <i class="las la-check"></i>
                                   <div class="hobbies-icon">
@@ -62,7 +62,7 @@
                                 </span>
                                </label>
                               <label class="custom-radio">
-                              <input type="radio" name="roomtype" value="Superior Riad" />
+                              <input class="form_check_input" type="radio" name="roomtype" value="Superior riad" />
                                <span class="radio-btn">
                                 <i class="las la-check"></i>
                               <div class="hobbies-icon">
@@ -84,10 +84,10 @@
                             </div>
 
 
-                              <div class="col-md-4">
+                            <div class="col-md-4">
                                 <div class="form-check">
-                                <input class="form-check-input" type="radio" name="coupleorsingle" id="couple" value="Per Couple">
-                                <label class="form-check-label" for="Deluxe_room">
+                                <input class="form_check_input2" type="radio" name="coupleorsingle" id="couple" value="Per couple">
+                                <label class="form-check-label" for="couple">
                                     a couple
                                 </label>
                                 </div>
@@ -95,8 +95,8 @@
 
                             <div class="col-md-4">
                                 <div class="form-check">
-                                <input class="form-check-input" type="radio" name="coupleorsingle" id="single" value="Single Traveller" >
-                                <label class="form-check-label" for="Deluxe_room">
+                                <input class="form_check_input2" type="radio" name="coupleorsingle" id="single" value="Per single" >
+                                <label class="form-check-label" for="single">
                                     a single
                                 </label>
                                 </div>
@@ -238,6 +238,19 @@
                 <div class="card">
                     <div class="card-body">
 
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h1 class="total">Total: </h1>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="hidden" name="price" value="1" >
+                                <input type="hidden" name="cmd" value="<?php echo substr(md5(mt_rand()), 0, 7); ?>">
+
+                                <h4 class="price"> MAD</h4>
+                                <h4 class="priceUSD">(~ approx  USD )</h4>
+                            </div>
+                        </div>
+                        <hr>
                         <div class="button-group">
 
                             <div class="col-md-5">

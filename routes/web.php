@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Mail;
 Route::get("PaymentRequest",function(){
     return view("PaymentRequest");
 });
+Route::get('changeprice',[BuyPackController::class,'changeprice']);
 Route::get('BuyPack',[BuyPackController::class,'index']);
 Route::get('BuyPack1',[BuyPackController::class,'index1']);
 Route::get('BuyPack2',[BuyPackController::class,'index2']);

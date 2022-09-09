@@ -11,7 +11,8 @@ class RoomType extends Model
     protected $table="roomtypes";
     protected $fillable=[
         'name',
-        'group_type_id',
-        'price'
+        'grouptype_id',
+        'priceInMad',
+        'priceInUsd'
     ];
 }

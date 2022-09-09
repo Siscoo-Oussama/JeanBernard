@@ -70,45 +70,49 @@
                         val1=$(this).val();
                      console.log(val1);
                     }
-                        $.ajax({
+                            $.ajax({
                                 type:'get',
-                                url:"{!!URL::to('BuyPack')!!}",
+                                url:"{!!URL::to('changeprice')!!}",
                                 data:{'val2':val2 ,'val1':val1},
                                 dataType:'json',
                                 success:function(data){
                                     //console.log('success');
 
-                                   console.log(data.data.price);
-                                   $('.price').text(data.data.price);
+                                   console.log(data);
+                         
+                                   $('.price').text(data.data.priceInMad + " MAD");
+                                   $('.priceUSD').text(data.data.priceInUsd + " (~ approx  USD )");
+                                   
 
                                 },
                                 error:function(){
 
                                 }
                             });
-
-
                     });
 
                     $(".form_check_input2").change(function() {
                     if(this.checked) {
-
-
                     val2=$(this).val();
                     console.log(val2);
                     }
 
 
-                   $.ajax({
+                          $.ajax({
                                 type:'get',
-                                url:"{!!URL::to('BuyPack')!!}",
+                                url:"{!!URL::to('changeprice')!!}",
                                 data:{'val2':val2 ,'val1':val1},
                                 dataType:'json',
                                 success:function(data){
                                     //console.log('success');
 
-                                   console.log(data.data.price);
-                                   $('.price').text(data.data.price);
+                                   console.log(data);
+                  
+                                   
+                                   $('.price').text(data.data.priceInMad + " MAD");
+                                   $('.priceUSD').text(data.data.priceInUsd +"( ~ approx  USD )");
+                                //    $('.priceUsd').text(data.data.priceInMad );
+                                   
 
                                 },
                                 error:function(){
