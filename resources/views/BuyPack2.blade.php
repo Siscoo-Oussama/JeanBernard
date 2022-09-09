@@ -254,7 +254,6 @@
                         <div class="button-group">
 
                             <div class="col-md-5">
-                                <img src={{asset('images/visaicon.png')}} alt="" class="image-payment">
                                 <button class="col-md-11 btn btn-submit" type="submit" >Submit Payment Request
                                 </button>
 

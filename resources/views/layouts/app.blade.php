@@ -82,7 +82,7 @@
 
                                    $('.price').text(parseFloat(data.data.priceInMad).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " MAD");
                                    $('.pricerequest').val(data.data.priceInMad);
-                                   $('.priceUSD').text((data.data.priceInUsd).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " ( ~ approx  USD )");
+                                   $('.priceUSD').text("( Approx."+(data.data.priceInUsd).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "  USD )");
 
 
                                 },
@@ -112,7 +112,7 @@
 
                                    $('.price').text((data.data.priceInMad).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " MAD");
                                    $('.pricerequest').val(data.data.priceInMad);
-                                   $('.priceUSD').text((data.data.priceInUsd).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") +" ( ~ approx  USD )");
+                                   $('.priceUSD').text("( Approx."+(data.data.priceInUsd).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "  USD )");
                                 //    $('.priceUsd').text(data.data.priceInMad );
 
 
