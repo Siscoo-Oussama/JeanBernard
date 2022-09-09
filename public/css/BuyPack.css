@@ -55,6 +55,11 @@ body{
     text-align: right;
     color: #000;
 }
+.priceUSD{
+    text-align: right;
+    font-size: 15px;
+    color: #000;
+}
 .button-group{
     display: flex;
     justify-content: center;

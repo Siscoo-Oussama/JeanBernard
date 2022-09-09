@@ -21,7 +21,7 @@ class BuyPackController extends Controller
     {
         $value1=$request->val1;
         $value2=$request->val2; 
-        $data=Hotel::select('priceInMad')
+        $data=Hotel::select('priceInMad','priceInUsd')
         ->join('roomtypes','roomtypes.id','=','hotels.roomtype_id')
         ->join('grouptypes','grouptypes.id','=','roomtypes.grouptype_id')
         ->where('roomtypes.name',$value1)

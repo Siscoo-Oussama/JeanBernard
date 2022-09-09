@@ -213,7 +213,8 @@
                                 <input type="hidden" name="price" value="1" >
                                 <input type="hidden" name="cmd" value="<?php echo substr(md5(mt_rand()), 0, 7); ?>">
 
-                                <h4 class="price"> MAD  <p>(~ approx  USD )</p></h4>
+                                <h4 class="price"> MAD</h4>
+                                <h4 class="priceUSD">(~ approx  USD )</h4>
                             </div>
                         </div>
                         <hr>

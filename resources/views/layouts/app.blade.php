@@ -80,7 +80,9 @@
 
                                    console.log(data);
                          
-                                   $('.price').text(data.data.priceInMad);
+                                   $('.price').text(data.data.priceInMad + " MAD");
+                                   $('.priceUSD').text(data.data.priceInUsd + " (~ approx  USD )");
+                                   
 
                                 },
                                 error:function(){
@@ -92,7 +94,7 @@
                     $(".form_check_input2").change(function() {
                     if(this.checked) {
                     val2=$(this).val();
-                    
+                    console.log(val2);
                     }
 
 
@@ -106,7 +108,11 @@
 
                                    console.log(data);
                   
-                                   $('.price').text(data.data.priceInMad);
+                                   
+                                   $('.price').text(data.data.priceInMad + " MAD");
+                                   $('.priceUSD').text(data.data.priceInUsd +"( ~ approx  USD )");
+                                //    $('.priceUsd').text(data.data.priceInMad );
+                                   
 
                                 },
                                 error:function(){

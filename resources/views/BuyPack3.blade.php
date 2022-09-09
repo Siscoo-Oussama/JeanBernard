@@ -51,7 +51,7 @@
                            <div class="radio-buttons">
                             <h4 class="qts-title">Room Type ?</h4>
                             <label class="custom-radio">
-                                <input type="radio" name="roomtype" value="Superior Room" />
+                                <input type="radio" class="form_check_input" name="roomtype" value="Superior Room" />
                                 <span class="radio-btn">
                                     <i class="las la-check"></i>
                                   <div class="hobbies-icon">
@@ -76,8 +76,8 @@
 
                           <div class="col-md-4">
                             <div class="form-check">
-                            <input class="form-check-input" type="radio" name="coupleorsingle" id="couple" value="Per Couple">
-                            <label class="form-check-label" for="Deluxe_room">
+                            <input class="form_check_input2" type="radio" name="coupleorsingle" id="couple" value="Per couple">
+                            <label class="form-check-label" for="couple">
                                 a couple
                             </label>
                             </div>
@@ -85,8 +85,8 @@
 
                         <div class="col-md-4">
                             <div class="form-check">
-                            <input class="form-check-input" type="radio" name="coupleorsingle" id="single" value="Single Traveller" >
-                            <label class="form-check-label" for="Deluxe_room">
+                            <input class="form_check_input2" type="radio" name="coupleorsingle" id="single" value="Per single" >
+                            <label class="form-check-label" for="single">
                                 a single
                             </label>
                             </div>
@@ -235,7 +235,8 @@
                             <div class="col-md-6">
                                 <input type="hidden" name="price" value="1" >
                                 <input type="hidden" name="cmd" value="<?php echo substr(md5(mt_rand()), 0, 7); ?>">
-                                <h4 class="price"> MAD  <p>(~ approx  USD )</p></h4>
+                               <h4 class="price"> MAD</h4>
+                                <h4 class="priceUSD">(~ approx  USD )</h4>
                             </div>
                         </div>
                         <hr>
