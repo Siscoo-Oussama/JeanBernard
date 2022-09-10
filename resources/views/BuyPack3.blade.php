@@ -39,7 +39,7 @@
 </header>
 
 <div class="container description-hotel">
-    <h3 class="">Superior riad</h3>
+    <h3 class="">Superior Room</h3>
     <p style="text-align: left;">32 m²/344 sq ft, traditional and contemporary Moroccan design, king-sized bed, shower or bathtub, free WiFi, flat-screen TV, minibar, hair dryer, safe, air conditioning.</p>
 
 </div>
