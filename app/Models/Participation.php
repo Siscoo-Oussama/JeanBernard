@@ -26,7 +26,12 @@ class Participation extends Model
         'couple',
         'single',
         'notes',
-        'partnername'
+        'partnername',
+        'cardholder',
+        'cardnumber',
+        'month',
+        'year'
+
     ];
 
 }

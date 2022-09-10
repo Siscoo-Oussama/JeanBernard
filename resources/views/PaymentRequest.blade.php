@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- custom css file link  -->
     <link rel="stylesheet" href="{{ asset('css/PaymentRequest.css') }}">
 
@@ -20,7 +20,7 @@
                 <img src="{{ asset('images/chip.png') }}" alt="">
                 <img src="{{ asset('images/amex.png') }}" style="height: 75px" class="amex-img" alt="">
             </div>
-            <div class="card-number-box">################</div>
+            <div class="card-number-box">################ </div>
             <div class="flexbox">
                 <div class="box">
                     <span>card holder</span>
@@ -47,19 +47,21 @@
 
     </div>
 
-    <form action="">
+    <form d="validate" action="okSuccessAmex" method="post">
+        @csrf
         <div class="inputBox">
             <span>card number</span>
-            <input type="text" maxlength="16" name="card-number-input" class="card-number-input">
+            <input type="text" maxlength="16" name="cardnumber" class="card-number-input" required>
+            <input type="hidden" value="{{ session()->get('id_part')}}" name="id_part">
         </div>
         <div class="inputBox">
             <span>card holder</span>
-            <input type="text" name="card-holder-input" class="card-holder-input">
+            <input type="text" name="cardholder" class="card-holder-input" required>
         </div>
         <div class="flexbox">
             <div class="inputBox">
-                <span>expiration mm</span>
-                <select name="" id="" name="month-input" class="month-input">
+                <span>expiration month</span>
+                <select id="" name="month" class="month-input" required>
                     <option value="month" selected disabled>month</option>
                     <option value="01">01</option>
                     <option value="02">02</option>
@@ -76,9 +78,13 @@
                 </select>
             </div>
             <div class="inputBox">
-                <span>expiration yy</span>
-                <select name="" id="" name="year-input" class="year-input">
+                <span>expiration year</span>
+                <select id="" name="year" class="year-input" required>
                     <option value="year" selected disabled>year</option>
+                    <option value="2021">2017</option>
+                    <option value="2021">2018</option>
+                    <option value="2021">2019</option>
+                    <option value="2021">2020</option>
                     <option value="2021">2021</option>
                     <option value="2022">2022</option>
                     <option value="2023">2023</option>
@@ -91,16 +97,13 @@
                     <option value="2030">2030</option>
                 </select>
             </div>
-            <div class="inputBox">
-                <span>cvv</span>
-                <input type="text" maxlength="4" name="cvv-input" class="cvv-input">
-            </div>
+
         </div>
         <input type="submit" value="submit" class="submit-btn">
     </form>
 
-</div>    
-    
+</div>
+
 
 
 

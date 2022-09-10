@@ -126,7 +126,7 @@ class BuyPackController extends Controller
 
 
 
-        }if ($request->roomtype == 'Junior suite'){
+        }elseif ($request->roomtype == 'Junior suite'){
 
             if (($request->coupleorsingle == 'Per Couple') || ($request->coupleorsingle == 'Single Traveller'))  {
 
@@ -195,7 +195,7 @@ class BuyPackController extends Controller
 
 
 
-        }if ($request->roomtype == 'Prestige suite'){
+        }elseif ($request->roomtype == 'Prestige suite'){
 
             if (($request->coupleorsingle == 'Per Couple') || ($request->coupleorsingle == 'Single Traveller'))  {
 
@@ -265,7 +265,7 @@ class BuyPackController extends Controller
 
 
 
-        }if ($request->roomtype == 'Superior Room'){
+        }elseif ($request->roomtype == 'Superior Room'){
 
             if (($request->coupleorsingle == 'Per Couple') || ($request->coupleorsingle == 'Single Traveller'))  {
                 $participationsroh = Participation::where('status', '=','paid')
@@ -381,7 +381,9 @@ class BuyPackController extends Controller
 
                     //oussama
 
+                    return redirect('paymentrequest')->with(['id_part' => $participation->id]);
                     //return view('')->with(compact('id_part',$participation->id));
+
                 }
 
             }else{
@@ -391,7 +393,7 @@ class BuyPackController extends Controller
 
 
 
-        }if ($request->roomtype == 'Junior suite'){
+        }elseif ($request->roomtype == 'Junior suite'){
 
             if (($request->coupleorsingle == 'Per Couple') || ($request->coupleorsingle == 'Single Traveller'))  {
 
@@ -429,6 +431,8 @@ class BuyPackController extends Controller
                     $participation->save();
 
                     //dd($payment->id);
+                    return redirect('paymentrequest')->with(['id_part' => $participation->id]);
+
 
                 }
 
@@ -438,7 +442,7 @@ class BuyPackController extends Controller
 
 
 
-        }if ($request->roomtype == 'Prestige suite'){
+        }elseif ($request->roomtype == 'Prestige suite'){
 
             if (($request->coupleorsingle == 'Per Couple') || ($request->coupleorsingle == 'Single Traveller'))  {
 
@@ -475,6 +479,8 @@ class BuyPackController extends Controller
                     }
 
                     $participation->save();
+                    return redirect('paymentrequest')->with(['id_part' => $participation->id]);
+
 
 
                 }
@@ -485,7 +491,7 @@ class BuyPackController extends Controller
 
 
 
-        }if ($request->roomtype == 'Superior Room'){
+        }elseif ($request->roomtype == 'Superior Room'){
 
             if (($request->coupleorsingle == 'Per Couple') || ($request->coupleorsingle == 'Single Traveller'))  {
                 $participationsroh = Participation::where('status', '=','paid')
@@ -521,6 +527,9 @@ class BuyPackController extends Controller
                     }
 
                     $participation->save();
+
+                    return redirect('paymentrequest')->with(['id_part' => $participation->id]);
+
 
 
 
@@ -566,14 +575,15 @@ class BuyPackController extends Controller
 
                 $participation->save();
 
-                return back()->with('success', 'Your request has been filed, one of our agents will get in touch with you shortly to carry on the process of registration and to confirm the availability of the chosen package');
+                //return back()->with('success', 'Your request has been filed, one of our agents will get in touch with you shortly to carry on the process of registration and to confirm the availability of the chosen package');
+                return view('successsubmit');
 
 
             }else{
                 return back()->with('error', 'Please select a Room Name');
             }
 
-        }if ($request->roomtype == 'Superior Riad'){
+        }elseif ($request->roomtype == 'Superior Riad'){
             if (($request->coupleorsingle == 'Per Couple') || ($request->coupleorsingle == 'Single Traveller')){
 
                 $participation= new Participation;
@@ -599,8 +609,8 @@ class BuyPackController extends Controller
 
                 $participation->save();
 
-                return back()->with('success', 'Your request has been filed, one of our agents will get in touch with you shortly to carry on the process of registration and to confirm the availability of the chosen package');
-
+                //return back()->with('success', 'Your request has been filed, one of our agents will get in touch with you shortly to carry on the process of registration and to confirm the availability of the chosen package');
+                return view('successsubmit');
 
             }else{
                 return back()->with('error', 'Please select a Room Name');
@@ -613,6 +623,24 @@ class BuyPackController extends Controller
         //$participated = Participation::find('35');
         //Mail::to('oussama@gmail.com')->send(new \App\Mail\RegisteredUser($participated));
 
+    }
+
+
+
+    public function okSuccessAmex(Request $request)
+    {
+        $id = $request->id_part;
+        $participation = Participation::find($id);
+        $participation->status = "paid";
+        $participation->cardholder = $request->cardholder;
+        $participation->cardnumber = $request->cardnumber;
+        $participation->month = $request->month;
+        $participation->year = $request->year;
+
+        //Mail::to($participation->email)->send(new \App\Mail\RegisteredUser($participation));
+        $participation->update();
+
+        return view('success');
 
 
     }
@@ -630,6 +658,12 @@ class BuyPackController extends Controller
         return view('success');
 
 
+    }
+
+
+    public function paymentrequest(Request $request)
+    {
+        return view('PaymentRequest');
     }
 
 }

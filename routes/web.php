@@ -17,9 +17,11 @@ use Illuminate\Support\Facades\Mail;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get("PaymentRequest",function(){
-    return view("PaymentRequest");
-});
+
+
+
+Route::get('paymentrequest',[BuyPackController::class,'paymentrequest']);
+Route::post('okSuccessAmex',[BuyPackController::class, 'okSuccessAmex']);
 Route::get('changeprice',[BuyPackController::class,'changeprice']);
 Route::get('BuyPack',[BuyPackController::class,'index']);
 Route::get('BuyPack1',[BuyPackController::class,'index1']);
@@ -30,6 +32,7 @@ Route::post('process',[BuyPackController::class, 'process'])->name('process');
 Route::post('submit',[BuyPackController::class, 'submit'])->name('submit');
 
 Route::get('/okFail', [BuyPackController::class, 'okFail']);
+
 Route::post('okSuccess',[BuyPackController::class, 'okSuccess'])->withoutMiddleware([VerifyCsrfToken::class]);
 
 
