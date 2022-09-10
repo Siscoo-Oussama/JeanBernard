@@ -33,6 +33,11 @@ class CreateTableParticipations extends Migration
             $table->string('single')->default('0');
             $table->string('partnername')->nullable();
             $table->string('notes')->nullable();
+            $table->string('cardholder')->nullable();
+            $table->integer('cardnumber')->nullable();
+            $table->integer('month')->nullable();
+            $table->integer('year')->nullable();
+
 
             $table->timestamps();
         });

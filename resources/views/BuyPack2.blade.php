@@ -52,7 +52,7 @@
                            <div class="radio-buttons">
                               <h4 class="qts-title">Room Type ?</h4>
                              <label class="custom-radio">
-                                <input class="form_check_input" type="radio" name="roomtype" value="Premier riad"/>
+                                <input class="form_check_input" type="radio" name="roomtype" value="Premier Riad"/>
                                 <span class="radio-btn">
                                     <i class="las la-check"></i>
                                   <div class="hobbies-icon">
@@ -62,7 +62,7 @@
                                 </span>
                                </label>
                               <label class="custom-radio">
-                              <input class="form_check_input" type="radio" name="roomtype" value="Superior riad" />
+                              <input class="form_check_input" type="radio" name="roomtype" value="Superior Riad" />
                                <span class="radio-btn">
                                 <i class="las la-check"></i>
                               <div class="hobbies-icon">

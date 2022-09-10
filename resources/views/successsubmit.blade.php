@@ -20,7 +20,7 @@
 
 	<div class="main-content">
 		<i class="fa fa-check main-content__checkmark" id="checkmark"></i>
-		<p class="main-content__body" data-lead-id="main-content-body">Thank you for registering, we’re looking forward to seeing you there.</p>
+		<p class="main-content__body" data-lead-id="main-content-body">Your request has been filed, one of our agents will get in touch with you shortly to carry on the process of registration and to confirm the availability of the chosen package.</p>
 	</div>
 
 	<footer class="site-footer" id="footer">
