@@ -33,8 +33,8 @@
                 </div>
                 <div class="col-md-6 description-hotel">
                     <h2 class="" style="">Royal Mansour Marrakech</h2>
-                    <p>One of the best, if not the best property in Marrakech, considered by some among the top 5 in the world.
-                    </p>
+                    <p>One of the best, if not the best property in Marrakech, considered by some among the top 5 in the world, ideally situated within the walls of the medina and just a short walk from the Jamaa el Fna square. The Royal Mansour Marrakech showcases stunning Moroccan architecture and authentic artcrafts. With its individual riads featuring elengant design and beautifully appointed bedrooms, every riad has its own plunge pool on an exclusive roof terrace with magnificent views of the city or Atlas Mountains, the Royal Mansour Marrakech offers its guests a unique experience of luxury hospitality						
+					</p>
                 </div>
 
             </div>
@@ -217,7 +217,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="form-check">
+                                <div class="form-check2">
                                   <input class="form-check-input" type="radio" name="terms" id="" value="" required>
                                   <label class="form-check-label" for="">
                                     I agreed to the <a href="http://hbsmorocco2023.com/wp-content/uploads/2022/09/Morocco-Terms-Conditions-HBS-Alumni-trip-April-2023.pdf" target="_black" > Terms and Conditions</a>

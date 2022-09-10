@@ -30,8 +30,8 @@
                 <div class="col-md-6 description-hotel">
                     <div class="container">
                     <h2 class="">Hivernage Hotel & SPA</h2>
-                        <p class="">The Hivernage Hotel & Spa is also located at the heart of the Hivernage district – just across the street from Sofitel Palais Imperial.
-                        </p>
+                        <p>The Hivernage Hotel & Spa is also located at the heart of the Hivernage district - just across the street from Sofitel Palais Imperial, within a few minutes walk from the Jamâa el Fna square and the souks. The hotel features rooms and suites that combine comfort with the nobility of traditional design with views of the Koutoubia minaret and the city's ramparts. This hotel provides its guests with a great value-for-money.						
+						</p>
                     </div>
                 </div>
 
@@ -208,7 +208,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="form-check">
+                                <div class="form-check2">
                                   <input class="form-check-input" type="radio" name="terms" id="" value="" required>
                                   <label class="form-check-label" for="">
                                     I agreed to the <a href="http://hbsmorocco2023.com/wp-content/uploads/2022/09/Morocco-Terms-Conditions-HBS-Alumni-trip-April-2023.pdf" target="_black" > Terms and Conditions</a>
@@ -245,12 +245,14 @@
 
                             <div class="row">
                                 <div class="col-md-6 col-sm-12">
-                                    <button class="form-control btn btn-submit" type="submit" ><img src={{asset('images/visaicon.png')}} alt="" class="image-payment">
+                                    <img src={{asset('images/visaicon.png')}} alt="" class="image-payment">
+                                    <button class="form-control btn btn-submit" type="submit" >
                                         Complete Payment Transaction
                                     </button>
                                 </div>
                                 <div class="col-md-6 col-sm-12">
-                                    <button class="form-control btn btn-submit"  formaction="/processwithamex" type="submit" ><img src={{asset('images/amex.png')}} alt="" class="image-payment">
+                                    <img src={{asset('images/amex.png')}} alt="" class="image-payment">
+                                    <button class="form-control btn btn-submit"  formaction="/processwithamex" type="submit" >
                                         Submit Payment Request
                                     </button>
                                 </div>

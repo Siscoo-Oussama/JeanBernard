@@ -28,8 +28,8 @@
                 </div>
                 <div class="col-md-6 description-hotel">
                     <h2 class="">Sofitel Palais Imperial</h2>
-                    <p>Located in the heart of Hivernage district, within walking distance from the Jamaa el Fna square and the city's main attractions. The Sofitel Palais Imperial is a beautiful Moorish property set amongst manicured gardens and fountains, offering comfortable rooms and spacious suites, with beautiful views of either the city, the pool, or the gardens. The interior design has succeeded in combining French elegance with a dash of Moroccan Art de Vivre.
-                    </p>
+                    <p>Located in the heart of Hivernage district, within walking distance from the Jamaa el Fna square and the city's main attractions. The Sofitel Palais Imperial is a beautiful Moorish property set amongst manicured gardens and fountains, offering comfortable rooms and spacious suites, with beautiful views of either the city, the pool, or the gardens. The interior design has succeeded in combining French elegance with a dash of Moroccan Art de Vivre.  	 						
+					</p>
                 </div>
 
             </div>
@@ -50,13 +50,16 @@
                         <div class="row">
                             <div class="radio-buttons">
                                 <h4 class="qts-title">Room Type ?</h4>
+                                
                                 <label class="custom-radio">
                                     <input type="radio" class="form_check_input" name="roomtype" value="Deluxe room" />
                                     <span class="radio-btn">
                                         <i class="las la-check"></i>
+                                       
                                       <div class="hobbies-icon">
                                         <img src="{{asset('images/SofitelDeluxeroom.jpg')}}" alt="">
-                                        <h3>Deluxe room</h3>
+                                        <h3>Deluxe room </h3>
+                                        
                                       </div>
                                     </span>
                                   </label>
@@ -185,7 +188,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="form-check">
+                                <div class="form-check2">
                                   <input class="form-check-input" type="radio" name="terms" id="" value="" required>
                                   <label class="form-check-label" for="">
                                     I agreed to the <a href="http://hbsmorocco2023.com/wp-content/uploads/2022/09/Morocco-Terms-Conditions-HBS-Alumni-trip-April-2023.pdf" target="_black" > Terms and Conditions</a>
@@ -224,12 +227,14 @@
 
                             <div class="row">
                                 <div class="col-md-6 col-sm-12">
-                                    <button class="form-control btn btn-submit" type="submit" ><img src={{asset('images/visaicon.png')}} alt="" class="image-payment">
+                                    <img src={{asset('images/visaicon.png')}} alt="" class="image-payment">
+                                    <button class="form-control btn btn-submit" type="submit" >
                                         Complete Payment Transaction
                                     </button>
                                 </div>
                                 <div class="col-md-6 col-sm-12">
-                                    <button class="form-control btn btn-submit"  formaction="/processwithamex" type="submit" ><img src={{asset('images/amex.png')}} alt="" class="image-payment">
+                                    <img src={{asset('images/amex.png')}} alt="" class="image-payment">
+                                    <button class="form-control btn btn-submit"  formaction="/processwithamex" type="submit" >
                                         Submit Payment Request
                                     </button>
                                 </div>
