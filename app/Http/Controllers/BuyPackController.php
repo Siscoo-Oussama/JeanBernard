@@ -69,7 +69,7 @@ class BuyPackController extends Controller
 
                 //dd($countdeluxeroom);
 
-                if($countdeluxeroom >= 5){
+                if($countdeluxeroom >= 20){
                     return back()->with('success', 'No place available for Deluxe Room');
                 }else{
 

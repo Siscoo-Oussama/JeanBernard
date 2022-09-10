@@ -33,12 +33,49 @@
                 </div>
                 <div class="col-md-6 description-hotel">
                     <h2 class="" style="">Royal Mansour Marrakech</h2>
-                    <p>One of the best, if not the best property in Marrakech, considered by some among the top 5 in the world, ideally situated within the walls of the medina and just a short walk from the Jamaa el Fna square. The Royal Mansour Marrakech showcases stunning Moroccan architecture and authentic artcrafts. With its individual riads featuring elengant design and beautifully appointed bedrooms, every riad has its own plunge pool on an exclusive roof terrace with magnificent views of the city or Atlas Mountains, the Royal Mansour Marrakech offers its guests a unique experience of luxury hospitality						
+                    <p  class="">One of the best, if not the best property in Marrakech, considered by some among the top 5 in the world, ideally situated within the walls of the medina and just a short walk from the Jamaa el Fna square. The Royal Mansour Marrakech showcases stunning Moroccan architecture and authentic artcrafts. With its individual riads featuring elengant design and beautifully appointed bedrooms, every riad has its own plunge pool on an exclusive roof terrace with magnificent views of the city or Atlas Mountains, the Royal Mansour Marrakech offers its guests a unique experience of luxury hospitality
 					</p>
                 </div>
 
             </div>
 </header>
+
+<br>
+
+
+<div class="container description-hotel">
+    <h3 class="">Superior riad</h3>
+    <p style="text-align: left;">140 m²/1500 sq ft split into 3 floors</p>
+    <br>
+        <ul>
+            <li>Ground floor has the open-air courtyard with fountain, and living room.</li>
+            <li>1st floor has the bededroom with king-sized bed, dressing area, and modern bathroom including shower and bathtub.</li>
+            <li>Rooftop has the terrace with plunge pool and sun-deck.</li>
+            <li>flat-screen TV, minibar, hair dryer, safe, air conditioning. free WiFi.</li>
+        </ul>
+
+        <p style="text-align: left;">Pls let us know if you need a riad with a lift, subject to availability
+    </p>
+</div>
+
+<br>
+
+<div class="container description-hotel">
+    <h3 class="">Premier riad</h3>
+    <p style="text-align: left;">175 m²/1884 sq ft split into 3 floors</p>
+    <br>
+        <ul>
+            <li>Ground floor has the open-air courtyard with fountain, and living room.</li>
+            <li>1st floor has the bededroom with king-sized bed, dressing area, and modern bathroom including shower and bathtub.</li>
+            <li>Rooftop has the terrace with plunge pool and sun-deck.</li>
+            <li>flat-screen TV, minibar, hair dryer, safe, air conditioning. free WiFi.</li>
+        </ul>
+
+</div>
+
+
+<br><br>
+
 
 <form  id="validate" action="submit" method="post">
     @csrf

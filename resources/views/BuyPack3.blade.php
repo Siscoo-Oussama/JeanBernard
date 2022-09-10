@@ -30,13 +30,20 @@
                 <div class="col-md-6 description-hotel">
                     <div class="container">
                     <h2 class="">Hivernage Hotel & SPA</h2>
-                        <p>The Hivernage Hotel & Spa is also located at the heart of the Hivernage district - just across the street from Sofitel Palais Imperial, within a few minutes walk from the Jamâa el Fna square and the souks. The hotel features rooms and suites that combine comfort with the nobility of traditional design with views of the Koutoubia minaret and the city's ramparts. This hotel provides its guests with a great value-for-money.						
+                        <p>The Hivernage Hotel & Spa is also located at the heart of the Hivernage district - just across the street from Sofitel Palais Imperial, within a few minutes walk from the Jamâa el Fna square and the souks. The hotel features rooms and suites that combine comfort with the nobility of traditional design with views of the Koutoubia minaret and the city's ramparts. This hotel provides its guests with a great value-for-money.
 						</p>
                     </div>
                 </div>
 
             </div>
 </header>
+
+<div class="container description-hotel">
+    <h3 class="">Superior riad</h3>
+    <p style="text-align: left;">32 m²/344 sq ft, traditional and contemporary Moroccan design, king-sized bed, shower or bathtub, free WiFi, flat-screen TV, minibar, hair dryer, safe, air conditioning.</p>
+
+</div>
+<BR>
 
 <form  id="validate" action="process" method="post">
     @csrf

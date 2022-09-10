@@ -28,15 +28,40 @@
                 </div>
                 <div class="col-md-6 description-hotel">
                     <h2 class="">Sofitel Palais Imperial</h2>
-                    <p>Located in the heart of Hivernage district, within walking distance from the Jamaa el Fna square and the city's main attractions. The Sofitel Palais Imperial is a beautiful Moorish property set amongst manicured gardens and fountains, offering comfortable rooms and spacious suites, with beautiful views of either the city, the pool, or the gardens. The interior design has succeeded in combining French elegance with a dash of Moroccan Art de Vivre.  	 						
+                    <p>Located in the heart of Hivernage district, within walking distance from the Jamaa el Fna square and the city's main attractions. The Sofitel Palais Imperial is a beautiful Moorish property set amongst manicured gardens and fountains, offering comfortable rooms and spacious suites, with beautiful views of either the city, the pool, or the gardens. The interior design has succeeded in combining French elegance with a dash of Moroccan Art de Vivre.
 					</p>
                 </div>
 
             </div>
+
 </header>
 
+<br>
 
 
+<div class="container description-hotel">
+    <h3 class="">Deluxe room</h3>
+    <p style="text-align: left;">30 m²/322 sq ft, traditional decor, Sofitel MyBed, shower, Atelier Cologne bath products, free WiFi, 48" TV, minibar, BOSE sound system, Tchaba teas, hair dryer, safe, air conditioning.
+    </p>
+</div>
+
+<br>
+
+<div class="container description-hotel">
+    <h3 class="">Junior suite</h3>
+    <p style="text-align: left;">44 m²/473 sq ft, traditional decor, Sofitel MyBed, lounge area, bathtub and shower, Hermès bath products, free WiFi, 48" TV, BOSE sound system, Nespresso coffee, minibar, hair dryer, safe, air conditioning.
+    </p>
+</div>
+
+<br>
+
+<div class="container ">
+    <h3 class="">Prestige suite</h3>
+    <p style="text-align: left;">68 m²/732 sq ft, traditional decor, Sofitel MyBed, separate lounge, bathtub and shower, Hermès bath products, free WiFi, 48" TV, BOSE sound system, Nespresso coffee, minibar, hair dryer, safe, air conditioning.
+    </p>
+</div>
+
+<br><br>
 
 
 <form  id="validate" action="process" method="post">
@@ -50,16 +75,17 @@
                         <div class="row">
                             <div class="radio-buttons">
                                 <h4 class="qts-title">Room Type ?</h4>
-                                
+
                                 <label class="custom-radio">
                                     <input type="radio" class="form_check_input" name="roomtype" value="Deluxe room" />
                                     <span class="radio-btn">
                                         <i class="las la-check"></i>
-                                       
+
                                       <div class="hobbies-icon">
                                         <img src="{{asset('images/SofitelDeluxeroom.jpg')}}" alt="">
                                         <h3>Deluxe room </h3>
-                                        
+
+
                                       </div>
                                     </span>
                                   </label>
