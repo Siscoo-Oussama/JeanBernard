@@ -1,0 +1,16 @@
+#pack1 .card{
+    margin-bottom: 10px;
+}
+#pack1 .form_check_input{
+    margin-left: 50%;
+}
+#pack1 .group-types{
+    margin-left: 50px;
+}
+#pack1 .couple,.single,.qts-title{
+    margin-top: 10px;
+}
+#pack1 .card-header img{
+    width: 100%;
+    height: 300px;
+}

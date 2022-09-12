@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>BuyPack</title>
+    <title>hbsmorocco2023 Payment</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -19,6 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/BuyPack.css')}}">
+    <link rel="stylesheet" href="{{asset('css/stylev2.css')}}">
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <style>
 

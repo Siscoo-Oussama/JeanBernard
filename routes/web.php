@@ -36,6 +36,16 @@ Route::get('/okFail', [BuyPackController::class, 'okFail']);
 Route::post('okSuccess',[BuyPackController::class, 'okSuccess'])->withoutMiddleware([VerifyCsrfToken::class]);
 
 
+Route::get('MainHotelPack',function(){
+    return view('BuyPack1v2');
+});
+Route::get('PalaceOptionPack',function(){
+    return view('BuyPack2v2');
+});
+Route::get('4StarsOptionPack',function(){
+    return view('BuyPack3v2');
+});
+
 
 
 
