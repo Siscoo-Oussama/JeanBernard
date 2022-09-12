@@ -291,7 +291,7 @@
                         <div class="button-group">
 
                             <div class="col-md-5">
-                                <button class="col-md-11 btn btn-submit" type="submit" >Submit Payment Request
+                                <button class="col-md-11 btn btn-submit" type="submit" >Submit Booking Request
                                 </button>
 
                             </div>

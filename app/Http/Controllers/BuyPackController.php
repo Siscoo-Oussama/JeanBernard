@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Payment;
 use App\Models\Hotel;
 use Illuminate\Http\Request;
 use App\Models\Participation;
@@ -47,15 +48,27 @@ class BuyPackController extends Controller
 
 
 
-    public function okFail(Request $request)
+    public function okFail()
     {
-        return Redirect::to('http://hbsmorocco2023.com');
+        return redirect('failed')
+            ->with(['status' => 'Paiement échoué']);
+    }
+
+    public function callback()
+    {
+        return view('callback');
     }
 
 
     public function process(Request $request)
     {
         $participation= new Participation;
+
+
+        if($request->price == null){
+            return back()->with('error', 'Please select a room type');
+        }
+
 
         if($request->roomtype == 'Deluxe room'){
 
@@ -70,7 +83,7 @@ class BuyPackController extends Controller
                 //dd($countdeluxeroom);
 
                 if($countdeluxeroom >= 20){
-                    return back()->with('success', 'No place available for Deluxe Room');
+                    return back()->with('error', 'No place available for Deluxe Room');
                 }else{
 
                     $participation->price = $request->price;
@@ -102,16 +115,18 @@ class BuyPackController extends Controller
                         'okUrl' => $base_url.'/okSuccess', // REDIRECTION AFTER SUCCEFFUL PAYMENT
                         'failUrl' => $base_url.'/okFail', // REDIRECTION AFTER FAILED PAYMENT
                         'email' => $request->email, // YOUR EMAIL APPEAR IN CMI PLATEFORM
-                        'BillToName' => 'Hbsmorocco2023', // YOUR NAME APPEAR IN CMI PLATEFORM
-                        'BillToStreet12' => $request->adresse, // YOUR ADDRESS APPEAR IN CMI PLATEFORM NOT REQUIRED
+                        'BillToName' => $request->fullname, // YOUR NAME APPEAR IN CMI PLATEFORM
+                        'BillToStreet12' => $request->adress, // YOUR ADDRESS APPEAR IN CMI PLATEFORM NOT REQUIRED
                         'BillToCity' => $request->country, // YOUR CITY APPEAR IN CMI PLATEFORM NOT REQUIRED
-                        'BillToStateProv' => $request->adresse, // YOUR STATE APPEAR IN CMI PLATEFORM NOT REQUIRED
+                        'BillToStateProv' => $request->adress, // YOUR STATE APPEAR IN CMI PLATEFORM NOT REQUIRED
                         'lang' => 'en',
                         'BillToCountry' => '200', // YOUR COUNTRY APPEAR IN CMI PLATEFORM NOT REQUIRED (504=MA)
                         'tel' => $request->tel, // YOUR PHONE APPEAR IN CMI PLATEFORM NOT REQUIRED
                         'amount' => $request->price, // RETRIEVE AMOUNT WITH METHOD POST
                         'payment_id' => $participation->id,
-                        'CallbackURL' => $base_url.'/callback', // CALLBACK
+                        //'CallbackURL' => $base_url.'/callback', // CALLBACK
+
+
                     ]);
 
                     //dd($payment->id);
@@ -139,7 +154,7 @@ class BuyPackController extends Controller
                 //dd($countjuniorsuite);
 
                 if($countjuniorsuite >= 25){
-                    return back()->with('success', 'No place available for Junior suite');
+                    return back()->with('error', 'No place available for Junior suite');
                 }else{
                     $participation->price = $request->price;
                     $participation->fullname = $request->fullname;
@@ -172,16 +187,16 @@ class BuyPackController extends Controller
                         'okUrl' => $base_url.'/okSuccess', // REDIRECTION AFTER SUCCEFFUL PAYMENT
                         'failUrl' => $base_url.'/okFail', // REDIRECTION AFTER FAILED PAYMENT
                         'email' => $request->email, // YOUR EMAIL APPEAR IN CMI PLATEFORM
-                        'BillToName' => 'Hbsmorocco2023', // YOUR NAME APPEAR IN CMI PLATEFORM
-                        'BillToStreet12' => $request->adresse, // YOUR ADDRESS APPEAR IN CMI PLATEFORM NOT REQUIRED
+                        'BillToName' => $request->fullname, // YOUR NAME APPEAR IN CMI PLATEFORM
+                        'BillToStreet12' => $request->adress, // YOUR ADDRESS APPEAR IN CMI PLATEFORM NOT REQUIRED
                         'BillToCity' => $request->country, // YOUR CITY APPEAR IN CMI PLATEFORM NOT REQUIRED
-                        'BillToStateProv' => $request->adresse, // YOUR STATE APPEAR IN CMI PLATEFORM NOT REQUIRED
+                        'BillToStateProv' => $request->adress, // YOUR STATE APPEAR IN CMI PLATEFORM NOT REQUIRED
                         'lang' => 'en',
                         'BillToCountry' => '200', // YOUR COUNTRY APPEAR IN CMI PLATEFORM NOT REQUIRED (504=MA)
                         'tel' => $request->tel, // YOUR PHONE APPEAR IN CMI PLATEFORM NOT REQUIRED
                         'amount' => $request->price, // RETRIEVE AMOUNT WITH METHOD POST
                         'payment_id' => $participation->id,
-                        'CallbackURL' => $base_url.'/callback', // CALLBACK
+                        //'CallbackURL' => $base_url.'/callback', // CALLBACK
                     ]);
 
                     //dd($payment->id);
@@ -208,7 +223,7 @@ class BuyPackController extends Controller
                 //dd($countprestigesuite);
 
                 if($countprestigesuite >= 5){
-                    return back()->with('success', 'No place available for Prestige suite');
+                    return back()->with('error', 'No place available for Prestige suite');
                 }else{
 
                     $participation->price = $request->price;
@@ -242,10 +257,10 @@ class BuyPackController extends Controller
                         'okUrl' => $base_url.'/okSuccess', // REDIRECTION AFTER SUCCEFFUL PAYMENT
                         'failUrl' => $base_url.'/okFail', // REDIRECTION AFTER FAILED PAYMENT
                         'email' => $request->email, // YOUR EMAIL APPEAR IN CMI PLATEFORM
-                        'BillToName' => 'Hbsmorocco2023', // YOUR NAME APPEAR IN CMI PLATEFORM
-                        'BillToStreet12' => $request->adresse, // YOUR ADDRESS APPEAR IN CMI PLATEFORM NOT REQUIRED
+                        'BillToName' => $request->fullname, // YOUR NAME APPEAR IN CMI PLATEFORM
+                        'BillToStreet12' => $request->adress, // YOUR ADDRESS APPEAR IN CMI PLATEFORM NOT REQUIRED
                         'BillToCity' => $request->country, // YOUR CITY APPEAR IN CMI PLATEFORM NOT REQUIRED
-                        'BillToStateProv' => $request->adresse, // YOUR STATE APPEAR IN CMI PLATEFORM NOT REQUIRED
+                        'BillToStateProv' => $request->adress, // YOUR STATE APPEAR IN CMI PLATEFORM NOT REQUIRED
                         'lang' => 'en',
                         'BillToCountry' => '200', // YOUR COUNTRY APPEAR IN CMI PLATEFORM NOT REQUIRED (504=MA)
                         'tel' => $request->tel, // YOUR PHONE APPEAR IN CMI PLATEFORM NOT REQUIRED
@@ -277,7 +292,7 @@ class BuyPackController extends Controller
                 //dd($countroh);
 
                 if($countroh >= 10){
-                    return back()->with('success', 'No place available for Superior Room');
+                    return back()->with('error', 'No place available for Superior Room');
                 }else{
 
                     $participation->price = $request->price;
@@ -311,10 +326,10 @@ class BuyPackController extends Controller
                         'okUrl' => $base_url.'/okSuccess', // REDIRECTION AFTER SUCCEFFUL PAYMENT
                         'failUrl' => $base_url.'/okFail', // REDIRECTION AFTER FAILED PAYMENT
                         'email' => $request->email, // YOUR EMAIL APPEAR IN CMI PLATEFORM
-                        'BillToName' => 'Hbsmorocco2023', // YOUR NAME APPEAR IN CMI PLATEFORM
-                        'BillToStreet12' => $request->adresse, // YOUR ADDRESS APPEAR IN CMI PLATEFORM NOT REQUIRED
+                        'BillToName' => $request->fullname, // YOUR NAME APPEAR IN CMI PLATEFORM
+                        'BillToStreet12' => $request->adress, // YOUR ADDRESS APPEAR IN CMI PLATEFORM NOT REQUIRED
                         'BillToCity' => $request->country, // YOUR CITY APPEAR IN CMI PLATEFORM NOT REQUIRED
-                        'BillToStateProv' => $request->adresse, // YOUR STATE APPEAR IN CMI PLATEFORM NOT REQUIRED
+                        'BillToStateProv' => $request->adress, // YOUR STATE APPEAR IN CMI PLATEFORM NOT REQUIRED
                         'lang' => 'en',
                         'BillToCountry' => '200', // YOUR COUNTRY APPEAR IN CMI PLATEFORM NOT REQUIRED (504=MA)
                         'tel' => $request->tel, // YOUR PHONE APPEAR IN CMI PLATEFORM NOT REQUIRED
@@ -343,6 +358,10 @@ class BuyPackController extends Controller
     {
         $participation= new Participation;
 
+        if($request->price == null){
+            return back()->with('error', 'Please select a room type');
+        }
+
         if($request->roomtype == 'Deluxe room'){
 
             if (($request->coupleorsingle == 'Per Couple') || ($request->coupleorsingle == 'Single Traveller'))  {
@@ -355,8 +374,8 @@ class BuyPackController extends Controller
 
                 //dd($countdeluxeroom);
 
-                if($countdeluxeroom >= 5){
-                    return back()->with('success', 'No place available for Deluxe Room');
+                if($countdeluxeroom >= 20){
+                    return back()->with('error', 'No place available for Deluxe Room');
                 }else{
 
                     $participation->price = $request->price;
@@ -406,7 +425,7 @@ class BuyPackController extends Controller
                 //dd($countjuniorsuite);
 
                 if($countjuniorsuite >= 25){
-                    return back()->with('success', 'No place available for Junior suite');
+                    return back()->with('error', 'No place available for Junior suite');
                 }else{
                     $participation->price = $request->price;
                     $participation->fullname = $request->fullname;
@@ -455,7 +474,7 @@ class BuyPackController extends Controller
                 //dd($countprestigesuite);
 
                 if($countprestigesuite >= 5){
-                    return back()->with('success', 'No place available for Prestige suite');
+                    return back()->with('error', 'No place available for Prestige suite');
                 }else{
 
                     $participation->price = $request->price;
@@ -576,6 +595,7 @@ class BuyPackController extends Controller
                 $participation->save();
 
                 //return back()->with('success', 'Your request has been filed, one of our agents will get in touch with you shortly to carry on the process of registration and to confirm the availability of the chosen package');
+                Mail::to($request->email)->send(new Payment($participation));
                 return view('successsubmit');
 
 
