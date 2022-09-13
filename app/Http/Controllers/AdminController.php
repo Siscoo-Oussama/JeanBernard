@@ -18,7 +18,7 @@ class AdminController extends Controller
      */
     public function dashboard()
     {
-        $data=Participation::all()->where('status','paid');
+        $data=Participation::all()->where('status','!=','unpaid');
         return view('Dashboard',['data'=>$data]);
     }
 
