@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class Payment extends Mailable
+class OrderDetails extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -30,9 +30,8 @@ class Payment extends Mailable
      */
     public function build()
     {
-        return $this->subject('Order Details')
-            ->view('payment')
+        return $this->subject('Order Placed')
+            ->view('emails.orderdetails')
             ->with('data', $this->participation);
-
     }
 }

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\BookingRequest;
+use App\Mail\OrderDetails;
 use App\Mail\Payment;
 use App\Models\Hotel;
 use Illuminate\Http\Request;
@@ -567,8 +569,9 @@ class BuyPackController extends Controller
 
     public function submit(Request $request)
     {
+        //dd($request->roomtype);
 
-        if ($request->roomtype == 'Premuim Riad'){
+        if ($request->roomtype = 'Premuim Riad'){
             if (($request->coupleorsingle == 'Per Couple') || ($request->coupleorsingle == 'Single Traveller')){
 
                 $participation= new Participation;
@@ -595,7 +598,8 @@ class BuyPackController extends Controller
                 $participation->save();
 
                 //return back()->with('success', 'Your request has been filed, one of our agents will get in touch with you shortly to carry on the process of registration and to confirm the availability of the chosen package');
-                Mail::to($request->email)->send(new Payment($participation));
+                Mail::to('contact@hbsmorocco2023.com')->send(new OrderDetails($participation));
+                Mail::to($request->email)->send(new BookingRequest($participation));
                 return view('successsubmit');
 
 
@@ -603,7 +607,7 @@ class BuyPackController extends Controller
                 return back()->with('error', 'Please select a Room Name');
             }
 
-        }elseif ($request->roomtype == 'Superior Riad'){
+        }elseif ($request->roomtype = 'Superior Riad'){
             if (($request->coupleorsingle == 'Per Couple') || ($request->coupleorsingle == 'Single Traveller')){
 
                 $participation= new Participation;
@@ -630,6 +634,8 @@ class BuyPackController extends Controller
                 $participation->save();
 
                 //return back()->with('success', 'Your request has been filed, one of our agents will get in touch with you shortly to carry on the process of registration and to confirm the availability of the chosen package');
+                Mail::to('contact@hbsmorocco2023.com')->send(new OrderDetails($participation));
+                Mail::to($request->email)->send(new BookingRequest($participation));
                 return view('successsubmit');
 
             }else{
