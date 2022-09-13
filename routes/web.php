@@ -1,11 +1,14 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BuyPackController;
+use App\Http\Controllers\BuyPackSaveOnlyController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 USE App\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Support\Facades\Mail;
-
+use Illuminate\Support\Facades\Redirect;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,9 +36,12 @@ Route::post('submit',[BuyPackController::class, 'submit'])->name('submit');
 Route::get('okFail', [BuyPackController::class, 'okFail'])->name('okFail');
 Route::get('callback', [BuyPackController::class, 'callback'])->name('callback');
 Route::post('okSuccess',[BuyPackController::class, 'okSuccess'])->withoutMiddleware([VerifyCsrfToken::class]);
+Route::get('/dashboard',[AdminController::class,'dashboard']);
 
 
-
+Route::get("/" ,function(){
+    return Redirect::to('http://hbsmorocco2023.com');
+});
 
 Auth::routes();
 
