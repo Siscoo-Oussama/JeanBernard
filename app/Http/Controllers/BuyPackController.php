@@ -377,6 +377,7 @@ class BuyPackController extends Controller
 
                 $participationsdeluxeroom = Participation::where('status', '=','paid')
                 ->where('deluxeroom', '=','1')
+                ->orWhere('status', '=','requested')
                 ->get();
 
                 $countdeluxeroom = $participationsdeluxeroom->count();
@@ -427,6 +428,7 @@ class BuyPackController extends Controller
 
                 $participationsjuniorsuite = Participation::where('status', '=','paid')
                 ->where('juniorsuite', '=','1')
+                ->orWhere('status', '=','requested')
                 ->get();
 
                 $countjuniorsuite = $participationsjuniorsuite->count();
@@ -476,6 +478,7 @@ class BuyPackController extends Controller
 
                 $participationsprestigesuite = Participation::where('status', '=','paid')
                 ->where('prestigesuite', '=','1')
+                ->orWhere('status', '=','requested')
                 ->get();
 
                 $countprestigesuite = $participationsprestigesuite->count();
@@ -524,6 +527,7 @@ class BuyPackController extends Controller
             if (($request->coupleorsingle == 'Per Couple') || ($request->coupleorsingle == 'Single Traveller'))  {
                 $participationsroh = Participation::where('status', '=','paid')
                 ->where('roh', '=','1')
+                ->orWhere('status', '=','requested')
                 ->get();
 
                 $countroh = $participationsroh->count();
@@ -585,7 +589,7 @@ class BuyPackController extends Controller
                 $participation->price = 0;
                 $participation->fullname = $request->fullname;
                 $participation->country = $request->country;
-                $participation->status = "paid";
+                $participation->status = "requested";
                 $participation->email = $request->email;
                 $participation->nationality = $request->nationality;
                 $participation->tel = $request->tel;
@@ -621,7 +625,7 @@ class BuyPackController extends Controller
                 $participation->price = 0;
                 $participation->fullname = $request->fullname;
                 $participation->country = $request->country;
-                $participation->status = "paid";
+                $participation->status = "requested";
                 $participation->email = $request->email;
                 $participation->nationality = $request->nationality;
                 $participation->tel = $request->tel;
@@ -664,7 +668,7 @@ class BuyPackController extends Controller
     {
         $id = $request->id_part;
         $participation = Participation::find($id);
-        $participation->status = "paid";
+        $participation->status = "requested";
         $participation->cardholder = $request->cardholder;
         $participation->cardnumber = $request->cardnumber;
         $participation->month = $request->month;
