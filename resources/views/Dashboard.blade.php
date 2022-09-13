@@ -141,12 +141,17 @@
                                                     <label for="floatingInput">status</label>
                                                 </div>
                                             </div>
+                                            @if($item->price!=null)
                                             <div class="col-md-6">
                                                 <div class="form-floating mb-3">
                                                     <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="{{$item->price}} MAD">
                                                     <label for="floatingInput">price</label>
                                                 </div>
                                             </div>
+<<<<<<< HEAD
+=======
+                                            @endif
+>>>>>>> 2283a44a4c30f5bf0feeddc9d35dd51768224373
                                             <div class="col-md-12">
                                                 <div class="form-floating mb-3">
                                                     <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="{{$item->adress}}">
@@ -168,7 +173,11 @@
                                             @if($item->deluxeroom==1)
                                             <div class="col-md-6">
                                                 <div class="form-floating mb-3">
+<<<<<<< HEAD
                                                     <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="Selected : Deluxe room" style="">
+=======
+                                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="Selected : Deluxe room">
+>>>>>>> 2283a44a4c30f5bf0feeddc9d35dd51768224373
                                                     <label for="floatingInput">Deluxe room</label>
                                                 </div>
                                             </div>
@@ -176,7 +185,11 @@
                                             @if($item->juniorsuite==1)
                                             <div class="col-md-6">
                                                 <div class="form-floating mb-3">
+<<<<<<< HEAD
                                                     <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="Selected : Junior suite" style="">
+=======
+                                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="Selected : Junior suite">
+>>>>>>> 2283a44a4c30f5bf0feeddc9d35dd51768224373
                                                     <label for="floatingInput">Junior suite</label>
                                                 </div>
                                             </div>
@@ -184,7 +197,11 @@
                                             @if($item->prestigesuite==1)
                                             <div class="col-md-6">
                                                 <div class="form-floating mb-3">
+<<<<<<< HEAD
                                                     <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="Selected : Prestige suite" style="">
+=======
+                                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="Selected : Prestige suite">
+>>>>>>> 2283a44a4c30f5bf0feeddc9d35dd51768224373
                                                     <label for="floatingInput">Prestige suite</label>
                                                 </div>
                                             </div>
@@ -192,7 +209,11 @@
                                             @if($item->roh==1)
                                             <div class="col-md-6">
                                                 <div class="form-floating mb-3">
+<<<<<<< HEAD
                                                     <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="Selected : Superior Room" style="">
+=======
+                                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="Selected : Superior Room">
+>>>>>>> 2283a44a4c30f5bf0feeddc9d35dd51768224373
                                                     <label for="floatingInput">Superior Room</label>
                                                 </div>
                                             </div>
@@ -200,7 +221,11 @@
                                             @if($item->premuimriad==1)
                                             <div class="col-md-6">
                                                 <div class="form-floating mb-3">
+<<<<<<< HEAD
                                                     <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="Selected : Premuim Riad" style="">
+=======
+                                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="Selected : Premuim Riad">
+>>>>>>> 2283a44a4c30f5bf0feeddc9d35dd51768224373
                                                     <label for="floatingInput">Premuim Riad</label>
                                                 </div>
                                             </div>
@@ -208,7 +233,11 @@
                                             @if($item->superiorriad ==1)
                                             <div class="col-md-6">
                                                 <div class="form-floating mb-3">
+<<<<<<< HEAD
                                                     <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="Selected : Superior Riad "style="">
+=======
+                                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="Selected : Superior Riad >
+>>>>>>> 2283a44a4c30f5bf0feeddc9d35dd51768224373
                                                     <label for="floatingInput">Superior Riad</label>
                                                 </div>
                                             </div>
@@ -219,7 +248,11 @@
                                             @if($item->couple ==1)
                                             <div class="col-md-6">
                                                 <div class="form-floating mb-3">
+<<<<<<< HEAD
                                                     <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="Selected : Couple " style="">
+=======
+                                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="Selected : Couple ">
+>>>>>>> 2283a44a4c30f5bf0feeddc9d35dd51768224373
                                                     <label for="floatingInput">Couple</label>
                                                 </div>
                                             </div>
@@ -227,7 +260,11 @@
                                             @if($item->single ==1)
                                             <div class="col-md-6">
                                                 <div class="form-floating mb-3">
+<<<<<<< HEAD
                                                     <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="Selected : Single" style="">
+=======
+                                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="Selected : Single">
+>>>>>>> 2283a44a4c30f5bf0feeddc9d35dd51768224373
                                                     <label for="floatingInput">Single</label>
                                                 </div>
                                             </div>

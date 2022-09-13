@@ -260,6 +260,9 @@ body{
 .unpaid{
     background-color: crimson;
 }
+.requested{
+    background-color: #016CC9;
+}
 .mode_process{
     background-color: #ff8000;
 }
