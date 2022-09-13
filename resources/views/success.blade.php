@@ -15,6 +15,8 @@
 </head>
 <body>
 	<header class="site-header" id="header">
+        <img src="http://hbsmorocco2023.com/wp-content/uploads/2022/09/AK-Company-Morocco-Center-Grey-1.png" style="width: 220px;">
+        <br><br>
 		<h1 class="site-header__title" data-lead-id="site-header-title">THANK YOU!</h1>
 	</header>
 

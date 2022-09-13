@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.14/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 <link rel="stylesheet" href="{{asset('css/Dashboard.css')}}">
-<link rel="stylesheet" href="{{asset('css/app.css')}}"> 
+<link rel="stylesheet" href="{{asset('css/app.css')}}">
 <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,800&display=swap" rel="stylesheet">
 <title>hbsmorocco2023</title>
 </head>
@@ -87,7 +87,7 @@
                                         </button>
                                     </td>
                                 </tr>
-                                
+
                                 <div class="modal fade" id="{{$item->fullname}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                       <div class="modal-content">
@@ -147,25 +147,28 @@
                                                     <label for="floatingInput">price</label>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-12">
                                                 <div class="form-floating mb-3">
                                                     <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="{{$item->adress}}">
                                                     <label for="floatingInput">Address</label>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-12">
                                                 <div class="form-floating mb-3">
                                                     <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="{{$item->notes}}">
                                                     <label for="floatingInput">Special notes</label>
                                                 </div>
                                             </div>
+
+                                            <h3>Order Details</h3>
+
                                             <div class="col-md-6">
                                                 <label for="" style="margin-top: 10px;font-weight:700;margin-left:55px">Room Type :</label>
                                             </div>
                                             @if($item->deluxeroom==1)
                                             <div class="col-md-6">
                                                 <div class="form-floating mb-3">
-                                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="Selected : Deluxe room" style="background:#82D500">
+                                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="Selected : Deluxe room" style="">
                                                     <label for="floatingInput">Deluxe room</label>
                                                 </div>
                                             </div>
@@ -173,7 +176,7 @@
                                             @if($item->juniorsuite==1)
                                             <div class="col-md-6">
                                                 <div class="form-floating mb-3">
-                                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="Selected : Junior suite" style="background:#82D500">
+                                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="Selected : Junior suite" style="">
                                                     <label for="floatingInput">Junior suite</label>
                                                 </div>
                                             </div>
@@ -181,7 +184,7 @@
                                             @if($item->prestigesuite==1)
                                             <div class="col-md-6">
                                                 <div class="form-floating mb-3">
-                                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="Selected : Prestige suite" style="background:#82D500">
+                                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="Selected : Prestige suite" style="">
                                                     <label for="floatingInput">Prestige suite</label>
                                                 </div>
                                             </div>
@@ -189,7 +192,7 @@
                                             @if($item->roh==1)
                                             <div class="col-md-6">
                                                 <div class="form-floating mb-3">
-                                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="Selected : Superior Room" style="background:#82D500">
+                                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="Selected : Superior Room" style="">
                                                     <label for="floatingInput">Superior Room</label>
                                                 </div>
                                             </div>
@@ -197,7 +200,7 @@
                                             @if($item->premuimriad==1)
                                             <div class="col-md-6">
                                                 <div class="form-floating mb-3">
-                                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="Selected : Premuim Riad" style="background:#82D500">
+                                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="Selected : Premuim Riad" style="">
                                                     <label for="floatingInput">Premuim Riad</label>
                                                 </div>
                                             </div>
@@ -205,18 +208,18 @@
                                             @if($item->superiorriad ==1)
                                             <div class="col-md-6">
                                                 <div class="form-floating mb-3">
-                                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="Selected : Superior Riad "style="background:#82D500">
+                                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="Selected : Superior Riad "style="">
                                                     <label for="floatingInput">Superior Riad</label>
                                                 </div>
                                             </div>
                                             @endif
                                             <div class="col-md-6">
-                                                <label for="" style="margin-top: 10px;font-weight:700;margin-left:55px">Group Type :</label>
+                                                <label for="" style="margin-top: 10px;font-weight:700;margin-left:55px">Room Name :</label>
                                             </div>
                                             @if($item->couple ==1)
                                             <div class="col-md-6">
                                                 <div class="form-floating mb-3">
-                                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="Selected : Couple " style="background:#82D500">
+                                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="Selected : Couple " style="">
                                                     <label for="floatingInput">Couple</label>
                                                 </div>
                                             </div>
@@ -224,7 +227,7 @@
                                             @if($item->single ==1)
                                             <div class="col-md-6">
                                                 <div class="form-floating mb-3">
-                                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="Selected : Single" style="background:#82D500">
+                                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="price" disabled value="Selected : Single" style="">
                                                     <label for="floatingInput">Single</label>
                                                 </div>
                                             </div>

@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Mail\BookingRequest;
+use App\Mail\BookingRequestDetails;
+use App\Mail\Order;
 use App\Mail\OrderDetails;
 use App\Mail\Payment;
+use App\Mail\PaymentRequest;
+use App\Mail\PaymentRequestDetails;
 use App\Models\Hotel;
 use Illuminate\Http\Request;
 use App\Models\Participation;
@@ -50,15 +54,18 @@ class BuyPackController extends Controller
 
 
 
-    public function okFail()
+    public function okFail(Request $request)
     {
-        return redirect('failed')
-            ->with(['status' => 'Paiement échoué']);
+        // return redirect('failed')
+        //     ->with(['status' => 'Paiement échoué']);
+
+        dd($request->all());
+
     }
 
-    public function callback()
+    public function callback(Request $request)
     {
-        return view('callback');
+        dd($request->all());
     }
 
 
@@ -126,7 +133,7 @@ class BuyPackController extends Controller
                         'tel' => $request->tel, // YOUR PHONE APPEAR IN CMI PLATEFORM NOT REQUIRED
                         'amount' => $request->price, // RETRIEVE AMOUNT WITH METHOD POST
                         'payment_id' => $participation->id,
-                        //'CallbackURL' => $base_url.'/callback', // CALLBACK
+                        'CallbackURL' => $base_url.'/callback', // CALLBACK
 
 
                     ]);
@@ -198,7 +205,7 @@ class BuyPackController extends Controller
                         'tel' => $request->tel, // YOUR PHONE APPEAR IN CMI PLATEFORM NOT REQUIRED
                         'amount' => $request->price, // RETRIEVE AMOUNT WITH METHOD POST
                         'payment_id' => $participation->id,
-                        //'CallbackURL' => $base_url.'/callback', // CALLBACK
+                        'CallbackURL' => $base_url.'/callback', // CALLBACK
                     ]);
 
                     //dd($payment->id);
@@ -571,7 +578,7 @@ class BuyPackController extends Controller
     {
         //dd($request->roomtype);
 
-        if ($request->roomtype = 'Premuim Riad'){
+        if ($request->roomtype = 'Premium Riad'){
             if (($request->coupleorsingle == 'Per Couple') || ($request->coupleorsingle == 'Single Traveller')){
 
                 $participation= new Participation;
@@ -598,7 +605,7 @@ class BuyPackController extends Controller
                 $participation->save();
 
                 //return back()->with('success', 'Your request has been filed, one of our agents will get in touch with you shortly to carry on the process of registration and to confirm the availability of the chosen package');
-                Mail::to('contact@hbsmorocco2023.com')->send(new OrderDetails($participation));
+                Mail::to('contact@hbsmorocco2023.com')->send(new BookingRequestDetails($participation));
                 Mail::to($request->email)->send(new BookingRequest($participation));
                 return view('successsubmit');
 
@@ -634,7 +641,7 @@ class BuyPackController extends Controller
                 $participation->save();
 
                 //return back()->with('success', 'Your request has been filed, one of our agents will get in touch with you shortly to carry on the process of registration and to confirm the availability of the chosen package');
-                Mail::to('contact@hbsmorocco2023.com')->send(new OrderDetails($participation));
+                Mail::to('contact@hbsmorocco2023.com')->send(new BookingRequestDetails($participation));
                 Mail::to($request->email)->send(new BookingRequest($participation));
                 return view('successsubmit');
 
@@ -666,6 +673,9 @@ class BuyPackController extends Controller
         //Mail::to($participation->email)->send(new \App\Mail\RegisteredUser($participation));
         $participation->update();
 
+        Mail::to('contact@hbsmorocco2023.com')->send(new PaymentRequestDetails($participation));
+        Mail::to($participation->email)->send(new PaymentRequest($participation));
+
         return view('success');
 
 
@@ -679,7 +689,8 @@ class BuyPackController extends Controller
         //Mail::to($participation->email)->send(new \App\Mail\RegisteredUser($participation));
         $participation->update();
 
-
+        Mail::to('contact@hbsmorocco2023.com')->send(new OrderDetails($participation));
+        Mail::to($participation->email)->send(new Order($participation));
 
         return view('success');
 

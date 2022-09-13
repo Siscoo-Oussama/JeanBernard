@@ -56,7 +56,7 @@
                         <div class="row ">
 
                            <div class="radio-buttons">
-                            <h4 class="qts-title">Room Type ?</h4>
+                            <h4 class="qts-title">Room Name ?</h4>
                             <label class="custom-radio">
                                 <input type="radio" class="form_check_input" name="roomtype" value="Superior Room" />
                                 <span class="radio-btn">

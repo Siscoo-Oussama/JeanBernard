@@ -132,7 +132,7 @@
 													<table class="heading_block block-6" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace:0;mso-table-rspace:0">
 														<tr>
 															<td class="pad" style="text-align:center;width:100%;padding-top:63px">
-																<h1 style="margin:0;color:#fff;direction:ltr;font-family:Montserrat,Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;font-size:50px;font-weight:400;letter-spacing:5px;line-height:120%;text-align:center;margin-top:0;margin-bottom:0"><strong>Order Placed</strong></h1></td>
+																<h1 style="margin:0;color:#fff;direction:ltr;font-family:Montserrat,Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;font-size:50px;font-weight:400;letter-spacing:5px;line-height:120%;text-align:center;margin-top:0;margin-bottom:0"><strong>Booking Request</strong></h1></td>
 														</tr>
 													</table>
 													<table class="text_block block-9" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace:0;mso-table-rspace:0;word-break:break-word">
@@ -141,9 +141,9 @@
 																<div style="font-family:sans-serif">
 																	<div class style="font-size:12px;font-family:Montserrat,Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;mso-line-height-alt:18px;color:#fff;line-height:1.5">
 																		<p style="margin:0;font-size:16px;mso-line-height-alt:18px">&nbsp;</p>
-																		<p style="margin:0;font-size:16px;mso-line-height-alt:24px"> <span style="font-size:16px;color:#fff;">{{ $data['fullname'] }} placed an order by CMI.</span></p>
+																		<p style="margin:0;font-size:16px;mso-line-height-alt:24px"> <span style="font-size:16px;color:#fff;">{{ $data['fullname'] }} requested a booking.</span></p>
 																		<p style="margin:0;font-size:16px;mso-line-height-alt:18px">&nbsp;</p>
-																		<p style="margin:0;font-size:16px;mso-line-height-alt:24px"><u><strong><span style="font-size:16px;color:#fff;">Order Details</span></strong></u></p>
+																		<p style="margin:0;font-size:16px;mso-line-height-alt:24px"><u><strong><span style="font-size:16px;color:#fff;">Booking Details</span></strong></u></p>
 																		<p style="margin:0;font-size:16px;mso-line-height-alt:18px">&nbsp;</p>
 																		<p style="margin:0;font-size:16px;mso-line-height-alt:24px"><span style="font-size:16px;color:#fff;">Full Name : {{ $data['fullname'] }}</span></p>
 
@@ -151,8 +151,6 @@
                                                                         <p style="margin:0;font-size:16px;mso-line-height-alt:24px"><span style="font-size:16px;color:#fff;">Address : {{ $data['adress'] }}</span></p>
 																		<p style="margin:0;font-size:16px;mso-line-height-alt:24px"><span style="font-size:16px;color:#fff;">Phone : {{ $data['tel'] }}</span></p>
                                                                         </span></p>
-                                                                        <p style="margin:0;font-size:16px;mso-line-height-alt:24px"><span style="font-size:16px;color:#fff;">Amount : {{ $data['price'] }} MAD</span></p>
-
                                                                         <p style="margin:0;font-size:16px;mso-line-height-alt:24px"><span style="font-size:16px;color:#fff;">Room Type :
 
                                                                         <?php
@@ -180,7 +178,6 @@
 
 
                                                                         <p style="margin:0;font-size:16px;mso-line-height-alt:24px"><span style="font-size:16px;color:#fff;">Special Notes : {{ $data['notes'] }}</span></p>
-
 																		<p style="margin:0;font-size:16px;mso-line-height-alt:18px">&nbsp;</p>
 																	</div>
 																</div>

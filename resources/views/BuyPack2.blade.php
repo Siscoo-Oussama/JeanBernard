@@ -87,14 +87,14 @@
                         <div class="row">
 
                            <div class="radio-buttons">
-                              <h4 class="qts-title">Room Type ?</h4>
+                              <h4 class="qts-title">Room Name ?</h4>
                              <label class="custom-radio">
-                                <input class="form_check_input" type="radio" name="roomtype" value="Premier Riad"/>
+                                <input class="form_check_input" type="radio" name="roomtype" value="Premium Riad"/>
                                 <span class="radio-btn">
                                     <i class="las la-check"></i>
                                   <div class="hobbies-icon">
                                     <img src="{{asset('images/RMMRiadPremiefirst.jpg')}}" alt="">
-                                    <h3>Premuim Riad</h3>
+                                    <h3>Premium Riad</h3>
                                   </div>
                                 </span>
                                </label>

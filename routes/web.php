@@ -33,9 +33,9 @@ Route::get('BuyPack3',[BuyPackController::class,'index3']);
 Route::post('processwithamex',[BuyPackController::class, 'processwithamex'])->name('processwithamex');
 Route::post('process',[BuyPackController::class, 'process'])->name('process');
 Route::post('submit',[BuyPackController::class, 'submit'])->name('submit');
-Route::get('okFail', [BuyPackController::class, 'okFail'])->name('okFail');
-Route::get('callback', [BuyPackController::class, 'callback'])->name('callback');
-Route::post('okSuccess',[BuyPackController::class, 'okSuccess'])->withoutMiddleware([VerifyCsrfToken::class]);
+Route::post('okFail', [BuyPackController::class, 'okFail'])->name('okFail')->withoutMiddleware([VerifyCsrfToken::class]);
+Route::post('callback', [BuyPackController::class, 'callback'])->name('callback');
+Route::post('okSuccess',[BuyPackController::class, 'okSuccess']);
 Route::get('/dashboard',[AdminController::class,'dashboard']);
 
 

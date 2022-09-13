@@ -30,8 +30,8 @@ class OrderDetails extends Mailable
      */
     public function build()
     {
-        return $this->subject('Order Placed')
-            ->view('emails.orderdetails')
+        return $this->subject('New Order Placed Successfully')
+            ->view('emails.ordertdetails')
             ->with('data', $this->participation);
     }
 }
