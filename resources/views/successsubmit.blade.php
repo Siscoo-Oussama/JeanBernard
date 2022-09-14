@@ -15,10 +15,11 @@
 </head>
 <body>
 	<header class="site-header" id="header">
-        <img src="http://hbsmorocco2023.com/wp-content/uploads/2022/09/AK-Company-Morocco-Center-Grey-1.png" style="width: 250px;">
+        <img src="http://hbsmorocco2023.com/wp-content/uploads/2022/09/AK-Company-Morocco-Center-Grey-1.png" style="width: 280px;margin-bottom: 100px;
+        ">
         <br><br>
 
-		<h2 class="site-header__title" data-lead-id="site-header-title">Thank You For Your Request!</h2>
+		<h2 class="site-header__title" data-lead-id="site-header-title" style="font-size: 20px;">Thank You For Your Request!</h2>
 	</header>
 
 	<div class="main-content">

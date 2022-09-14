@@ -166,6 +166,17 @@
                                                                         ?>
 
                                                                         </span></p>
+                                                                        <?php
+
+                                                                            if ($data['couple'] == "1" ) { ?>
+
+
+                                                                            <p style="margin:0;font-size:16px;mso-line-height-alt:24px"><span style="font-size:16px;color:#fff;">Partner Name : {{ $data['partnername'] }}</span></p>
+
+                                                                        <?php
+                                                                            }
+
+                                                                        ?>
 																		<p style="margin:0;font-size:16px;mso-line-height-alt:24px"><span style="font-size:16px;color:#fff;">Room Name :
 
                                                                         <?php

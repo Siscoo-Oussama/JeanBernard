@@ -604,7 +604,7 @@ class BuyPackController extends Controller
     {
         //dd($request->roomtype);
 
-        if ($request->roomtype = 'Premium Riad'){
+        if ($request->roomtype == 'Premium Riad'){
             if (($request->coupleorsingle == 'Per Couple') || ($request->coupleorsingle == 'Single Traveller')){
 
                 $participation= new Participation;
@@ -640,7 +640,7 @@ class BuyPackController extends Controller
                 return back()->with('error', 'Please select a Room Name');
             }
 
-        }elseif ($request->roomtype = 'Superior Riad'){
+        }elseif ($request->roomtype == 'Superior Riad'){
             if (($request->coupleorsingle == 'Per Couple') || ($request->coupleorsingle == 'Single Traveller')){
 
                 $participation= new Participation;
