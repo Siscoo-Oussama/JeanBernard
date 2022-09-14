@@ -17,11 +17,11 @@
 	<header class="site-header" id="header">
         <img src="http://hbsmorocco2023.com/wp-content/uploads/2022/09/AK-Company-Morocco-Center-Grey-1.png" style="width: 220px;">
         <br><br>
-		<h1 class="site-header__title" data-lead-id="site-header-title">THANK YOU!</h1>
+		<h1 class="site-header__title" data-lead-id="site-header-title">Thank You!</h1>
 	</header>
 
 	<div class="main-content">
-		<i class="fa fa-check main-content__checkmark" id="checkmark"></i>
+		<!--<i class="fa fa-check main-content__checkmark" id="checkmark"></i>-->
 		<p class="main-content__body" data-lead-id="main-content-body">Thank you for registering, we’re looking forward to seeing you there.</p>
 	</div>
 

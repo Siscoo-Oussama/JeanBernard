@@ -170,10 +170,14 @@
 
                                                                         <?php
 
-                                                                            if ($data['superiorriad'] == "1" ) {
-                                                                                echo "Superior Riad";
-                                                                            }elseif ($data['premuimriad'] == "1" ) {
-                                                                                echo "Premium Riad";
+                                                                            if ($data['deluxeroom'] == "1" ) {
+                                                                                echo "Deluxe Room";
+                                                                            }elseif ($data['juniorsuite'] == "1" ){
+                                                                                echo "Junior Suite";
+                                                                            }elseif ($data['prestigesuite'] == "1" ) {
+                                                                                echo "Prestige Suite";
+                                                                            }elseif ($data['roh'] == "1" ) {
+                                                                                echo "Superior Room";
                                                                             }
 
                                                                         ?>

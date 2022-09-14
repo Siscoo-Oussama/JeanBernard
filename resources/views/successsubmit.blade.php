@@ -15,15 +15,15 @@
 </head>
 <body>
 	<header class="site-header" id="header">
-        <img src="http://hbsmorocco2023.com/wp-content/uploads/2022/09/AK-Company-Morocco-Center-Grey-1.png" style="width: 220px;">
+        <img src="http://hbsmorocco2023.com/wp-content/uploads/2022/09/AK-Company-Morocco-Center-Grey-1.png" style="width: 250px;">
         <br><br>
 
-		<h1 class="site-header__title" data-lead-id="site-header-title">THANK YOU!</h1>
+		<h2 class="site-header__title" data-lead-id="site-header-title">Thank You For Your Request!</h2>
 	</header>
 
 	<div class="main-content">
-		<i class="fa fa-check main-content__checkmark" id="checkmark"></i>
-		<p class="main-content__body" data-lead-id="main-content-body">Your request has been filed, one of our agents will get in touch with you shortly to carry on the process of registration and to confirm the availability of the chosen package.</p>
+		<!--<i class="fa fa-check main-content__checkmark" id="checkmark"></i>-->
+		<p class="main-content__body" data-lead-id="main-content-body">Your request has been sent, one of our agents will get in touch with you shortly to carry on the process of registration and to confirm the availability of the chosen package.</p>
 	</div>
 
 	<footer class="site-footer" id="footer">

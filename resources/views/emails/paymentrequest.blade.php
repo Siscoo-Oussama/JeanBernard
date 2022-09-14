@@ -141,7 +141,7 @@
 																<div style="font-family:sans-serif">
 																	<div class style="font-size:12px;font-family:Montserrat,Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;mso-line-height-alt:18px;color:#fff;line-height:1.5">
 																		<p style="margin:0;font-size:16px;mso-line-height-alt:18px">&nbsp;</p>
-																		<p style="margin:0;font-size:16px;mso-line-height-alt:24px"> <span style="font-size:16px;color:#fff;">Your request has been filed, one of our agents will get in touch with you shortly to carry on the process of registration and to confirm the availability of the chosen package.</span></p>
+																		<p style="margin:0;font-size:16px;mso-line-height-alt:24px"> <span style="font-size:16px;color:#fff;">Thank you for registering, one of our agents will be in touch with you to finalize your payment request and confirm your booking.</span></p>
 																		<p style="margin:0;font-size:16px;mso-line-height-alt:18px">&nbsp;</p>
 
 																		<p style="margin:0;font-size:16px;mso-line-height-alt:18px">&nbsp;</p>

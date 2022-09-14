@@ -171,11 +171,13 @@
                                                                         <?php
 
                                                                             if ($data['deluxeroom'] == "1" ) {
-                                                                                echo "Deluxe room";
+                                                                                echo "Deluxe Room";
                                                                             }elseif ($data['juniorsuite'] == "1" ){
-                                                                                echo "Junior suite";
+                                                                                echo "Junior Suite";
                                                                             }elseif ($data['prestigesuite'] == "1" ) {
-                                                                                echo "Prestige suite";
+                                                                                echo "Prestige Suite";
+                                                                            }elseif ($data['roh'] == "1" ) {
+                                                                                echo "Superior Room";
                                                                             }
 
                                                                         ?>

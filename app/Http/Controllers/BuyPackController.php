@@ -56,10 +56,9 @@ class BuyPackController extends Controller
 
     public function okFail(Request $request)
     {
-        // return redirect('failed')
-        //     ->with(['status' => 'Paiement échoué']);
+        return view('failed')->with(['status' => 'Paiement échoué']);
 
-        dd($request->all());
+        //dd($request->all());
 
     }
 
@@ -83,9 +82,12 @@ class BuyPackController extends Controller
 
             if (($request->coupleorsingle == 'Per Couple') || ($request->coupleorsingle == 'Single Traveller'))  {
 
-                $participationsdeluxeroom = Participation::where('status', '=','paid')
-                ->where('deluxeroom', '=','1')
-                ->get();
+                $participationsdeluxeroom = Participation::where(function ($query) {
+                    $query->where('status', '=', 'requested')
+                          ->orWhere('status', '=', 'paid');
+                })->where(function ($query) {
+                    $query->where('deluxeroom', '=', '1');
+                })->get();
 
                 $countdeluxeroom = $participationsdeluxeroom->count();
 
@@ -100,7 +102,7 @@ class BuyPackController extends Controller
                     $participation->country = $request->country;
                     $participation->email = $request->email;
                     $participation->nationality = $request->nationality;
-                    $participation->tel = $request->tel;
+                    $participation->tel = "(+".$request->telcode.")"." ".$request->tel;
                     $participation->adress = $request->adress;
                     $participation->partnername = $request->partnername;
                     $participation->notes = $request->notes;
@@ -154,9 +156,12 @@ class BuyPackController extends Controller
 
             if (($request->coupleorsingle == 'Per Couple') || ($request->coupleorsingle == 'Single Traveller'))  {
 
-                $participationsjuniorsuite = Participation::where('status', '=','paid')
-                ->where('juniorsuite', '=','1')
-                ->get();
+                $participationsjuniorsuite = Participation::where(function ($query) {
+                    $query->where('status', '=', 'requested')
+                          ->orWhere('status', '=', 'paid');
+                })->where(function ($query) {
+                    $query->where('juniorsuite', '=', '1');
+                })->get();
 
                 $countjuniorsuite = $participationsjuniorsuite->count();
 
@@ -170,7 +175,7 @@ class BuyPackController extends Controller
                     $participation->country = $request->country;
                     $participation->email = $request->email;
                     $participation->nationality = $request->nationality;
-                    $participation->tel = $request->tel;
+                    $participation->tel = "(+".$request->telcode.")"." ".$request->tel;
                     $participation->adress = $request->adress;
                     $participation->partnername = $request->partnername;
                     $participation->notes = $request->notes;
@@ -223,9 +228,12 @@ class BuyPackController extends Controller
 
             if (($request->coupleorsingle == 'Per Couple') || ($request->coupleorsingle == 'Single Traveller'))  {
 
-                $participationsprestigesuite = Participation::where('status', '=','paid')
-                ->where('prestigesuite', '=','1')
-                ->get();
+                $participationsprestigesuite = Participation::where(function ($query) {
+                    $query->where('status', '=', 'requested')
+                          ->orWhere('status', '=', 'paid');
+                })->where(function ($query) {
+                    $query->where('prestigesuite', '=', '1');
+                })->get();
 
                 $countprestigesuite = $participationsprestigesuite->count();
 
@@ -240,7 +248,7 @@ class BuyPackController extends Controller
                     $participation->country = $request->country;
                     $participation->email = $request->email;
                     $participation->nationality = $request->nationality;
-                    $participation->tel = $request->tel;
+                    $participation->tel = "(+".$request->telcode.")"." ".$request->tel;
                     $participation->adress = $request->adress;
                     $participation->partnername = $request->partnername;
                     $participation->notes = $request->notes;
@@ -292,9 +300,12 @@ class BuyPackController extends Controller
         }elseif ($request->roomtype == 'Superior Room'){
 
             if (($request->coupleorsingle == 'Per Couple') || ($request->coupleorsingle == 'Single Traveller'))  {
-                $participationsroh = Participation::where('status', '=','paid')
-                ->where('roh', '=','1')
-                ->get();
+                $participationsroh = Participation::where(function ($query) {
+                    $query->where('status', '=', 'requested')
+                          ->orWhere('status', '=', 'paid');
+                })->where(function ($query) {
+                    $query->where('roh', '=', '1');
+                })->get();
 
                 $countroh = $participationsroh->count();
 
@@ -309,7 +320,7 @@ class BuyPackController extends Controller
                     $participation->country = $request->country;
                     $participation->email = $request->email;
                     $participation->nationality = $request->nationality;
-                    $participation->tel = $request->tel;
+                    $participation->tel = "(+".$request->telcode.")"." ".$request->tel;
                     $participation->adress = $request->adress;
                     $participation->partnername = $request->partnername;
                     $participation->notes = $request->notes;
@@ -375,10 +386,12 @@ class BuyPackController extends Controller
 
             if (($request->coupleorsingle == 'Per Couple') || ($request->coupleorsingle == 'Single Traveller'))  {
 
-                $participationsdeluxeroom = Participation::where('status', '=','paid')
-                ->where('deluxeroom', '=','1')
-                ->orWhere('status', '=','requested')
-                ->get();
+                $participationsdeluxeroom = Participation::where(function ($query) {
+                    $query->where('status', '=', 'requested')
+                          ->orWhere('status', '=', 'paid');
+                })->where(function ($query) {
+                    $query->where('deluxeroom', '=', '1');
+                })->get();
 
                 $countdeluxeroom = $participationsdeluxeroom->count();
 
@@ -393,7 +406,7 @@ class BuyPackController extends Controller
                     $participation->country = $request->country;
                     $participation->email = $request->email;
                     $participation->nationality = $request->nationality;
-                    $participation->tel = $request->tel;
+                    $participation->tel = "(+".$request->telcode.")"." ".$request->tel;
                     $participation->adress = $request->adress;
                     $participation->partnername = $request->partnername;
                     $participation->notes = $request->notes;
@@ -426,10 +439,13 @@ class BuyPackController extends Controller
 
             if (($request->coupleorsingle == 'Per Couple') || ($request->coupleorsingle == 'Single Traveller'))  {
 
-                $participationsjuniorsuite = Participation::where('status', '=','paid')
-                ->where('juniorsuite', '=','1')
-                ->orWhere('status', '=','requested')
-                ->get();
+
+                $participationsjuniorsuite = Participation::where(function ($query) {
+                    $query->where('status', '=', 'requested')
+                          ->orWhere('status', '=', 'paid');
+                })->where(function ($query) {
+                    $query->where('juniorsuite', '=', '1');
+                })->get();
 
                 $countjuniorsuite = $participationsjuniorsuite->count();
 
@@ -443,7 +459,7 @@ class BuyPackController extends Controller
                     $participation->country = $request->country;
                     $participation->email = $request->email;
                     $participation->nationality = $request->nationality;
-                    $participation->tel = $request->tel;
+                    $participation->tel = "(+".$request->telcode.")"." ".$request->tel;
                     $participation->adress = $request->adress;
                     $participation->partnername = $request->partnername;
                     $participation->notes = $request->notes;
@@ -476,10 +492,12 @@ class BuyPackController extends Controller
 
             if (($request->coupleorsingle == 'Per Couple') || ($request->coupleorsingle == 'Single Traveller'))  {
 
-                $participationsprestigesuite = Participation::where('status', '=','paid')
-                ->where('prestigesuite', '=','1')
-                ->orWhere('status', '=','requested')
-                ->get();
+                $participationsprestigesuite = Participation::where(function ($query) {
+                    $query->where('status', '=', 'requested')
+                          ->orWhere('status', '=', 'paid');
+                })->where(function ($query) {
+                    $query->where('prestigesuite', '=', '1');
+                })->get();
 
                 $countprestigesuite = $participationsprestigesuite->count();
 
@@ -494,7 +512,7 @@ class BuyPackController extends Controller
                     $participation->country = $request->country;
                     $participation->email = $request->email;
                     $participation->nationality = $request->nationality;
-                    $participation->tel = $request->tel;
+                    $participation->tel = "(+".$request->telcode.")"." ".$request->tel;
                     $participation->adress = $request->adress;
                     $participation->partnername = $request->partnername;
                     $participation->notes = $request->notes;
@@ -525,10 +543,14 @@ class BuyPackController extends Controller
         }elseif ($request->roomtype == 'Superior Room'){
 
             if (($request->coupleorsingle == 'Per Couple') || ($request->coupleorsingle == 'Single Traveller'))  {
-                $participationsroh = Participation::where('status', '=','paid')
-                ->where('roh', '=','1')
-                ->orWhere('status', '=','requested')
-                ->get();
+
+
+                $participationsroh = Participation::where(function ($query) {
+                    $query->where('status', '=', 'requested')
+                          ->orWhere('status', '=', 'paid');
+                })->where(function ($query) {
+                    $query->where('roh', '=', '1');
+                })->get();
 
                 $countroh = $participationsroh->count();
 
@@ -543,7 +565,7 @@ class BuyPackController extends Controller
                     $participation->country = $request->country;
                     $participation->email = $request->email;
                     $participation->nationality = $request->nationality;
-                    $participation->tel = $request->tel;
+                    $participation->tel = "(+".$request->telcode.")"." ".$request->tel;
                     $participation->adress = $request->adress;
                     $participation->partnername = $request->partnername;
                     $participation->notes = $request->notes;
@@ -592,7 +614,7 @@ class BuyPackController extends Controller
                 $participation->status = "requested";
                 $participation->email = $request->email;
                 $participation->nationality = $request->nationality;
-                $participation->tel = $request->tel;
+                $participation->tel = "(+".$request->telcode.")"." ".$request->tel;
                 $participation->adress = $request->adress;
                 $participation->partnername = $request->partnername;
                 $participation->notes = $request->notes;
@@ -628,7 +650,7 @@ class BuyPackController extends Controller
                 $participation->status = "requested";
                 $participation->email = $request->email;
                 $participation->nationality = $request->nationality;
-                $participation->tel = $request->tel;
+                $participation->tel = "(+".$request->telcode.")"." ".$request->tel;
                 $participation->adress = $request->adress;
                 $participation->partnername = $request->partnername;
                 $participation->notes = $request->notes;
@@ -680,7 +702,7 @@ class BuyPackController extends Controller
         Mail::to('contact@hbsmorocco2023.com')->send(new PaymentRequestDetails($participation));
         Mail::to($participation->email)->send(new PaymentRequest($participation));
 
-        return view('success');
+        return view('successamex');
 
 
     }
