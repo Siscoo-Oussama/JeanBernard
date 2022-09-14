@@ -58,6 +58,16 @@
     <div class="container p-30">
         <div class="row">
             <div class="col-md-12 main-datatable">
+               <div class="RoomType-count d-flex">
+                 <ol>
+                    <li>Deluxe room : The number of the remaining rooms <b>{{$countdeluxeroom}}/20</b> </li>
+                    <li>Junior suite : The number of the remaining rooms <b>{{$countjuniorsuite}}/25</b></li>
+                    <li>Prestige suite : The number of the remaining rooms <b>{{$countprestigesuite}}/5</b></li>
+                    <li>Superior riad : The number of type requested <b>{{$countsuperiorriad}}</b></li>
+                    <li>Premier riad : The number of type requested <b>{{$countpremieriad}}</b></li>
+                    <li>Superior Room : The number of the remaining rooms <b>{{$countsuperiorroom}}/10</b></li>
+                 </ol>
+               </div>
                 <div class="card_body">
                     <div class="overflow-x">
                         <table style="width:100%;" id="filtertable" class="table cust-datatable dataTable no-footer">
