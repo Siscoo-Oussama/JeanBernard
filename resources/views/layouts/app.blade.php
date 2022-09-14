@@ -19,6 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/BuyPack.css')}}">
+    <link rel="stylesheet" href="{{asset('css/Stylev2.css')}}">
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <style>
 
