@@ -23,8 +23,45 @@
 
 	<div class="main-content">
 		<!--<i class="fa fa-check main-content__checkmark" id="checkmark"></i>-->
-		<p class="main-content__body" data-lead-id="main-content-body">Thank you for registering, we’re looking forward to seeing you there.</p>
-	</div>
+		<p class="main-content__body" data-lead-id="main-content-body">We received your purchase request, Thank you for registering, we’re looking forward to seeing you there.</p>
+        <br>
+        <h3 style="text-align: left;" data-lead-id="main-content-body">Order Details :</h3>
+        <p style="font-size: 15px;text-align: left;" data-lead-id="main-content-body">Full Name : {{ $data['fullname'] }}</p>
+        <p style="font-size: 15px;text-align: left;" data-lead-id="main-content-body">Email : {{ $data['email'] }}</p>
+        <p style="font-size: 15px;text-align: left;" data-lead-id="main-content-body">Address : {{ $data['adress'] }}</p>
+        <p style="font-size: 15px;text-align: left;" data-lead-id="main-content-body">Amount Paid : {{ $data['price'] }} MAD</p>
+        <p style="font-size: 15px;text-align: left;" data-lead-id="main-content-body">Room Type :
+
+            <?php
+
+                if ($data['single'] == "1" ) {
+                    echo "Single";
+                }elseif ($data['couple'] == "1" ) {
+                    echo "Couple";
+                }
+
+            ?>
+
+        </p>
+        <p style="font-size: 15px;text-align: left;" data-lead-id="main-content-body">Room Type :
+
+            <?php
+
+                if ($data['deluxeroom'] == "1" ) {
+                    echo "Deluxe Room";
+                }elseif ($data['juniorsuite'] == "1" ){
+                    echo "Junior Suite";
+                }elseif ($data['prestigesuite'] == "1" ) {
+                    echo "Prestige Suite";
+                }elseif ($data['roh'] == "1" ) {
+                    echo "Superior Room";
+                }
+
+            ?>
+
+        </p>
+
+    </div>
 
 	<footer class="site-footer" id="footer">
 		<p class="site-footer__fineprint" id="fineprint">Hbsmorocco2023 | Copyright ©2022 | All Rights Reserved</p>

@@ -7,6 +7,7 @@ use App\Http\Controllers\BuyPackSaveOnlyController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 USE App\Http\Middleware\VerifyCsrfToken;
+use App\Models\Participation;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 
@@ -34,10 +35,9 @@ Route::post('processwithamex',[BuyPackController::class, 'processwithamex'])->na
 Route::post('process',[BuyPackController::class, 'process'])->name('process');
 Route::post('submit',[BuyPackController::class, 'submit'])->name('submit');
 Route::post('okFail', [BuyPackController::class, 'okFail'])->name('okFail')->withoutMiddleware([VerifyCsrfToken::class]);
-Route::post('callback', [BuyPackController::class, 'callback'])->name('callback');
+Route::post('callback', [BuyPackController::class, 'callback'])->name('callback')->withoutMiddleware([VerifyCsrfToken::class]);
 Route::post('okSuccess',[BuyPackController::class, 'okSuccess']);
 Route::get('/dashboard',[AdminController::class,'dashboard']);
-
 
 Route::get("/" ,function(){
     return Redirect::to('http://hbsmorocco2023.com');

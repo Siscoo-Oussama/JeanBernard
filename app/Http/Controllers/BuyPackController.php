@@ -64,7 +64,13 @@ class BuyPackController extends Controller
 
     public function callback(Request $request)
     {
-        dd($request->all());
+        //dd($request->all());
+
+        if($request->ProcReturnCode == "00"){
+			echo "ACTION=POSTAUTH";
+		} else {
+			echo "APPROVED";
+		}
     }
 
 
@@ -140,7 +146,7 @@ class BuyPackController extends Controller
 
                     ]);
 
-                    //dd($payment->id);
+                    //dd($client);
 
                     $client->redirect_post();
                 }
@@ -718,7 +724,7 @@ class BuyPackController extends Controller
         Mail::to('contact@hbsmorocco2023.com')->send(new OrderDetails($participation));
         Mail::to($participation->email)->send(new Order($participation));
 
-        return view('success');
+        return view('success')->with(['data' => $participation]);
 
 
     }

@@ -39,7 +39,21 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
+    @yield('script')
+
     <script type="text/javascript">
+
+
+    $(document).on('keypress', '#allowAlphaNumericSpace', function (event) {
+        var regex = new RegExp("^[a-zA-Z0-9 ]+$");
+        var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+        if (!regex.test(key)) {
+            event.preventDefault();
+            return false;
+        }
+    });
+
+
 
        $(document).ready(function(){
         $("#single").change(function(){

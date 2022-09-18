@@ -153,19 +153,19 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="fullname" required>
+                                    <input type="text" class="form-control" id="allowAlphaNumericSpace" placeholder=" " name="fullname" required>
                                     <label for="floatingInput">Full Name</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class=" mb-3">
-                                    <input type="text" style="height: 55px" class="form-control" id="" name="partnername" placeholder="Partner Full Name">
-                                    {{-- <label for="floatingInput">Partner Name (Only for couple type)</label> --}}
+                                    <input type="text" style="height: 55px" class="form-control" id="allowAlphaNumericSpace" name="partnername" placeholder="Partner Full Name">
+
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="nationality" required>
+                                    <input type="text" class="form-control" id="allowAlphaNumericSpace" placeholder=" " name="nationality" required>
                                     <label for="floatingInput">Nationality</label>
                                 </div>
                             </div>
@@ -408,23 +408,22 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="country" required>
+                                    <input type="text" class="form-control" id="allowAlphaNumericSpace" placeholder=" " name="country" required>
                                     <label for="floatingInput">Country</label>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="adress" required>
+                                    <input type="text" class="form-control" id="allowAlphaNumericSpace" placeholder=" " name="adress" required>
                                     <label for="floatingInput">Address</label>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="notes" >
+                                    <input type="text" class="form-control" id="allowAlphaNumericSpace" placeholder=" " name="notes">
                                     <label for="floatingInput">Special Note (dietary requirements, allergies, medical condition, bedding preference…)</label>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -503,6 +502,11 @@
     </div>
 </form>
 </div>
+
+
+@endsection
+
+@section('script')
 
 
 @endsection
