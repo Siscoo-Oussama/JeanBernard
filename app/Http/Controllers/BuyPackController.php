@@ -125,8 +125,8 @@ class BuyPackController extends Controller
 
                     $base_url= config('app.url');
                     $client = new CmiClient([
-                        'storekey' => 'HBSevent23', // STOREKEY Icecube99??
-                        'clientid' => '600003367', // CLIENTID 600001399
+                        'storekey' => 'Hbsmorocco2023', // STOREKEY Icecube99??
+                        'clientid' => '600003300', // CLIENTID 600001399
                         'oid' => $request->cmd, // COMMAND ID IT MUST BE UNIQUE
                         'shopurl' => $base_url, // SHOP URL FOR REDIRECTION
                         'okUrl' => $base_url.'/okSuccess', // REDIRECTION AFTER SUCCEFFUL PAYMENT
@@ -200,8 +200,8 @@ class BuyPackController extends Controller
 
                     $base_url= config('app.url');
                     $client = new CmiClient([
-                        'storekey' => 'HBSevent23', // STOREKEY Icecube99??
-                        'clientid' => '600003367', // CLIENTID 600001399
+                        'storekey' => 'Hbsmorocco2023', // STOREKEY Icecube99??
+                        'clientid' => '600003300', // CLIENTID 600001399
                         'oid' => $request->cmd, // COMMAND ID IT MUST BE UNIQUE
                         'shopurl' => $base_url, // SHOP URL FOR REDIRECTION
                         'okUrl' => $base_url.'/okSuccess', // REDIRECTION AFTER SUCCEFFUL PAYMENT
@@ -273,8 +273,8 @@ class BuyPackController extends Controller
 
                     $base_url= config('app.url');
                     $client = new CmiClient([
-                        'storekey' => 'HBSevent23', // STOREKEY Icecube99??
-                        'clientid' => '600003367', // CLIENTID 600001399
+                        'storekey' => 'Hbsmorocco2023', // STOREKEY Icecube99??
+                        'clientid' => '600003300', // CLIENTID 600001399
                         'oid' => $request->cmd, // COMMAND ID IT MUST BE UNIQUE
                         'shopurl' => $base_url, // SHOP URL FOR REDIRECTION
                         'okUrl' => $base_url.'/okSuccess', // REDIRECTION AFTER SUCCEFFUL PAYMENT
@@ -345,8 +345,8 @@ class BuyPackController extends Controller
 
                     $base_url= config('app.url');
                     $client = new CmiClient([
-                        'storekey' => 'HBSevent23', // STOREKEY Icecube99??
-                        'clientid' => '600003367', // CLIENTID 600001399
+                        'storekey' => 'Hbsmorocco2023', // STOREKEY Icecube99??
+                        'clientid' => '600003300', // CLIENTID 600001399
                         'oid' => $request->cmd, // COMMAND ID IT MUST BE UNIQUE
                         'shopurl' => $base_url, // SHOP URL FOR REDIRECTION
                         'okUrl' => $base_url.'/okSuccess', // REDIRECTION AFTER SUCCEFFUL PAYMENT

@@ -36,7 +36,7 @@ Route::post('process',[BuyPackController::class, 'process'])->name('process');
 Route::post('submit',[BuyPackController::class, 'submit'])->name('submit');
 Route::post('okFail', [BuyPackController::class, 'okFail'])->name('okFail')->withoutMiddleware([VerifyCsrfToken::class]);
 Route::post('callback', [BuyPackController::class, 'callback'])->name('callback')->withoutMiddleware([VerifyCsrfToken::class]);
-Route::post('okSuccess',[BuyPackController::class, 'okSuccess']);
+Route::post('okSuccess',[BuyPackController::class, 'okSuccess'])->withoutMiddleware([VerifyCsrfToken::class]);
 Route::get('/dashboard',[AdminController::class,'dashboard']);
 
 Route::get("/" ,function(){
