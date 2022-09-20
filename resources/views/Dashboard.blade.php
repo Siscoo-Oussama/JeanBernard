@@ -92,13 +92,13 @@
                                     <td><span class="mode {{$item->status}}">{{$item->status}}</span></td>
                                     <td>{{$item->adress}}</td>
                                     <td>
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#{{$item->fullname}}">
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#part{{$item->id}}">
                                             Details
                                         </button>
                                     </td>
                                 </tr>
 
-                                <div class="modal fade" id="{{$item->fullname}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal fade" id="part{{$item->id}}"  data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="part{{ $item->id }}" aria-hidden="true">
                                     <div class="modal-dialog">
                                       <div class="modal-content">
                                         <div class="modal-header">

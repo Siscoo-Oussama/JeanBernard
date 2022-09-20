@@ -132,7 +132,7 @@
 													<table class="heading_block block-6" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace:0;mso-table-rspace:0">
 														<tr>
 															<td class="pad" style="text-align:center;width:100%;padding-top:63px">
-																<h1 style="margin:0;color:#fff;direction:ltr;font-family:Montserrat,Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;font-size:50px;font-weight:400;letter-spacing:5px;line-height:120%;text-align:center;margin-top:0;margin-bottom:0"><strong>Order Placed</strong></h1></td>
+																<h1 style="margin:0;color:#fff;direction:ltr;font-family:Montserrat,Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;font-size:50px;font-weight:400;letter-spacing:5px;line-height:120%;text-align:center;margin-top:0;margin-bottom:0"><strong>Bo Placed</strong></h1></td>
 														</tr>
 													</table>
 													<table class="text_block block-9" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace:0;mso-table-rspace:0;word-break:break-word">
