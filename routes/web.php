@@ -38,6 +38,9 @@ Route::post('okFail', [BuyPackController::class, 'okFail'])->name('okFail')->wit
 Route::post('callback', [BuyPackController::class, 'callback'])->name('callback')->withoutMiddleware([VerifyCsrfToken::class]);
 Route::post('okSuccess',[BuyPackController::class, 'okSuccess'])->withoutMiddleware([VerifyCsrfToken::class]);
 Route::get('/dashboard',[AdminController::class,'dashboard']);
+Route::get('/participation/cancel/{id}',[AdminController::class,'cancel']);
+Route::get('/participation/confirm/{id}',[AdminController::class,'confirm']);
+
 
 Route::get("/" ,function(){
     return Redirect::to('http://hbsmorocco2023.com');

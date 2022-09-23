@@ -148,7 +148,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-floating mb-3">
                                                     <input type="text" class="form-control" id="floatingInput" placeholder=" " name="phone" disabled value="{{$item->status}}">
-                                                    <label for="floatingInput">status</label>
+                                                    <label for="floatingInput">Status</label>
                                                 </div>
                                             </div>
                                             @if($item->price!=null)
@@ -241,8 +241,37 @@
                                                 </div>
                                             </div>
                                             @endif
+
+
                                            </div>
                                         </div>
+
+                                        <div class="modal-body">
+                                            <div class="row">
+                                             <div class="col-md-12">
+                                                 <div class="form-floating mb-3" style="TEXT-ALIGN: center;">
+                                                    @if($item->status=="requested")
+                                                    <a href="participation/cancel/{{$item->id}}" class="col-md-4 btn btn-danger" >Cancel</a>
+                                                    <a href="participation/confirm/{{$item->id}}" class="col-md-4 btn btn-success" >Confirm</a>
+
+                                                    @endif
+
+                                                    @if($item->status=="paid")
+                                                    <a href="participation/cancel/{{$item->id}}" class="col-md-4 btn btn-danger" >Cancel</a>
+                                                    @endif
+
+                                                    @if($item->status=="canceled")
+                                                    <a href="participation/confirm/{{$item->id}}" class="col-md-4 btn btn-success" >Confirm</a>
+                                                    @endif
+
+                                                    </div>
+                                             </div>
+
+
+
+
+                                            </div>
+                                         </div>
                                       </div>
                                     </div>
                                   </div>

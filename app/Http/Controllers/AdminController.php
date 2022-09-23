@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Participation;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class AdminController extends Controller
 {
@@ -79,6 +81,26 @@ class AdminController extends Controller
 
 
         ]);
+    }
+
+    public function confirm ($id)
+    {
+        $participation = Participation::find($id);
+        $participation->status = "paid";
+        $participation->update();
+
+        return Redirect::back();
+
+    }
+
+    public function cancel ($id)
+    {
+        $participation = Participation::find($id);
+        $participation->status = "canceled";
+        $participation->update();
+
+        return Redirect::back();
+
     }
 
 
